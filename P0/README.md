@@ -9,3 +9,5 @@ Esta es otra línea
 
 
 Tercer cambio
+
+![](Ejercicio2-img1.gif)
