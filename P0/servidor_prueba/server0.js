@@ -1,24 +1,19 @@
 const http = require('http');
 
-//-- Crear el servidor
-const server = http.createServer();
+const PUERTO = 8080;
 
-//-- Función de retrollamada de petición recibida
-//-- Cada vez que un cliente realiza una petición
-//-- Se llama a esta función
-function atender(req, res) {
-    //-- req: http.IncomingMessage: Mensaje de solicitud
-    //-- res: http.SercerResponse: Mensaje de respuesta (vacío)
+const server = http.createServer((req, res) => {
+    
+  //-- Indicamos que se ha recibido una petición
+  console.log("Petición recibida!");
 
-    //-- Indicamos que se ha recibido una petición
-    console.log("Petición recibida!");
+  // Repuesta del servidor
+  res.setHeader('Content-Type', 'text/plain');
+  res.write("Soy el Happy server!!\n");
+  res.end();
 
-    //-- pero no enviamos respusta (todavía)
-}
 
-//-- Activar la función de retrollamada del servidor
-server.on('request', atender);
+});
 
-//-- Activar el servidor. A la escucha de peitciones
-//-- en el puerto 8080
-server.listen(8080);
+server.listen(PUERTO);
+console.log("Happy server activado!. Escuchando en puerto: " + PUERTO);
