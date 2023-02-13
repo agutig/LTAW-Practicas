@@ -1,0 +1,112 @@
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+
+header{
+    margin: auto;
+    margin-top: 1vh;
+    width: 95vw;
+    text-align: center;
+    color: #3b3b3b;
+    border: none;
+    border-radius: 8px;
+    background-color: #EEEEEE;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10),
+                0 16px 16px rgba(0,0,0,0.05);
+    
+}
+
+.mainBody{
+    margin: auto;
+    margin-top: 1vh;
+    font-size: 4vh;
+    width: 95vw;
+    min-height: 65vh;
+    text-align: center;
+    color: #3b3b3b;
+    border: none;
+    border-radius: 8px;
+    background-color: #EEEEEE;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10),
+                0 16px 16px rgba(0,0,0,0.05);
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #3b3b3b;
+    border: none;
+    background-color: #EEEEEE;
+
+}
+
+.headerMenu{
+    margin: auto;
+    margin-top: 1vh;
+    font-size: 4vh;
+    width: 95vw;
+    text-align: center;
+    color: #3b3b3b;
+    border: none;
+    border-radius: 8px;
+    background-color: #E0E0E0;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10),
+                0 16px 16px rgba(0,0,0,0.05);
+}
+
+.menuButton{
+    border-radius: 8px;
+    color: #363636;
+    margin: auto;
+    font-size: 0.80vw;
+    width: 8vw;
+    border: none;
+    background-color: #cecece;
+    box-shadow: 0 0px 0px rgba(0,0,0,0.05),
+                0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10);
+}
+
+
+
+#mainLogo{
+    text-align: left;
+    margin-left: 1vw;
+    margin-top: 0.5vh;
+    font-size: 4vh;
+    color: #3b3b3b;
+}
+
+#slogan{
+    text-align: left;
+    margin-left: 1.5vw;
+    margin-top: -2.6vh;
+    font-size: 1.5vh;
+    color: #3b3b3b;
+}
+
+
