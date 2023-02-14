@@ -1,3 +1,9 @@
+
+body{
+
+    background-color: #fafafa;
+}
+
 html {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
       'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -5,7 +11,6 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    background-color: #fafafa;
 }
 
 
@@ -131,10 +136,110 @@ header{
 }
 
 
+.categorySelector{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: auto;
+    font-size: 4vh;
+    width: 85vw;
+    height: 60vh;
+    border: none;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10),
+                0 16px 16px rgba(0,0,0,0.05);
+}
+
+.categorySelector .category{
+    margin: auto;
+    margin-top: 3vh;
+    height: 25vh;
+    width: 40vw;
+    border: none;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10),
+                0 16px 16px rgba(0,0,0,0.05);   
+}
+
+
+.reviewCarrusel{
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    width: 80vw;
+}
+
+.reviewCarrusel .reviewButton{
+    height: 5vh;
+    width: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-right: 2vw;
+    margin-left: 2vw;
+    text-align: center;
+    background-color: #fafafa;
+    border: none;
+    font-size: 5vh;
+    border-radius: 25px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10),
+                0 16px 16px rgba(0,0,0,0.05);
+}
+
+
+.reviewCarrusel .review{
+    width: 75vw;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    border-radius: 8px;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
+                0 2px 2px rgba(0,0,0,0.20), 
+                0 4px 4px rgba(0,0,0,0.15), 
+                0 8px 8px rgba(0,0,0,0.10),
+                0 16px 16px rgba(0,0,0,0.05);
+}
+
+
+.reviewCarrusel.review .reviewUserImage{
+    margin: auto;
+}
+
+.reviewCarrusel .review .reviewUser{
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+}
+
+.reviewCarrusel .review .reviewUser .reviewName{
+    font-size: 3.5vh;
+    text-align: left;
+}
+
+.reviewCarrusel .review .reviewUser .reviewText{
+    font-size: 2vh;
+    text-align: left;
+}
+
+
+
 
 footer{
-    position: fixed;
-    bottom: 0;
+    
     width: 100%;
     text-align: center;
     color: #3b3b3b;
