@@ -1,6 +1,9 @@
 
 //Test:  http://127.0.0.1:8080/
 
+//Modules
+const fs = require('fs');
+const http = require('http');
 
 function print_info_req(req) {
 
@@ -18,22 +21,48 @@ function print_info_req(req) {
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
   console.log("URL completa: " + myURL.href);
   console.log("  Ruta: " + myURL.pathname);
+
+  return myURL
 }
 
 
+function OK(res,data,type){
+  res.statusCode = 200;
+  res.statusMessage = "OK"
+  res.setHeader("content-Type" , "text/" + String(type));
+  res.write(data);
+  res.end();
+  console.log("200 OK")
+}
 
-const http = require('http');
 
-//-- Definir el puerto a utilizar
+function NOT_OK(res){
+  res.statusCode = 404;
+  res.statusMessage = "Not Found"
+  res.setHeader("content-Type" , "text/plain");
+  res.end();
+  console.log("Error 404 NOT FOUND")
+}
+
+
 const PUERTO = 8080;
 
 const server = http.createServer((req, res) => {
     
-    
-  console.log("Petición recibida!");
+  url = print_info_req(req)
+  if (req.method == "GET" ){
+    if (url.pathname == '/'){
+      fs.readFile('index.html', 'utf8', (err, data) => { if(!err){OK(res,data,"html")}else{NOT_OK(res)}});
+    }
+
+    else if(url.pathname == '/style/index.css'){
+      fs.readFile('style/index.css', 'utf8', (err, data) => { if(!err){OK(res,data,"css")}else{NOT_OK(res)}});
+    }
+
+ 
+  }
+
 });
 
-//-- Activar el servidor: ¡Que empiece la fiesta!
 server.listen(PUERTO);
-
 console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
