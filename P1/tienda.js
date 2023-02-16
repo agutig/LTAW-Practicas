@@ -41,6 +41,9 @@ function replaceType(type){
 
       case 'jpeg':
         return 'image/jpeg'
+
+      case 'png':
+        return 'image/png'
   }
 
 }
@@ -78,7 +81,7 @@ const server = http.createServer((req, res) => {
       fileType = url.pathname.split('.')
       fileType = fileType[fileType.length-1]
       fileType = replaceType(fileType)
-      
+
       fs.readFile(url.pathname.slice(1,) , 'utf8', (err, data) => { if(!err){OK(res,data,fileType)}else{NOT_OK(res)}});
     }
 
