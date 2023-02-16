@@ -26,13 +26,32 @@ function print_info_req(req) {
 }
 
 
+function replaceType(type){
+
+  switch(type){
+
+      case 'html':
+        return 'text/html'
+      
+      case 'css':
+        return 'text/css'
+      
+      case 'js':
+        return 'text/javascript'
+
+      case 'jpeg':
+        return 'image/jpeg'
+  }
+
+}
+
 function OK(res,data,type){
   res.statusCode = 200;
   res.statusMessage = "OK"
-  res.setHeader("content-Type" , "text/" + String(type));
+  res.setHeader("content-Type" , String(type));
   res.write(data);
   res.end();
-  console.log("200 OK")
+  console.log("    200 OK")
 }
 
 
@@ -41,7 +60,7 @@ function NOT_OK(res){
   res.statusMessage = "Not Found"
   res.setHeader("content-Type" , "text/plain");
   res.end();
-  console.log("Error 404 NOT FOUND")
+  console.log("    Error 404 NOT FOUND")
 }
 
 
@@ -51,15 +70,19 @@ const server = http.createServer((req, res) => {
     
   url = print_info_req(req)
   if (req.method == "GET" ){
+
     if (url.pathname == '/'){
-      fs.readFile('index.html', 'utf8', (err, data) => { if(!err){OK(res,data,"html")}else{NOT_OK(res)}});
+      fs.readFile('index.html', 'utf8', (err, data) => { if(!err){OK(res,data,"text/html")}else{NOT_OK(res)}});
+
+    }else{
+      fileType = url.pathname.split('.')
+      fileType = fileType[fileType.length-1]
+      fileType = replaceType(fileType)
+      
+      fs.readFile(url.pathname.slice(1,) , 'utf8', (err, data) => { if(!err){OK(res,data,fileType)}else{NOT_OK(res)}});
     }
 
-    else if(url.pathname == '/style/index.css'){
-      fs.readFile('style/index.css', 'utf8', (err, data) => { if(!err){OK(res,data,"css")}else{NOT_OK(res)}});
-    }
 
- 
   }
 
 });
