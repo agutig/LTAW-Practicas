@@ -29,7 +29,6 @@ function print_info_req(req) {
 function replaceType(type){
 
   switch(type){
-
       case 'html':
         return  ['text/html','utf8']
       
@@ -48,16 +47,17 @@ function replaceType(type){
       case 'jpg':
         return ['image/jpg','binary']
   }
-
 }
 
-function OK(res,data,type){
-  res.statusCode = 200;
-  res.statusMessage = "OK"
-  res.setHeader("content-Type" , String(type[0]));
-  res.write(data);
-  res.end();
-  console.log("    200 OK")
+function OK(res,data){
+
+    res.statusCode = 200;
+    res.statusMessage = "OK"
+    //res.setHeader("content-Type" , String(type[0]));
+    res.write(data);
+    res.end();
+    console.log("    200 OK")
+
 }
 
 
@@ -78,16 +78,10 @@ const server = http.createServer((req, res) => {
   if (req.method == "GET" ){
 
     if (url.pathname == '/'){
-
-      fileType = ['text/html','utf8']
-      fs.readFile('index.html', 'utf8', (err, data) => { if(!err){OK(res,data,fileType)}else{NOT_OK(res)}});
+      fs.readFile('index.html', (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
 
     }else{
-      fileType = url.pathname.split('.')
-      fileType = fileType[fileType.length-1]
-      fileType = replaceType(fileType)
-      console.log(fileType)
-      fs.readFile(url.pathname.slice(1,) ,  fileType[1], (err, data) => { if(!err){OK(res,data,fileType)}else{NOT_OK(res)}});
+      fs.readFile(url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
     }
 
     //<img src="images/mv_apple_0_0.jpg">
