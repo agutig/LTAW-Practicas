@@ -16,6 +16,7 @@ html {
 
 header{
     position: fixed;
+    z-index: 5;
     top: 0;
     left: 0;
     overflow: hidden;
@@ -48,11 +49,7 @@ header{
     border: none;
     
     background-color: #fafafa;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.05),
-                0 1px 1px rgba(0,0,0,0.25), 
-                0 1px 1px rgba(0,0,0,0.20), 
-                0 1px 1px rgba(0,0,0,0.15), 
-                0 2px 2px rgba(0,0,0,0.10);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
 }
 
 
@@ -88,23 +85,38 @@ header{
 
 
 .productSelection{
+    margin: auto;
     display: flex;
     flex-direction: row;
+    width: 90vw;
 }
 
 .product{
     margin: auto;
     font-size: 4vh;
     min-width: 15vw;
-    height: 30vh;
+    width: 18vw;
+    height: 45vh;
     border: none;
     border-radius: 8px;
     background-color: #fafafa;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
-                0 2px 2px rgba(0,0,0,0.20), 
-                0 4px 4px rgba(0,0,0,0.15), 
-                0 8px 8px rgba(0,0,0,0.10),
-                0 16px 16px rgba(0,0,0,0.05);
+    overflow: hidden; 
+    position: relative;
+    z-index: 0;
+    box-shadow: 0px 8px 8px rgba(62, 62, 62, 0.2),
+                0px -8px 8px rgba(62, 62, 62, 0.2),
+                8px  0px 8px rgba(62, 62, 62, 0.2),
+                -8px 0px 8px rgba(62, 62, 62, 0.2);
+                
+    transition: box-shadow 0.3s ease, height 0.3s ease;
+}
+
+.product:hover{
+    height: 50vh;
+    box-shadow: 0px 12px 8px rgba(0, 0, 0, 0.2),
+                0px -8px 8px rgba(0, 0, 0, 0.3),
+                12px  0px 8px rgba(0, 0, 0, 0.3),
+                -12px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
 .product .productTittle{
@@ -112,6 +124,10 @@ header{
     font-weight: 550;
     text-align: left;
     margin-left: 1vw;
+    position: absolute;
+    top: 1vh; /* ajusta la posición vertical del texto */
+    left: 0.5vw; /* ajusta la posición horizontal del texto */
+    color: #fafafa;
 }
 
 .product .productSubTittle{
@@ -120,19 +136,33 @@ header{
     text-align: left;
     margin-left: 1vw;
     margin-top: -2.25vh;
+    position: absolute;
+    top: 10vh; /* ajusta la posición vertical del texto */
+    left: 0.5vw; /* ajusta la posición horizontal del texto */
+    color: #fafafa;
+}
+
+.product .productPic{
+    width: 100%; /* ajusta el ancho de la imagen al 100% del contenedor */
+    height: 100%; 
+    border-radius: 8px;
+    z-index: -5;
+    object-fit: cover;
 }
 
 .product .productButton{
+    position: absolute;
+    top: 33.5vh; /* ajusta la posición vertical del texto */
+    left: 1.5vw; /* ajusta la posición horizontal del texto */
+    height: 3vh;
     border: none;
     border-radius: 8px;
-    font-size: 1.5vh;
+    font-size: 2vh;
     margin-left: 10vw;
-    background-color: #fafafa;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
-                0 2px 2px rgba(0,0,0,0.20), 
-                0 4px 4px rgba(0,0,0,0.15), 
-                0 8px 8px rgba(0,0,0,0.10),
-                0 16px 16px rgba(0,0,0,0.05);
+    background-color: #4a64f8;
+    color:#fafafa;
+    z-index: 5;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
 }
 
 
@@ -143,30 +173,47 @@ header{
     margin: auto;
     font-size: 4vh;
     width: 85vw;
-    height: 60vh;
     border: none;
     border-radius: 8px;
     background-color: #fafafa;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
-                0 2px 2px rgba(0,0,0,0.20), 
-                0 4px 4px rgba(0,0,0,0.15), 
-                0 8px 8px rgba(0,0,0,0.10),
-                0 16px 16px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2); 
 }
 
 .categorySelector .category{
     margin: auto;
     margin-top: 3vh;
-    height: 25vh;
-    width: 40vw;
+    margin-bottom: 2vh;
+    height: 40vh;
+    width: 70vh;
     border: none;
     border-radius: 8px;
-    background-color: #fafafa;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
-                0 2px 2px rgba(0,0,0,0.20), 
-                0 4px 4px rgba(0,0,0,0.15), 
-                0 8px 8px rgba(0,0,0,0.10),
-                0 16px 16px rgba(0,0,0,0.05);   
+    overflow: hidden; 
+    position: relative;
+    z-index: 0;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
+}
+
+.categorySelector .category:hover{
+    height: 42vh;
+    width: 72vh;
+}
+
+.categorySelector .category .categoryPic{
+    width: 100%; /* ajusta el ancho de la imagen al 100% del contenedor */
+    height: 100%; 
+    border-radius: 8px;
+    z-index: -5;
+    object-fit: cover;
+}
+
+.categorySelector .category .categoryText{
+    position: absolute;
+    font-size: 5vh;
+    top: 25vh; /* ajusta la posición vertical del texto */
+    left: 3vw; /* ajusta la posición horizontal del texto */
+    text-align: center;
+    color: #fafafa;
+    z-index: 5;
 }
 
 
@@ -191,11 +238,7 @@ header{
     border: none;
     font-size: 5vh;
     border-radius: 25px;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
-                0 2px 2px rgba(0,0,0,0.20), 
-                0 4px 4px rgba(0,0,0,0.15), 
-                0 8px 8px rgba(0,0,0,0.10),
-                0 16px 16px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
 }
 
 
@@ -207,11 +250,7 @@ header{
     border-radius: 8px;
     margin-top: 2vh;
     margin-bottom: 1vh;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.25), 
-                0 2px 2px rgba(0,0,0,0.20), 
-                0 4px 4px rgba(0,0,0,0.15), 
-                0 8px 8px rgba(0,0,0,0.10),
-                0 16px 16px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2); 
 }
 
 
