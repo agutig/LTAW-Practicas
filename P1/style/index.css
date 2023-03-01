@@ -2,6 +2,7 @@
 body{
 
     background-color: #fafafa;
+    box-sizing: content-box;
 }
 
 html {
@@ -10,7 +11,8 @@ html {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
+    width: 100%;
+    box-sizing: content-box;
 }
 
 
@@ -24,7 +26,6 @@ header{
     box-sizing: border-box;
     color: #3b3b3b;
     background-color: #fafafa;
-
     
 }
 
@@ -49,9 +50,22 @@ header{
     border: none;
     
     background-color: #fafafa;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+                
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease
 }
 
+.menuButton:hover{
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2),
+                0px -3px 3px rgba(0, 0, 0, 0.3),
+                3px  0px 3px rgba(0, 0, 0, 0.3),
+                -3px 0px 3px rgba(0, 0, 0, 0.3);
+    color: #fafafa;
+    background-color: #363636;
+}
 
 
 #mainLogo{
@@ -76,13 +90,55 @@ header{
     margin: auto;
     margin-top: 10vh;
     font-size: 4vh;
-    width: 95vw;
+    width: 100%;
     min-height: 65vh;
     text-align: center;
     color: #3b3b3b;
     background-color: #fafafa;
+    box-sizing: content-box;
 }
 
+
+
+.productText{
+    font-size: 10vh;
+    margin-left: 5vw;
+    margin-top: 8vh;
+    margin-bottom: 4vh;
+    font-weight: 600;
+    text-align: left;
+    --bg-size: 400%;
+    --color-one: hsl(272, 100%, 50%);
+    --color-two: hsl(40 95% 55%);
+    --color-three: hsl(0, 0%, 16%);
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-three),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: move-bg 20s infinite linear;
+}
+
+@media(prefers-reduced-motion: no-preference) {
+    .boujee-text {
+      animation: move-bg 10s linear infinite;
+    }
+    @keyframes move-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+  }
+
+.topSells{
+    margin-top: 12vh;
+    margin-bottom: 5vh;
+}
 
 .productSelection{
     margin: auto;
@@ -98,7 +154,7 @@ header{
     width: 18vw;
     height: 45vh;
     border: none;
-    border-radius: 8px;
+    border-radius: 24px;
     background-color: #fafafa;
     overflow: hidden; 
     position: relative;
@@ -163,39 +219,69 @@ header{
     color:#fafafa;
     z-index: 5;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
+    transition: top 0.3s ease
 }
 
+.product:hover .productButton{
+    top: 40.5vh; /* ajusta la posición vertical del texto */
+}
 
+.categoryDiv{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 85vw ;
+    border: none;
+    border-radius: 30px;
+    background-color: #000000;
+    box-sizing: border-box;
+    margin: auto;
+}
+.categoryDivText{
+    margin-left: 5vw;
+    font-size: 3vw;
+    font-weight: 600;
+    text-align: left;
+    color: #fafafa;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
 .categorySelector{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin: auto;
     font-size: 4vh;
-    width: 85vw;
-    border: none;
-    border-radius: 8px;
-    background-color: #fafafa;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2); 
+
 }
 
 .categorySelector .category{
     margin: auto;
     margin-top: 3vh;
-    margin-bottom: 2vh;
-    height: 40vh;
-    width: 70vh;
+    margin-bottom: 4vh;
+    margin-left: 2vw;
+    height: 35vh;
+    width: 65vh;
     border: none;
-    border-radius: 8px;
+    border-radius: 24px;
     overflow: hidden; 
     position: relative;
     z-index: 0;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.2),
+    0px -8px 8px rgba(0, 0, 0, 0.2),
+    8px  0px 8px rgba(0, 0, 0, 0.2),
+    -8px 0px 8px rgba(0, 0, 0, 0.2);
+    
+    transition: box-shadow 0.3s ease, height 0.3s ease , width 0.3s ease;
 }
 
 .categorySelector .category:hover{
-    height: 42vh;
-    width: 72vh;
+    height: 38vh;
+    width: 68vh;
+    
+    box-shadow: 0px 12px 8px rgba(255, 255, 255, 0.2),
+                0px -8px 8px rgba(255, 255, 255, 0.3),
+                12px  0px 8px rgba(255, 255, 255, 0.3),
+                -12px 0px 8px rgba(255, 255, 255, 0.3);
 }
 
 .categorySelector .category .categoryPic{
@@ -217,11 +303,21 @@ header{
 }
 
 
+.opinionText{
+    margin: auto;
+    font-size: 7.5vh;
+    margin-top: 6vh;
+    margin-bottom: 4vh;
+    font-weight: 600;
+    text-align: center;
+}
+
 .reviewCarrusel{
     display: flex;
     margin: auto;
     flex-direction: row;
     width: 80vw;
+    margin-bottom: 4vh;
 }
 
 .reviewCarrusel .reviewButton{
@@ -247,7 +343,7 @@ header{
     display: flex;
     margin: auto;
     flex-direction: row;
-    border-radius: 8px;
+    border-radius: 24px;
     margin-top: 2vh;
     margin-bottom: 1vh;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2); 
