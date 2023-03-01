@@ -219,7 +219,24 @@ header{
     color:#fafafa;
     z-index: 5;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
-    transition: top 0.3s ease
+    transition: top 0.3s ease , height 0.3s ease ,font-size 0.3s ease ,font-weight 0.3s ease;
+}
+
+.product .productButton:hover{
+    height: 3.5vh;
+    font-size: 2.1vh;
+    font-weight: 800;
+    --bg-size: 400%;
+    --color-one: hsl(272, 100%, 50%);
+    --color-two: hsl(40 95% 55%);
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+
+    animation: move-bg 20s infinite linear;
 }
 
 .product:hover .productButton{
