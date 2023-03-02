@@ -1,8 +1,9 @@
 
 body{
-
+    margin: 0;
+    padding: 0;
+    width: 100%;
     background-color: #fafafa;
-    box-sizing: content-box;
 }
 
 html {
@@ -11,8 +12,7 @@ html {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    width: 100%;
-    box-sizing: content-box;
+
 }
 
 
@@ -255,7 +255,7 @@ header{
 
 .fade{
     opacity: 0.1;
-    transition: opacity 1.5s ease-in;
+    transition: opacity 0.5s ease-in;
 }
 
 
@@ -394,15 +394,18 @@ header{
 }
 
 
-
-
 footer{
-    
+    display: block;
     width: 100%;
+    min-width: 100%;
+    margin-bottom: -1vh;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
+    background-color: #111111;
     text-align: center;
-    color: #3b3b3b;
     border-top: 1px solid #080808;
-    background-color: #fafafa
 
 }
 
@@ -432,9 +435,9 @@ footer{
 }
 
 
-.opacityOnLoad23{
+.opacityOnLoad3{
     opacity: 0;
-    animation-name: opacityLoad;
+    animation-name: opacityLoadSubtle;
     animation-duration: 2s;
     animation-delay: 5s;
     animation-fill-mode: forwards; 
@@ -444,3 +447,23 @@ footer{
     from {opacity: 0;}
     to {opacity: 1;}
   }
+
+@keyframes opacityLoadSubtle {
+    from {opacity: 0;}
+    to {opacity: 0.2;}
+  }
+
+
+/* Establecer el ancho del scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Establecer el color del thumb y del track del scrollbar */
+::-webkit-scrollbar-thumb {
+  background-color: #747474;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #000000;
+}
