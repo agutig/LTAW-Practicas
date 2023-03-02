@@ -320,7 +320,7 @@ header{
     top: 25vh; /* ajusta la posición vertical del texto */
     left: 3vw; /* ajusta la posición horizontal del texto */
     text-align: center;
-    color: #fafafa;
+    color: #000000;
     z-index: 5;
 }
 
@@ -365,6 +365,7 @@ header{
     width: 75vw;
     display: flex;
     margin: auto;
+    min-height: 22vh;
     flex-direction: row;
     border-radius: 24px;
     margin-top: 2vh;
@@ -373,8 +374,14 @@ header{
 }
 
 
-.reviewCarrusel.review .reviewUserImage{
-    margin: auto;
+.reviewCarrusel .review .reviewUserImage{
+    margin-left: 10vw;
+    margin-right: 5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 20vh;
+    border-radius: 100px;
+    
 }
 
 .reviewCarrusel .review .reviewUser{
@@ -384,13 +391,19 @@ header{
 }
 
 .reviewCarrusel .review .reviewUser .reviewName{
-    font-size: 3.5vh;
+    font-size: 5vh;
     text-align: left;
+    font-weight: 700;
+    margin-top: 2vh;
+
 }
 
 .reviewCarrusel .review .reviewUser .reviewText{
-    font-size: 2vh;
+    font-size: 2.75vh;
     text-align: left;
+    margin-top: -4vh;
+    width: 25vw;
+    font-weight: 500;
 }
 
 
