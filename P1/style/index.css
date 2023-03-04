@@ -66,6 +66,11 @@ header{
     background-color: #363636;
 }
 
+.menuButton:active{
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #161616;
+}
 
 #mainLogo{
     text-align: left;
@@ -236,6 +241,11 @@ header{
     animation: move-bg 20s infinite linear;
 }
 
+.product .productButton:active{
+    border: 1px solid #ffffff;
+    color: #fafafa;
+}
+
 .product:hover .productButton{
     top: 40.5vh; /* ajusta la posición vertical del texto */
 }
@@ -358,7 +368,7 @@ header{
     font-size: 5vh;
     border-radius: 25px;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
-    transition: box-shadow 0.3s ease, color 0.3s ease , background-color 0.3s ease;
+    transition: box-shadow 0.1s ease, color 0.1s ease , background-color 0.1s ease;
 }
 
 
@@ -366,7 +376,12 @@ header{
     box-shadow: 0 8px 8px rgba(0,0,0,0.2), 0 -8px 8px rgba(25, 25, 25, 0.2);
     background-color: #3b3b3b ;
     color: #fafafa;
+}
 
+.reviewCarrusel .reviewButton:active{
+    box-shadow: none;
+    background-color: #000000 ;
+    color: #ffffff;
 }
 
 .reviewCarrusel .review{
