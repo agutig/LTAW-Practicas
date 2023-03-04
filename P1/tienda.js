@@ -5,6 +5,23 @@
 const fs = require('fs');
 const http = require('http');
 
+const error_html = `
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techmazon</title>
+</head>
+<body style="background-color: #000000">
+<h1 style="color: white; margin="auto">Error 404</h1>
+<h2 style="color: white" margin="auto">File not Found :(</h2>
+</body>
+</html>
+`
+
+
 function print_info_req(req) {
 
   console.log("");
@@ -46,6 +63,9 @@ function replaceType(type){
 
       case 'jpg':
         return ['image/jpg','binary']
+
+      case 'ico':
+        return ['image/jpg','binary']
   }
 }
 
@@ -64,9 +84,13 @@ function OK(res,data){
 function NOT_OK(res){
   res.statusCode = 404;
   res.statusMessage = "Not Found"
-  res.setHeader("content-Type" , "text/plain");
-  res.end();
-  console.log("    Error 404 NOT FOUND")
+  res.setHeader('Content-Type','text/html');
+  fs.readFile('error.html', (err, data) => { if(!err){
+    res.write(data)
+    res.end();
+    console.log("    Error 404 NOT FOUND")
+  }});
+  
 }
 
 
