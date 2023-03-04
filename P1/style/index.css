@@ -358,8 +358,16 @@ header{
     font-size: 5vh;
     border-radius: 25px;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
+    transition: box-shadow 0.3s ease, color 0.3s ease , background-color 0.3s ease;
 }
 
+
+.reviewCarrusel .reviewButton:hover{
+    box-shadow: 0 8px 8px rgba(0,0,0,0.2), 0 -8px 8px rgba(25, 25, 25, 0.2);
+    background-color: #3b3b3b ;
+    color: #fafafa;
+
+}
 
 .reviewCarrusel .review{
     width: 75vw;
@@ -381,7 +389,7 @@ header{
     margin-bottom: auto;
     height: 20vh;
     border-radius: 100px;
-    
+    animation: opacityLoad 2s linear 1;
 }
 
 .reviewCarrusel .review .reviewUser{

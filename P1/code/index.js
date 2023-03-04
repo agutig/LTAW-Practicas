@@ -22,6 +22,8 @@ function showOnScroll() {
     }
 }
 
+
+document.addEventListener("DOMContentLoaded", function(event) { 
 window.addEventListener('scroll', showOnScroll);
 
 
@@ -41,16 +43,39 @@ reviews = [guillermo,jBalvin]
 
 names = document.getElementsByClassName("reviewName");
 coments = document.getElementsByClassName("reviewText");
-images = document.getElementsByClassName("reviewUserImage");
+images = document.getElementsByClassName("reviewUserImage");    
 
+var nextRev = document.getElementById("reviewButtonNext");
+var prevRev = document.getElementById("reviewButtonPrev");
 
+console.log(nextRev)
 index = 0
 
-setInterval(function() {
-    names[0].innerHTML = reviews[index % reviews.length].name
-    coments[0].innerHTML = reviews[index % reviews.length].coment
-    images[0].src = reviews[index % reviews.length].image
+function showReview(){
+    names[0].innerHTML = reviews[ Math.abs(index % reviews.length)].name
+    coments[0].innerHTML = reviews[Math.abs(index % reviews.length)].coment
+    images[0].src = reviews[Math.abs(index % reviews.length)].image
+
+}
+
+nextRev.onclick = function() {
     index += 1
-    console.log("La función timer se ha activado.");
-    console.log(name.innerHTML)
+    showReview()
+    console.log(index)
+};
+
+prevRev.onclick = function() {
+    index += -1
+    showReview()
+    console.log(index)
+};
+
+
+setInterval(function() {
+    showReview()
+    index += 1
   }, 5000);
+
+console.log(index)
+
+});
