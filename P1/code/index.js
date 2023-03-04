@@ -48,7 +48,6 @@ images = document.getElementsByClassName("reviewUserImage");
 var nextRev = document.getElementById("reviewButtonNext");
 var prevRev = document.getElementById("reviewButtonPrev");
 
-console.log(nextRev)
 index = 0
 
 function showReview(){

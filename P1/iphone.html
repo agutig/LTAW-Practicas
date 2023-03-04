@@ -5,6 +5,7 @@
   <title>Techmazon</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/product_page.css"> 
+  <script type="text/javascript" src="/code/product_page.js"></script>
 </head>
 
 
@@ -29,14 +30,14 @@
 
         <div class="firstView">
             <div class="photoDiv">
-                <img class="productPic" src="images/mv_apple_0_0.png">
+                <img class="productPic" id="productPic" src="images/mv_apple_0_0.png">
                 <div class="picManagerBlur"></div>
                 <div class="picManager">
-                    <button class="picButton"> < </button>
-                    <p class="productPicText">.</p>
-                    <p class="productPicText">.</p>
-                    <p class="productPicText">.</p>
-                    <button class="picButton"> > </button>
+                    <button class="picButton" id="picButtonPrev"> < </button>
+                    <p class="productPicText" id="ppt0">.</p>
+                    <p class="productPicText" id="ppt1">.</p>
+                    <p class="productPicText" id="ppt2">.</p>
+                    <button class="picButton" id="picButtonNext"> > </button>
                 </div>
             </div>
 

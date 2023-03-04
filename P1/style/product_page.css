@@ -163,7 +163,15 @@ header{
     color: #ffffff;
     height: 50%;
     margin: auto;
-    margin-top: -5%;
+    margin-top: -5.5%;
+}
+
+#ppt0{
+    text-shadow: 
+    0.75px 0.75px 0 #1b1b1b, 
+    -0.5px -0.75px 0 #1b1b1b, 
+    0.75px -0.75px 0 #1b1b1b, 
+    -0.75px 0.75px 0 #1b1b1b;
 }
 
 .photoDiv .picManager .picButton{
