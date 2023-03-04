@@ -5,23 +5,6 @@
 const fs = require('fs');
 const http = require('http');
 
-const error_html = `
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techmazon</title>
-</head>
-<body style="background-color: #000000">
-<h1 style="color: white; margin="auto">Error 404</h1>
-<h2 style="color: white" margin="auto">File not Found :(</h2>
-</body>
-</html>
-`
-
-
 function print_info_req(req) {
 
   console.log("");
@@ -42,32 +25,6 @@ function print_info_req(req) {
   return myURL
 }
 
-
-function replaceType(type){
-
-  switch(type){
-      case 'html':
-        return  ['text/html','utf8']
-      
-      case 'css':
-        return ['text/css','utf8']
-      
-      case 'js':
-        return ['text/javascript','utf8']
-
-      case 'jpeg':
-        return ['image/jpeg','binary']
-
-      case 'png':
-        return ['image/png','binary']
-
-      case 'jpg':
-        return ['image/jpg','binary']
-
-      case 'ico':
-        return ['image/jpg','binary']
-  }
-}
 
 function OK(res,data){
 
@@ -107,8 +64,6 @@ const server = http.createServer((req, res) => {
     }else{
       fs.readFile(url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
     }
-
-    //<img src="images/mv_apple_0_0.jpg">
 
   }
 

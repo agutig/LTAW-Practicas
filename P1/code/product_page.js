@@ -12,8 +12,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
         //Update data
         index += parseInt(step)
-        console.log(index)
         if (index < 0){ index = fileListLen -1}
+        index = Math.abs(index % fileListLen)
+ 
         //index = Math.abs(index % fileListLen)
 
         var ppt = document.getElementById("ppt" + String(index));
