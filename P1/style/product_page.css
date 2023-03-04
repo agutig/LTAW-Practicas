@@ -67,6 +67,11 @@ header{
     background-color: #363636;
 }
 
+.menuButton:active{
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #000000;
+}
 
 #mainLogo{
     text-align: left;
@@ -200,6 +205,12 @@ header{
     background-color: #363636;
 }
 
+.photoDiv .picManager .picButton:active{
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #151515;
+}
+
 
 .dataDiv1{
     margin: auto;
@@ -252,7 +263,7 @@ header{
                 2px  0px 2px rgba(62, 62, 62, 0.2),
                 -2px 0px 2px rgba(62, 62, 62, 0.2);
 
-    transition: box-shadow 0.3s ease, font-size 0.3s ease
+    transition: box-shadow 0.15s ease, font-size 0.15s ease
 }
 
 .dataDiv1 .buyButton:hover{
@@ -261,6 +272,10 @@ header{
                 0px -8px 8px rgba(62, 62, 62, 0.2),
                 8px  0px 8px rgba(62, 62, 62, 0.2),
                 -8px 0px 8px rgba(62, 62, 62, 0.2)
+}
+.dataDiv1 .buyButton:active{
+    font-size: 105%;
+    box-shadow: none;
 }
 
 @media(prefers-reduced-motion: no-preference) {
