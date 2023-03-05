@@ -1,0 +1,36 @@
+
+{
+    "top":{
+
+        "iphone_14_pro":{
+            "name": "Iphone 14 pro",
+            "stock": 6.0,
+            "intro": "cool phone",
+            "description": "cool phone"
+
+        }
+
+    },
+
+    "intermediate":{
+        "xiaomi_14_pro":{
+            "name": "Iphone 14 pro",
+            "stock": 6.0,
+            "intro": "cool phone",
+            "description": "cool phone"
+
+        }
+    },
+
+    "lowCost":{
+        "xiaomi_14_pro":{
+            "name": "Iphone 14 pro",
+            "stock": 6.0,
+            "intro": "cool phone",
+            "description": "cool phone"
+
+        }
+    }
+
+
+}
