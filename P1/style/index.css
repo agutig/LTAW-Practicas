@@ -227,7 +227,7 @@ header{
 .product .productButton:hover{
     height: 3.5vh;
     font-size: 2.1vh;
-    font-weight: 800;
+    font-weight: 600;
     --bg-size: 400%;
     --color-one: hsl(272, 100%, 50%);
     --color-two: hsl(40 95% 55%);
