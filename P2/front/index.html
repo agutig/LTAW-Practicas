@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Techmazon</title>
+  <link rel="icon" type="image/ico" href="/icon.ico"/>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/index.css">
+  <script type="text/javascript" src="/code/index.js"></script>
+</head>
+
+
+<body>
+
+    
+    <header class="opacityOnLoad1">
+            <h1 id="mainLogo" onclick="location.href='/';">TECHMAZON</h1>
+            <h2 id="slogan" onclick="location.href='/';">Donde compran los profesionales</h2>
+            <div class="headerMenu">
+                <button class="menuButton" onclick="location.href='/';">Inicio</button>
+                <button class="menuButton" onclick="location.href='/alta_gama.html';">Alta gama</button>
+                <button class="menuButton" onclick="location.href='/mid_range.html';">Mid-range</button>
+                <button class="menuButton" onclick="location.href='/low_cost.html';">Low cost</button>
+                <button class="menuButton" onclick="location.href='/others.html';">Otros</button>
+            </div>
+        
+    </header>
+
+
+    <div class="mainBody">
+            <div class="topSells">
+                <p class="productText">Todo lo que necesitas</p>
+                <div class="productSelection opacityOnLoad2">
+                    <div class="product">
+                        <p class="productTittle">Iphone 14 Pro</p>
+                        <p class="productSubTittle">Lo ultimo de la manzana</p>
+                        <img class="productPic" src="images/mv_apple_0_0.png">
+                        <button class="productButton" onclick="location.href='/iphone.html';">Saber más</button>
+                    </div>
+                    <div class="product">
+                        <p class="productTittle">Galaxy S23 Ultra</p>
+                        <p class="productSubTittle">Tecnologia punta</p>
+                        <img class="productPic" src="images/mv_samsung_0_0.png">
+                        <button class="productButton" onclick="location.href='/samsung.html';" >Saber más</button>
+                    </div>
+                    <div class="product">
+                        <p class="productTittle">Xiaomi 13 Pro</p>
+                        <p class="productSubTittle">El rey del mercado</p>
+                        <img class="productPic" src="images/mv_xiaomi_0_0.png">
+                        <button class="productButton" onclick="location.href='/xiaomi.html';" >Saber más</button>
+                    </div>
+                    <div class="product">
+                        <p class="productTittle" >OPPO Find N2 Flip</p>
+                        <p class="productSubTittle" >Doblando el color</p>
+                        <img class="productPic" src="images/mv_oppo_0_0.png">
+                        <button class="productButton" onclick="location.href='/oppo.html';">Saber más</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="categoryDiv fade opacityOnLoad3">
+                <p class="categoryDivText">Categorias</p>
+                <div class="categorySelector">
+                    <div class="category" id="pc_foto" onclick="location.href='/ordenadores';">
+                        <img class="categoryPic" src="images/g_g_1.png">
+                        <h2 class="categoryText">Alta gama</h2>
+                    </div>
+
+                    <div class="category" onclick="location.href='/ordenadores';">
+                        <img class="categoryPic" src="images/g_g_3.png">
+                        <h2 class="categoryText">Mid-range</h2>
+                    </div>
+
+                    <div class="category" onclick="location.href='/ordenadores';">
+                        <img class="categoryPic" src="images/g_g_0.png">
+                        <h2 class="categoryText">Low Cost</h2>
+                    </div>
+
+                    <div class="category" onclick="location.href='/ordenadores';">
+                        <img class="categoryPic" src="images/g_g_2.png">
+                        <h2 class="categoryText">Otros</h2>
+                    </div>
+                </div>
+            </div>
+
+
+            <p class="opinionText fade" >Opiniones de nuestros clientes</p>
+            <div class="reviewCarrusel fade opacityOnLoad3">   
+                <button class="reviewButton" id="reviewButtonPrev"> < </button>
+                    <div class="review">
+                            <img class="reviewUserImage" src="images/cliente_1.png">
+                            <div class="reviewUser">
+                                <p class="reviewName">J Balvin</p>
+                                <p class="reviewText">Lo unico bueno que tienen es el front de la web, no les vuelvo a comprar.</p>
+                            </div>
+                    </div>
+                <button class="reviewButton"  id="reviewButtonNext">  > </button>
+                </div>
+            </div>
+
+        </div>
+
+    <footer>
+        <h2>Contacto</h2>
+        <p>email</p>
+        <p>telefono</p>
+    </footer>
+
+</body>
+
+</html>

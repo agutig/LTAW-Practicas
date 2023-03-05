@@ -1,0 +1,352 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+header{
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
+    background-color: #111111;
+    
+}
+
+
+.headerMenu{
+    width: 100%;
+    height: 3vh;
+    text-align: center;
+    border-bottom: 1px solid #363636;
+    border-top: 1px solid #363636;
+    background-color: #000000;
+}
+
+.menuButton{
+    border-radius: 8px;
+    margin-top: 0.5vh;
+    margin-right: 1vw;
+    font-size: 0.80vw;
+    font-weight: 550;
+    width: 8vw;
+    border: none;
+    color: #fafafa;
+    background-color: #000000;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+                
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease
+}
+
+
+.menuButton:hover{
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2),
+                0px -3px 3px rgba(0, 0, 0, 0.3),
+                3px  0px 3px rgba(0, 0, 0, 0.3),
+                -3px 0px 3px rgba(0, 0, 0, 0.3);
+    color: #fafafa;
+    background-color: #363636;
+}
+
+.menuButton:active{
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#mainLogo{
+    text-align: left;
+    margin-left: 6vw;
+    margin-top: 0.5vh;
+    font-size: 3vh;
+    color: #ffffff;
+}
+
+#slogan{
+    text-align: left;
+    margin-left: 6.2vw;
+    margin-top: -2.6vh;
+    font-size: 1.2vh;
+    color: #ffffff;
+}
+
+
+
+.mainBody{
+
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    font-size: 4vh;
+    width: 100%;
+    min-height: 65vh;
+    text-align: center;
+    color: #3b3b3b;
+    background-color: #fafafa;
+}
+
+.firstView{
+    display: flex;
+    flex-direction: row;
+}
+
+.photoDiv{
+    position: relative;
+    margin: auto;
+    margin-top: 4vh;
+    width: 25vw;
+    height: 75vh;
+    border-radius: 24px;
+    background-color: #fafafa;
+    z-index: 0;
+    align-items: center;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);        
+    transition: box-shadow 0.3s ease, height 0.3s ease;
+}
+
+.photoDiv .productPic{
+    position: relative;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+    z-index: 0;
+}
+.photoDiv .picManagerBlur{
+    position: absolute;
+    margin: auto;
+    width: 80%;
+    height: 5%;
+    border-radius: 20px;
+    top: 90%;
+    left: 10%;
+    z-index: 2;
+    filter: blur(1px); /* Establece el desenfoque del contenido */
+    background-color: rgba(255, 255, 255, 0.425); 
+}
+
+.photoDiv .picManager{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+    height: 5%;
+    border-radius: 20px;
+    top: 90%;
+    left: 10%;
+    z-index: 5;
+}
+
+.photoDiv .picManager .productPicText{
+    font-size: 120%;
+    font-weight: 900;
+    color: #ffffff;
+    height: 50%;
+    margin: auto;
+    margin-top: -5.5%;
+}
+
+#ppt0{
+    text-shadow: 
+    0.75px 0.75px 0 #1b1b1b, 
+    -0.5px -0.75px 0 #1b1b1b, 
+    0.75px -0.75px 0 #1b1b1b, 
+    -0.75px 0.75px 0 #1b1b1b;
+}
+
+.photoDiv .picManager .picButton{
+    font-size: 50%;
+    margin: auto;
+    height: 70%;
+    border-radius: 20px;
+    font-weight: 700;
+    border: none;
+    color: #ffffff;
+    background-color: #fafafa00;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+                
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease
+}
+
+.photoDiv .picManager .picButton:hover{
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2),
+                0px -3px 3px rgba(0, 0, 0, 0.3),
+                3px  0px 3px rgba(0, 0, 0, 0.3),
+                -3px 0px 3px rgba(0, 0, 0, 0.3);
+    color: #fafafa;
+    background-color: #363636;
+}
+
+.photoDiv .picManager .picButton:active{
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #151515;
+}
+
+
+.dataDiv1{
+    margin: auto;
+    margin-top: 4vh;
+    width: 60vw;
+    height: 75vh;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+}
+
+.dataDiv1 .dataTittle{
+    font-size: 200%;
+    font-weight: 500;
+}
+
+.dataDiv1 .dataIntro{
+    font-weight: 300;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 90%;
+    margin-top: -4vh;
+    margin-bottom: 8vh;
+}
+
+.dataDiv1 .buyButton{
+    margin-right: -60%;
+    font-size: 100%;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    border-radius: 20px;
+    color: #fafafa;
+
+    --bg-size: 400%;
+    --color-one: #d400ff;
+    --color-two: #193cff;
+    background: linear-gradient(
+                  90deg,
+                  var(--color-one),
+                  var(--color-two),
+                  var(--color-one)
+                ) 0 0 / var(--bg-size) 100%;
+    animation: move-bg 10s infinite linear;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+
+    transition: box-shadow 0.15s ease, font-size 0.15s ease
+}
+
+.dataDiv1 .buyButton:hover{
+    font-size: 110%;
+    box-shadow: 0px 8px 8px rgba(62, 62, 62, 0.2),
+                0px -8px 8px rgba(62, 62, 62, 0.2),
+                8px  0px 8px rgba(62, 62, 62, 0.2),
+                -8px 0px 8px rgba(62, 62, 62, 0.2)
+}
+.dataDiv1 .buyButton:active{
+    font-size: 105%;
+    box-shadow: none;
+}
+
+@media(prefers-reduced-motion: no-preference) {
+    .boujee-text {
+      animation: move-bg 10s linear infinite;
+    }
+    @keyframes move-bg {
+      to {
+        background-position: var(--bg-size) 0;
+      }
+    }
+  }
+
+.dataDiv2{
+    text-align: center;
+    margin: auto;
+    width: 92.5%;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    border-radius: 20px;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+}
+.dataDiv2 .especTittle{
+    font-weight: 300;
+    font-size: 150%;
+    text-align: left;
+    margin-left: 2vw;
+    padding-top: 2vh;
+    margin-bottom: -0.5vh;
+}
+
+.dataDiv2 .especList{
+    font-weight: 300;
+    font-size: 70%;
+    text-align: left;
+    margin-left: 2vw;
+    margin-bottom: 2vh
+}
+.dataDiv2 .espec{
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+footer{
+    display: block;
+    min-width: 100%;
+    margin-bottom: -1vh;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
+    background-color: #111111;
+    text-align: center;
+
+}
+
+
+/* Establecer el ancho del scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Establecer el color del thumb y del track del scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background-color: #747474;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #000000;
+  }
+  

@@ -53,16 +53,19 @@ function NOT_OK(res){
 
 const PUERTO = 9000;
 
+const FRONT_PATH = "front/"
+
 const server = http.createServer((req, res) => {
     
   url = print_info_req(req)
+
   if (req.method == "GET" ){
 
     if (url.pathname == '/'){
-      fs.readFile('index.html', (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
+      fs.readFile(FRONT_PATH + 'index.html', (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
 
     }else{
-      fs.readFile(url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
+      fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
     }
 
   }
