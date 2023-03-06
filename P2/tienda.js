@@ -7,30 +7,33 @@ const http = require('http');
 
 
 /////////////////////////////////////////////////////  DOWNLOAD DATA
-DATA =  fs.readFileSync('L5/stock.json', 'utf-8')
-DATA = JSON.parse(DATA)
-console.log(DATA[0])
+DATABASE =  fs.readFileSync('L5/stock.json', 'utf-8')
+DATABASE = JSON.parse(DATABASE)
+
 
 
 
 /////////////////////////////////////////////////////  BASIC STATIC HTML 
 function print_info_req(req) {
 
-  console.log("");
-  console.log("Mensaje de solicitud");
-  console.log("====================");
-  console.log("Método: " + req.method);
-  console.log("Recurso: " + req.url);
-  console.log("Version: " + req.httpVersion)
-  console.log("Cabeceras: ");
-
-  for (hname in req.headers)
-    console.log(`  * ${hname}: ${req.headers[hname]}`);
-
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
-  console.log("URL completa: " + myURL.href);
-  console.log("  Ruta: " + myURL.pathname);
 
+  if (false){
+    console.log("");
+    console.log("Mensaje de solicitud");
+    console.log("====================");
+    console.log("Método: " + req.method);
+    console.log("Recurso: " + req.url);
+    console.log("Version: " + req.httpVersion)
+    console.log("Cabeceras: ");
+
+    for (hname in req.headers)
+      console.log(`  * ${hname}: ${req.headers[hname]}`);
+
+    
+    console.log("URL completa: " + myURL.href);
+    console.log("  Ruta: " + myURL.pathname);
+  }
   return myURL
 }
 
@@ -71,7 +74,12 @@ const server = http.createServer((req, res) => {
   if (req.method == "GET" ){
 
     if (url.pathname == '/'){
-      fs.readFile(FRONT_PATH + 'index.html', (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
+      fs.readFile(FRONT_PATH + 'index.html', (err, data) => { if(!err){
+
+      data = manageMain(data, DATABASE)  
+      OK(res,data)
+    
+    }else{NOT_OK(res)}});
 
     }else{
       fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
@@ -88,8 +96,13 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 
 /////////////////////////////////////////////////////  DINAMIC HTML 
 
-function manageMain{
-  
+function manageMain(data, DATABASE){
+  data = data.toString()
 
+  for (let i = 0; i < DATABASE[0].length; i++){
+    console.log("hey")
+    data = data.replace("placeholderTittle", 'a');
+  }
 
+  return data
 }
