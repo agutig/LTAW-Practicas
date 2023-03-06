@@ -44,11 +44,9 @@
             "description": "cool phone",
             "color":"black"
 
-        }
+        },
 
-    ],
 
-    [
         {
             "name": "Realme GT Neo 3T",
             "marca": "apple",
@@ -87,10 +85,9 @@
             "intro": "cool phone",
             "description": "cool phone",
             "color":"black"
-        }
-    ],
+        },
 
-    [
+
         {
             "name": "Iphone 14 pro",
             "marca": "apple",
