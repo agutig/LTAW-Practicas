@@ -5,6 +5,15 @@
 const fs = require('fs');
 const http = require('http');
 
+
+/////////////////////////////////////////////////////  DOWNLOAD DATA
+DATA =  fs.readFileSync('L5/stock.json', 'utf-8')
+DATA = JSON.parse(DATA)
+console.log(DATA[0])
+
+
+
+/////////////////////////////////////////////////////  BASIC STATIC HTML 
 function print_info_req(req) {
 
   console.log("");
@@ -74,3 +83,13 @@ const server = http.createServer((req, res) => {
 
 server.listen(PUERTO);
 console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
+
+
+
+/////////////////////////////////////////////////////  DINAMIC HTML 
+
+function manageMain{
+  
+
+
+}
