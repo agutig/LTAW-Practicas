@@ -1,8 +1,8 @@
 
-{
-    "top":{
+[
+    [
 
-        "iphone_14_pro":{
+        {
             "name": "Iphone 14 pro",
             "marca": "apple",
             "stock": 6.0,
@@ -13,7 +13,7 @@
 
         },
 
-        "samsung_galaxy_s23_ultra":{
+        {
             "name": "Samsung Galaxy S23 Ultra",
             "marca": "Samsung",
             "slogan": "Tecnologia punta",
@@ -24,7 +24,7 @@
 
         },
 
-        "xiaomi_13_pro":{
+        {
             "name": "Iphone 14 pro",
             "marca": "apple",
             "slogan": "El rey del mercado",
@@ -35,7 +35,7 @@
 
         },
 
-        "oppo_find_n2_flip":{
+        {
             "name": "Iphone 14 pro",
             "marca": "apple",
             "slogan": "doblando el color",
@@ -46,10 +46,10 @@
 
         }
 
-    },
+    ],
 
-    "intermediate":{
-        "realme_gt_neo_3t":{
+    [
+        {
             "name": "Realme GT Neo 3T",
             "marca": "apple",
             "slogan": "cool phone",
@@ -59,7 +59,7 @@
             "color":"black"
         },
 
-        "oneplus_nord_2t":{
+        {
             "name": "Realme GT Neo 3T",
             "marca": "apple",
             "slogan": "cool phone",
@@ -69,7 +69,7 @@
             "color":"black"
         },
 
-        "google_pixel_6a":{
+        {
             "name": "Realme GT Neo 3T",
             "marca": "apple",
             "slogan": "cool phone",
@@ -79,7 +79,7 @@
             "color":"black"
         },
 
-        "xiaomi_poco_x5_pro":{
+        {
             "name": "Realme GT Neo 3T",
             "marca": "apple",
             "slogan": "cool phone",
@@ -88,10 +88,10 @@
             "description": "cool phone",
             "color":"black"
         }
-    },
+    ],
 
-    "lowCost":{
-        "xiaomi_14_pro":{
+    [
+        {
             "name": "Iphone 14 pro",
             "marca": "apple",
             "slogan": "cool phone",
@@ -101,7 +101,6 @@
             "color":"black"
 
         }
-    }
+    ]
 
-
-}
+]
