@@ -5,98 +5,236 @@
         {
             "name": "Iphone 14 pro",
             "marca": "apple",
-            "stock": 6.0,
+            "stock": 6,
             "slogan": "Lo último de la manzana",
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_apple_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
 
         },
 
         {
             "name": "Samsung Galaxy S23 Ultra",
             "marca": "Samsung",
-            "slogan": "Tecnologia punta",
-            "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "slogan": "Tecnología punta",
+            "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
+            "description": [
+                "cámara frontal 12 MP Cámara para selfies cámara trasera 12 MP Cámara ultra gran angular 200 MP Cámara gran angular 10 MP Cámara con teleobjetivo y zoom óptico 10x 110 MP Cámara con teleobjetivo y zoom óptico 3x 2",
+                "Transforma un cielo estrellado en una obra de arte. Activa el modo Hyperlapso para grabar movimientos nocturnos con una claridad brillante, acelerándolos en la postproducción para mostrar minutos de metraje en impresionantes segundos.",
+                "El procesador Snapdragon más rápido del mundo9 Snapdragon® 8 Gen 2 Mobile Platform for Galaxy",
+                "Esta batería inteligente de 5.000 mAh (típica) ahorra energía para que puedas jugar y transmitir hasta bien entrada la noche",
+                "La pantalla Dynamic AMOLED 2X ofrece detalles nítidos y coloridos, ya sea con un brillo bajo o a toda potencia a 120hz",
+                "Samsung Pay ha pasado al siguiente nivel: presentamos Samsung Wallet",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "haz un seguimiento de tus horas sueño, ejercicio, la composición corporal y mucho más con Samsung Health. ¡Saca lo mejor de ti mismo!"
+            ],
+            "img": ["mv_samsung_0_0.png", "mv_samsung_0_1.png", "mv_samsung_0_2.png"]
 
         },
 
         {
             "name": "Xiaomi 13 pro",
-            "marca": "apple",
+            "marca": "Xiaomi",
             "slogan": "El rey del mercado",
             "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Plataforma móvil Snapdragon® 8 Gen 2Proceso de fabricación de 4 nm y bajo consumo",
+                "Almacenamiento y RAM 12GB+256GB | 12GB+512GB",
+                "Dimensiones Altura: 162,9 mmAnchura: 74,6 mmGrosor: 8,38 mmPeso: 229 g",
+                "Pantalla Pantalla AMOLED WQHD+ de 6,73",
+                "Cámara frontal Cámara selfie en pantalla de 32 MP",
+                "Carga turbo inalámbrica de 50 WCarga inalámbrica con polaridad inversa de 10 WCargador de 120 W incluidoUSB tipo CBatería de 4820 mAh (típ.)",
+                "Audio Dos altavoces Dolby Atmos®",
+                "Resistente a salpicaduras, al agua y al polvo IP68"
+            ],
+            "img": ["mv_xiaomi_0_0.png", "mv_xiaomi_0_1.png", "mv_xiaomi_0_2.png"]
 
         },
 
         {
             "name": "OPPO find N2 flip",
-            "marca": "apple",
-            "slogan": "doblando el color",
+            "marca": "OPPO",
+            "slogan": "Doblando el color",
             "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla FHD+ de 6,8” AMOLED de 120 Hz.",
+                "Batería de 4300 mAh para que te olvides de cargarlo en todo el día.",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Increíble sensor de Sony IMX890 de 50MP. ",
+                "Sistema de bisagra en el OPPO Find N2 Flip esta certificada por TÜV Rheinland",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "32MP Cámara frontal"
+            ],
+            "img": ["mv_oppo_0_0.png", "mv_oppo_0_1.png", "mv_oppo_0_2.png"]
 
         },
 
 
         {
             "name": "Realme GT Neo 3T",
-            "marca": "apple",
-            "slogan": "cool phone",
-            "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "marca": "Realme",
+            "slogan": "Rendimiento acelerado NEO",
+            "stock": 6,
+            "intro": "Rendimiento innovador para una velocidad extraordinaria",
+            "description": [
+                "Chip Qualcomm Snapdragon 870 5G",
+                "Velocidad 5G líder",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Puede expandir dinámicamente 5 GB adicionales de RAM con la tecnología de expansión de RAM dinámica.",
+                "Carga rápida SuperDart de 80 W",
+                "Certificación del sistema de carga rápida segura TÜV Rheinland",
+                "38 niveles de protección de seguridad",
+                "Gran batería de 5000 mAh"
+            ],
+            "img": ["mv_realme_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
         },
 
         {
-            "name": "Realme GT Neo 3T",
+            "name": "POCO X4 GT",
             "marca": "apple",
             "slogan": "cool phone",
             "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_apple_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
         },
 
         {
-            "name": "Realme GT Neo 3T",
+            "name": "Samsung Galaxy A53 5G",
             "marca": "apple",
             "slogan": "cool phone",
             "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_apple_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
         },
 
         {
-            "name": "Realme GT Neo 3T",
+            "name": "Xiaomi Redmi A1",
             "marca": "apple",
             "slogan": "cool phone",
             "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_apple_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
         },
 
 
         {
-            "name": "Iphone 14 pro",
+            "name": "Vivo Y21s",
             "marca": "apple",
             "slogan": "cool phone",
             "stock": 6.0,
-            "intro": "cool phone",
-            "description": "cool phone",
-            "color":"black"
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_vivo_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
 
+        },
+
+        {
+            "name": "Realme C35",
+            "marca": "apple",
+            "slogan": "cool phone",
+            "stock": 6.0,
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_realme_1_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
+
+        },
+
+        {
+            "name": "Nokia G11",
+            "marca": "apple",
+            "slogan": "cool phone",
+            "stock": 6.0,
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_nokia_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
+        },
+
+        {
+            "name": "POCO M5",
+            "marca": "apple",
+            "slogan": "cool phone",
+            "stock": 6.0,
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_xiaomi_2_0.png", "mv_xiaomi_2_1.png", "mv_xiaomi_2_2.png"]
         }
     ]
 

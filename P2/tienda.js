@@ -98,10 +98,13 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 
 function manageMain(data, DATABASE){
   data = data.toString()
-  console.log(DATABASE[0])
+  
   for (let i = 0; i < DATABASE[0].length; i++){
-    
+    console.log(DATABASE[0][i].img[0])
     data = data.replace("placeholderTittle", DATABASE[0][i].name);
+    data = data.replace("placeholderSlogan", DATABASE[0][i].slogan);
+    data = data.replace("placeholderImage", DATABASE[0][i].img[0]);
+    
   }
 
   return data
