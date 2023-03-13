@@ -7,7 +7,7 @@ const http = require('http');
 
 
 /////////////////////////////////////////////////////  DOWNLOAD DATA
-DATABASE =  fs.readFileSync('L5/stock.json', 'utf-8')
+DATABASE =  fs.readFileSync('tienda.json', 'utf-8')
 DATABASE = JSON.parse(DATABASE)
 const imagePath = "images/"
 

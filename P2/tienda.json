@@ -1,0 +1,253 @@
+
+[
+    [
+
+        {
+            "name": "Iphone 14 pro",
+            "id":0,
+            "marca": "apple",
+            "stock": 6,
+            "slogan": "Lo último de la manzana",
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_apple_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
+
+        },
+
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "id":1,
+            "marca": "Samsung",
+            "slogan": "Tecnología punta",
+            "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
+            "description": [
+                "cámara frontal 12 MP Cámara para selfies cámara trasera 12 MP Cámara ultra gran angular 200 MP Cámara gran angular 10 MP Cámara con teleobjetivo y zoom óptico 10x 110 MP Cámara con teleobjetivo y zoom óptico 3x 2",
+                "Transforma un cielo estrellado en una obra de arte. Activa el modo Hyperlapso para grabar movimientos nocturnos con una claridad brillante, acelerándolos en la postproducción para mostrar minutos de metraje en impresionantes segundos.",
+                "El procesador Snapdragon más rápido del mundo9 Snapdragon® 8 Gen 2 Mobile Platform for Galaxy",
+                "Esta batería inteligente de 5.000 mAh (típica) ahorra energía para que puedas jugar y transmitir hasta bien entrada la noche",
+                "La pantalla Dynamic AMOLED 2X ofrece detalles nítidos y coloridos, ya sea con un brillo bajo o a toda potencia a 120hz",
+                "Samsung Pay ha pasado al siguiente nivel: presentamos Samsung Wallet",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "haz un seguimiento de tus horas sueño, ejercicio, la composición corporal y mucho más con Samsung Health. ¡Saca lo mejor de ti mismo!"
+            ],
+            "img": ["mv_samsung_0_0.png", "mv_samsung_0_1.png", "mv_samsung_0_2.png"]
+
+        },
+
+        {
+            "name": "Xiaomi 13 pro",
+            "id":2,
+            "marca": "Xiaomi",
+            "slogan": "El rey del mercado",
+            "stock": 6.0,
+            "intro": "Sumérgete en una experiencia única de navegación y entretenimiento con nuestro nuevo modelo de móvil. Con su pantalla curva de última generación, sonido envolvente y tecnología de vanguardia, sentirás que la magia está en tus manos. Además, con una batería de larga duración y resistencia al agua, nada te detendrá. ¡Bienvenido al futuro de la movilidad!",
+            "description": [
+                "Plataforma móvil Snapdragon® 8 Gen 2Proceso de fabricación de 4 nm y bajo consumo",
+                "Almacenamiento y RAM 12GB+256GB | 12GB+512GB",
+                "Dimensiones Altura: 162,9 mmAnchura: 74,6 mmGrosor: 8,38 mmPeso: 229 g",
+                "Pantalla Pantalla AMOLED WQHD+ de 6,73",
+                "Cámara frontal Cámara selfie en pantalla de 32 MP",
+                "Carga turbo inalámbrica de 50 WCarga inalámbrica con polaridad inversa de 10 WCargador de 120 W incluidoUSB tipo CBatería de 4820 mAh (típ.)",
+                "Audio Dos altavoces Dolby Atmos®",
+                "Resistente a salpicaduras, al agua y al polvo IP68"
+            ],
+            "img": ["mv_xiaomi_0_0.png", "mv_xiaomi_0_1.png", "mv_xiaomi_0_2.png"]
+
+        },
+
+        {
+            "name": "OPPO find N2 flip",
+            "id":3,
+            "marca": "OPPO",
+            "slogan": "Doblando el color",
+            "stock": 6.0,
+            "intro": "Con nuestro móvil, la seguridad es lo primero. Hemos integrado un sistema avanzado de reconocimiento facial, huella dactilar y encriptación de datos para que tus datos personales estén siempre protegidos. Además, su cámara de alta definición y su estabilizador de imagen te permitirán capturar momentos únicos y llenos de detalle. No te conformes con menos, ¡elige nuestro móvil Pro!",
+            "description": [
+                "Pantalla FHD+ de 6,8” AMOLED de 120 Hz.",
+                "Batería de 4300 mAh para que te olvides de cargarlo en todo el día.",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Increíble sensor de Sony IMX890 de 50MP. ",
+                "Sistema de bisagra en el OPPO Find N2 Flip esta certificada por TÜV Rheinland",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "32MP Cámara frontal"
+            ],
+            "img": ["mv_oppo_0_0.png", "mv_oppo_0_1.png", "mv_oppo_0_2.png"]
+
+        },
+
+
+        {
+            "name": "Realme GT Neo 3T",
+            "id":4,
+            "marca": "Realme",
+            "slogan": "Rendimiento acelerado NEO",
+            "stock": 6,
+            "intro": "Rendimiento innovador para una velocidad extraordinaria",
+            "description": [
+                "Chip Qualcomm Snapdragon 870 5G",
+                "Velocidad 5G líder",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Puede expandir dinámicamente 5 GB adicionales de RAM con la tecnología de expansión de RAM dinámica.",
+                "Carga rápida SuperDart de 80 W",
+                "Certificación del sistema de carga rápida segura TÜV Rheinland",
+                "38 niveles de protección de seguridad",
+                "Gran batería de 5000 mAh"
+            ],
+            "img": ["mv_realme_0_0.png", "mv_realme_0_1.png", "mv_realme_0_2.png"]
+        },
+
+        {
+            "name": "POCO X4 GT",
+            "id":5,
+            "marca": "Xiaomi",
+            "slogan": "Velocidad sin límites",
+            "stock": 6,
+            "intro": "La avanzada tecnología de proceso 5 nm de TSMC, que incorpora una nueva arquitectura de bajo consumo, proporciona una reducción del consumo de energía a la vez que ofrece un rendimiento de procesamiento más energético, además de permitir a todos los jugadores disfrutar de una nueva experiencia de juego a su alcance.",
+            "description": [
+                "Procesador Flagship MediaTek Dimensity 8100",
+                "Pantalla DotDisplay con DynamicSwitch de 144 Hz",
+                "Carga turbo de 67 W",
+                "CPU de alta gama 4 A78  Poco X4 Gt / 2,85 GHz",
+                "LPDDR5 + UFS 3.1",
+                "Tecnología LiquidCool 2.0",
+                "La tasa de refresco adaptable de 7 niveles de hasta 144 Hz permite una mayor duración de la batería y una mejor experiencia de usuario",
+                "Gran vista de 6,6'', ilumina tu mundo con colores más realistas."
+            ],
+            "img": ["mv_xiaomi_3_0.png", "mv_xiaomi_3_1.png", "mv_xiaomi_3_2.png"]
+        },
+
+        {
+            "name": "Samsung Galaxy A53 5G",
+            "id":6,
+            "marca": "Samsung",
+            "slogan": "Sencillez que destaca",
+            "stock": 6.0,
+            "intro": "¿Quieres tener todo bajo control? Con nuestro móvil inteligente, podrás controlar tus electrodomésticos, luces y sistemas de seguridad desde la palma de tu mano. Además, con su procesador de última generación y su memoria expandible, podrás hacer más y más rápido. Y si eres un aficionado a la fotografía, su cámara de gran angular y su sistema de doble lente te permitirán capturar el mundo como nunca antes. ¿Te unes a la revolución móvil?",
+            "description": [
+                "La pantalla Super AMOLED de 120Hz de tu Galaxy está preparada para mostrarte cualquier cosa",
+                "Cámara OIS e 64MP, conseguirás fotos más nítidas y claras",
+                "AI Image Enhancer: consigue fotos increíbles",
+                "Batería de 5.000mAh",
+                "Carga superrápida de hasta 25W",
+                "Dolby Atmos",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Gana ventaja con Game Booster"
+            ],
+            "img": ["mv_samsung_1_0.png", "mv_samsung_1_1.png", "mv_samsung_1_2.png"]
+        },
+
+        {
+            "name": "Xiaomi Redmi A1",
+            "id":7,
+            "marca": "Xiaomi",
+            "slogan": "Diseño elegante y moderno",
+            "stock": 6,
+            "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
+            "description": [
+                "Cámara dual de 8 MP",
+                "Batería de 5000 mAh",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Procesador potente y eficiente",
+                "Gran pantalla HD+ de 6,52''",
+                "Carga rápida de 10 W",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Hasta 1 TB de almacenamiento ampliable"
+            ],
+            "img": ["mv_xiaomi_4_0.png", "mv_xiaomi_4_1.png", "mv_xiaomi_4_2.png"]
+        },
+
+
+        {
+            "name": "Vivo Y21s",
+            "id":8,
+            "marca": "Vivo",
+            "slogan": "Diseñado para adaptarse a ti y a tu estilo de vida",
+            "stock": 6,
+            "intro": "¿Quieres rendimiento? Con nuestro móvil de última generación, tendrás el procesador más potente y la mayor velocidad de conexión. Además, con su pantalla de alta definición y su sistema de sonido envolvente, podrás disfrutar de tus contenidos favoritos como nunca antes. Y para los amantes de la fotografía, su cámara con inteligencia artificial y zoom óptico te permitirá capturar imágenes con calidad profesional.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_vivo_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
+
+        },
+
+        {
+            "name": "Realme C35",
+            "id":9,
+            "marca": "Realme",
+            "slogan": "Innovación, eficiencia y estilo en un solo dispositivo",
+            "stock": 6,
+            "intro": "La vida es impredecible, pero nuestro móvil no. Con su diseño resistente y su protección contra el agua y el polvo, podrás llevarlo contigo a cualquier parte sin preocupaciones. Además, su batería de larga duración y su carga inalámbrica te permitirán estar conectado en todo momento. Y con su sistema de reconocimiento de voz y asistente personal, podrás hacer tus tareas diarias con mayor eficiencia.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_realme_1_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
+
+        },
+
+        {
+            "name": "Nokia G11",
+            "id":10,
+            "marca": "Nokia",
+            "slogan": "El móvil que te lleva al futuro",
+            "stock": 6,
+            "intro": "Nuestro móvil es mucho más que un dispositivo. Es tu centro de entretenimiento, tu asistente personal y tu cámara de fotos en un solo dispositivo. Con su pantalla curva de gran tamaño, podrás sumergirte en tus juegos y vídeos favoritos como nunca antes. Y su sistema de carga rápida te permitirá tener tu móvil siempre listo para lo que necesites. No te pierdas la experiencia de tener nuestro móvil en tus manos.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_nokia_0_0.png", "mv_apple_0_1.png", "mv_apple_0_2.png"]
+        },
+
+        {
+            "name": "POCO M5",
+            "id":11,
+            "marca": "Xiaomi",
+            "slogan": "Todo lo que necesitas en un móvil, y más",
+            "stock": 6,
+            "intro": "La creatividad no tiene límites con nuestro móvil. Con su sistema de lápiz digital integrado y su pantalla de alta resolución, podrás dibujar y escribir como nunca antes. Además, su sistema de reconocimiento de voz y su asistente virtual te permitirán hacer tus tareas de forma más eficiente. Y si eres un amante de la fotografía, su cámara de alta definición y su sistema de estabilización de imagen te permitirán capturar momentos únicos con calidad profesional.",
+            "description": [
+                "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
+                "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
+                "Capacidad 128GB 256GB 512GB 1TB",
+                "Calificación IP68 según la norma IEC 60529 (hasta 6 metros de profundidad durante un máximo de 30 minutos)",
+                "Face ID Reconoci­miento facial mediante la cámara TrueDepth",
+                "Apple Pay ,Usa Face ID para pagar en tiendas, apps y páginas web con tu iPhone Confirma las compras realizadas con Apple Pay en el Mac",
+                "Seguridad,Emergencia SOS Detección de accidentes",
+                "Face ID,Reconoci­miento facial mediante la cámara TrueDepth"
+            ],
+            "img": ["mv_xiaomi_2_0.png", "mv_xiaomi_2_1.png", "mv_xiaomi_2_2.png"]
+        }
+    ]
+
+]
