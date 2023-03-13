@@ -11,7 +11,7 @@ function showOnScroll() {
     for (var i = 0; i < elementsToShow.length; i++) {
         var windowHeight = window.innerHeight;
         var elementTop = elementsToShow[i].getBoundingClientRect().top;
-        elementsToShow[i].style.opacity = 0.2 +(windowHeight - elementTop)/windowHeight
+        elementsToShow[i].style.opacity = 0.3 + 1.95*(windowHeight - elementTop)/windowHeight
         /*
         if (elementTop > 0 && elementTop < windowHeight) {
             elementsToShow[i].style.opacity = 1

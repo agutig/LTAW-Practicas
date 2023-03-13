@@ -106,7 +106,7 @@ header{
 
 .productText{
     font-size: 10vh;
-    margin-left: 5vw;
+    margin-left: 7vw;
     margin-top: 8vh;
     margin-bottom: 4vh;
     font-weight: 600;
@@ -124,6 +124,16 @@ header{
     background-clip: text;
     -webkit-background-clip: text;
     animation: move-bg 20s infinite linear;
+}
+
+.productText2{
+    font-size: 10vh;
+    font-weight: 600;
+    margin-left: 7vw;
+    margin-top: 8vh;
+    margin-bottom: 4vh;
+    text-align: left;
+    color: #161616
 }
 
 @media(prefers-reduced-motion: no-preference) {
@@ -264,8 +274,8 @@ header{
 }
 
 .fade{
-    opacity: 0.1;
-    transition: opacity 0.5s ease-in;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
 }
 
 
