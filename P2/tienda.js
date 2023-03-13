@@ -9,6 +9,7 @@ const http = require('http');
 /////////////////////////////////////////////////////  DOWNLOAD DATA
 DATABASE =  fs.readFileSync('L5/stock.json', 'utf-8')
 DATABASE = JSON.parse(DATABASE)
+const imagePath = "images/"
 
 
 
@@ -73,13 +74,19 @@ const server = http.createServer((req, res) => {
 
   if (req.method == "GET" ){
 
-    if (url.pathname == '/'){
-      fs.readFile(FRONT_PATH + 'index.html', (err, data) => { if(!err){
+    if (url.pathname == '/'){ fs.readFile(FRONT_PATH + 'index.html', (err, data) => { if(!err){
+        data = manageMain(data, DATABASE)  
+        OK(res,data)
+      }else{NOT_OK(res)}});
 
-      data = manageMain(data, DATABASE)  
-      OK(res,data)
+
+    }else if (url.pathname == '/product.html'){
+      fs.readFile(FRONT_PATH + '/product.html', (err, data) => { if(!err){
+
+        data = manageProductData(data, DATABASE,url.searchParams.get("product_id") )
+        OK(res,data)
     
-    }else{NOT_OK(res)}});
+      }else{NOT_OK(res)}});
 
     }else{
       fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
@@ -99,19 +106,27 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 function manageMain(data, DATABASE){
   data = data.toString()
   for (let i = 0; i < DATABASE[0].length; i++){
-    console.log(DATABASE[0][i].img[0])
     data = data.replace("placeholderTittle", DATABASE[0][i].name);
     data = data.replace("placeholderSlogan", DATABASE[0][i].slogan);
-    data = data.replace("placeholderImage", DATABASE[0][i].img[0]);
+    data = data.replace("placeholderImage", imagePath + String(DATABASE[0][i].img[0]));
+    data = data.replace("placeholderID" ,DATABASE[0][i].id )
     
   }
   return data
 }
 
-function manageProductData(data, DATABASE){
+function manageProductData(data, DATABASE , id){
   data = data.toString()
+  
   for (let i = 0; i < DATABASE[0].length; i++){
-    console.log(DATABASE[0][i].img[0])
+      if (id == DATABASE[0][i].id){
+        data = data.replace("placeholderTittle", DATABASE[0][i].name);
+        data = data.replace("placeholderIntro", DATABASE[0][i].intro);
+        data = data.replace("placeholderImage", imagePath + String(DATABASE[0][i].img[0]));
+        for (let j = 0; j < DATABASE[0][i].description.length; j++){
+          data = data.replace("placeholderESP", DATABASE[0][i].description[j]);
+        }
+      }
   }
   return data
 }

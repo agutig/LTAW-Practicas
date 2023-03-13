@@ -4,6 +4,7 @@
 
         {
             "name": "Iphone 14 pro",
+            "id":0,
             "marca": "apple",
             "stock": 6,
             "slogan": "Lo último de la manzana",
@@ -24,6 +25,7 @@
 
         {
             "name": "Samsung Galaxy S23 Ultra",
+            "id":1,
             "marca": "Samsung",
             "slogan": "Tecnología punta",
             "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
@@ -43,6 +45,7 @@
 
         {
             "name": "Xiaomi 13 pro",
+            "id":2,
             "marca": "Xiaomi",
             "slogan": "El rey del mercado",
             "stock": 6.0,
@@ -63,6 +66,7 @@
 
         {
             "name": "OPPO find N2 flip",
+            "id":3,
             "marca": "OPPO",
             "slogan": "Doblando el color",
             "stock": 6.0,
@@ -84,6 +88,7 @@
 
         {
             "name": "Realme GT Neo 3T",
+            "id":4,
             "marca": "Realme",
             "slogan": "Rendimiento acelerado NEO",
             "stock": 6,
@@ -103,6 +108,7 @@
 
         {
             "name": "POCO X4 GT",
+            "id":5,
             "marca": "Xiaomi",
             "slogan": "Velocidad sin límites",
             "stock": 6,
@@ -122,6 +128,7 @@
 
         {
             "name": "Samsung Galaxy A53 5G",
+            "id":6,
             "marca": "Samsung",
             "slogan": "Sencillez que destaca",
             "stock": 6.0,
@@ -141,6 +148,7 @@
 
         {
             "name": "Xiaomi Redmi A1",
+            "id":7,
             "marca": "Xiaomi",
             "slogan": "Diseño elegante y moderno",
             "stock": 6,
@@ -161,6 +169,7 @@
 
         {
             "name": "Vivo Y21s",
+            "id":8,
             "marca": "Vivo",
             "slogan": "Diseñado para adaptarse a ti y a tu estilo de vida",
             "stock": 6,
@@ -181,6 +190,7 @@
 
         {
             "name": "Realme C35",
+            "id":9,
             "marca": "Realme",
             "slogan": "Innovación, eficiencia y estilo en un solo dispositivo",
             "stock": 6,
@@ -201,6 +211,7 @@
 
         {
             "name": "Nokia G11",
+            "id":10,
             "marca": "Nokia",
             "slogan": "El móvil que te lleva al futuro",
             "stock": 6,
@@ -220,6 +231,7 @@
 
         {
             "name": "POCO M5",
+            "id":11,
             "marca": "Xiaomi",
             "slogan": "Todo lo que necesitas en un móvil, y más",
             "stock": 6,
