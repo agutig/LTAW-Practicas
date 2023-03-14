@@ -30,6 +30,17 @@ header{
 }
 
 
+.headerFormulary{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+}
+
+.headerFormulary .headerInputs{
+    margin: auto;
+}
+
 .headerMenu{
     width: 100%;
     height: 3vh;
