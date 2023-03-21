@@ -15,7 +15,6 @@ html {
 
 }
 
-
 header{
     position: fixed;
     z-index: 5;
@@ -39,7 +38,50 @@ header{
 
 .headerFormulary .headerInputs{
     margin: auto;
+    margin-right: 0vw;
+    text-align: left;
+    width: 80%;
+    height: 4vh;
 }
+
+.headerFormulary .headerInputs .logButton{
+    margin-top: 0.35vh;
+    margin-right: 0vw;
+    border-radius: 8px;
+    font-weight: 550;
+    width: 7vw;
+    height: 3vh;
+    border: none;
+    color: #fafafa;
+    background-color: #363636;
+    font-size: large;
+}
+
+.headerFormulary .headerInputs .logButtonSearch{
+    margin-top: 0.35vh;
+    margin-right: 10vw;
+    border-radius: 8px;
+    font-weight: 550;
+    height: 3vh;
+    border: none;
+    color: #fafafa;
+    font-size: large;
+    background-color: #363636;
+}
+
+.headerFormulary .headerInputs .searchBar{
+    height: 3vh;
+    margin-right: 0vw;
+    margin-left: 9%;
+    border-radius: 8px;
+    border: none;
+    width: 53.5%;
+    font-size: large;
+    color: #fafafa;
+    background-color: #363636;
+}
+
+
 
 .headerMenu{
     width: 100%;
@@ -49,6 +91,7 @@ header{
     border-top: 1px solid #363636;
     background-color: #000000;
 }
+
 
 .menuButton{
     border-radius: 8px;
@@ -68,6 +111,7 @@ header{
     transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease
 }
 
+
 .menuButton:hover{
     box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2),
                 0px -3px 3px rgba(0, 0, 0, 0.3),
@@ -80,7 +124,7 @@ header{
 .menuButton:active{
     box-shadow: none;
     color: #ffffff;
-    background-color: #161616;
+    background-color: #000000;
 }
 
 #mainLogo{
@@ -98,6 +142,7 @@ header{
     font-size: 1.2vh;
     color: #ffffff;
 }
+
 
 
 
