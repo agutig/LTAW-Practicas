@@ -16,6 +16,7 @@ html {
 }
 
 header{
+    height: auto;
     position: fixed;
     z-index: 5;
     top: 0;
@@ -30,6 +31,7 @@ header{
 
 
 .headerFormulary{
+    height: auto;
     display: flex;
     flex-direction: row;
     margin: auto;
@@ -37,16 +39,18 @@ header{
 }
 
 .headerFormulary .headerInputs{
+    display: flex;
+    flex-direction: row;
     margin: auto;
     margin-right: 0vw;
     text-align: left;
     width: 80%;
-    height: 4vh;
+    min-height: 4vh;
+    height: auto;
 }
 
 .headerFormulary .headerInputs .logButton{
-    margin-top: 0.35vh;
-    margin-right: 0vw;
+    margin-left: 1%;
     border-radius: 8px;
     font-weight: 550;
     width: 7vw;
@@ -58,10 +62,11 @@ header{
 }
 
 .headerFormulary .headerInputs .logButtonSearch{
-    margin-top: 0.35vh;
-    margin-right: 10vw;
+    margin-left: 0.5%;
+    margin-right: 10%;
     border-radius: 8px;
     font-weight: 550;
+    width: 3%;
     height: 3vh;
     border: none;
     color: #fafafa;
@@ -69,19 +74,44 @@ header{
     background-color: #363636;
 }
 
-.headerFormulary .headerInputs .searchBar{
-    height: 3vh;
-    margin-right: 0vw;
-    margin-left: 9%;
+
+.headerFormulary .headerInputs .searchDiv{
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 8.5%;
+}
+
+.headerFormulary .headerInputs .searchDiv .searchBar{
+    margin: auto;
+    min-height: 3vh;
+    height: auto;
     border-radius: 8px;
+    text-align: center;
     border: none;
-    width: 53.5%;
+    width: 100%;
     font-size: large;
     color: #fafafa;
     background-color: #363636;
 }
 
+.headerFormulary .headerInputs .searchDiv #searchElements{
+    margin-top: 1%;
+    height: auto;
+    width: 100%;
+    background-color: #363636;
+    border-radius: 16px
 
+}
+
+.headerFormulary .headerInputs .searchDiv .elementSearched{
+    margin: auto;
+    border: none;
+    border-radius: 32px;
+    color: #fafafa;
+    text-align: center;
+}
 
 .headerMenu{
     width: 100%;

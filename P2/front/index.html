@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/index.css">
   <script type="text/javascript" src="/code/index.js"></script>
+  <script type="text/javascript" src="/code/searchBar.js"></script>
 </head>
 
 
@@ -21,7 +22,10 @@
                 <h2 id="slogan" onclick="location.href='/';">Donde compran los profesionales</h2>
             </div>
             <div class="headerInputs">
-                <input class="searchBar" placeholder="Busca un producto" type="text"/>
+                <div class="searchDiv">
+                    <input class="searchBar" placeholder="Busca un producto" type="text"/>
+                    <div id="searchElements"></div>
+                </div>
                 <button class="logButtonSearch" onclick="location.href='/';">🔎</button>
                 <button class="logButton" onclick="location.href='/login.html';">👤</button>
                 <button class="logButton" onclick="location.href='/';">🛒</button>
