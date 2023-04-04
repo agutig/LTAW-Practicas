@@ -80,11 +80,18 @@ const server = http.createServer((req, res) => {
 
     }else if (url.pathname == '/product.html'){
       fs.readFile(FRONT_PATH + '/product.html', (err, data) => { if(!err){
-
         data = manageProductData(data, DATABASE,url.searchParams.get("product_id") )
         OK(res,data)
-    
       }else{NOT_OK(res)}});
+
+    }else if (url.pathname == '/searchBar'){
+        let productFind = url.searchParams.get("product");
+        if (productFind != ""){
+           productList = findProduct(productFind)
+        }else{
+          productList = []
+        }
+        OK(res,JSON.stringify(productList))
 
     }else{
       fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
@@ -115,7 +122,6 @@ function manageMain(data, DATABASE){
 
 function manageProductData(data, DATABASE , id){
   data = data.toString()
-  
   for (let i = 0; i < DATABASE[0].length; i++){
       if (id == DATABASE[0][i].id){
         data = data.replace("placeholderTittle", DATABASE[0][i].name);
@@ -128,3 +134,19 @@ function manageProductData(data, DATABASE , id){
   }
   return data
 }
+
+
+function findProduct(search){
+
+  const filteredArray = []
+  console.log(search)
+  DATABASE[0].map(function(elemento) {
+    if ((elemento.name).toUpperCase().startsWith(search.toUpperCase())) {
+      filteredArray.push(elemento.name);
+    }
+  });
+  
+  console.log(filteredArray)
+  return filteredArray
+}
+
