@@ -20,7 +20,7 @@ function searchPreview() {
         results = JSON.parse(m.responseText)
         searchElements.innerHTML = ""
         for (let i=0; i < results.length; i++) {
-          searchElements.innerHTML += "<button class='elementSearched' onclick='productSelected(" + results[i] + ")'>"+ results[i] +"</button>"
+          searchElements.innerHTML += "<button class='elementSearched' onclick=\"location.href='/product.html?product_id=" + results[i][1]+"';\">"+ results[i][0] +"</button>"
         }
         searchResults = results
         console.log(searchResults);

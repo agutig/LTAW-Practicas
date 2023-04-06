@@ -142,7 +142,7 @@ function findProduct(search){
   console.log(search)
   DATABASE[0].map(function(elemento) {
     if ((elemento.name).toUpperCase().startsWith(search.toUpperCase())) {
-      filteredArray.push(elemento.name);
+      filteredArray.push([elemento.name ,elemento.id]);
     }
   });
   
