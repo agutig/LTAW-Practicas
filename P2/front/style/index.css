@@ -65,6 +65,12 @@ header{
     color: #fafafa;
     background-color: #363636;
     font-size: large;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.headerFormulary .headerInputs .logButton:hover{
+    background-color: #555555;
+    color: #2b2b2b;
 }
 
 .headerFormulary .headerInputs .logButtonSearch{
@@ -80,8 +86,13 @@ header{
     color: #fafafa;
     font-size: large;
     background-color: #363636;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.headerFormulary .headerInputs .logButtonSearch:hover{
+    background-color: #5e5e5e;
+    color: #2b2b2b;
+}
 
 .headerFormulary .headerInputs .searchDiv{
     margin-bottom: 1vh;

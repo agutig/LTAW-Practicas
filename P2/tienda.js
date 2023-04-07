@@ -36,7 +36,6 @@ function print_info_req(req) {
   return myURL
 }
 
-
 function OK(res,data){
 
     res.statusCode = 200;
@@ -84,7 +83,7 @@ const server = http.createServer((req, res) => {
         OK(res,data)
       }else{NOT_OK(res)}});
 
-    }else if (url.pathname == '/searchBar'){
+    }else if (url.pathname == '/productos'){
         let productFind = url.searchParams.get("product");
         if (productFind != ""){
            productList = findProduct(productFind)
@@ -92,6 +91,25 @@ const server = http.createServer((req, res) => {
           productList = []
         }
         OK(res,JSON.stringify(productList))
+
+    }else if (url.pathname == '/searchProduct'){
+      let productFind = url.searchParams.get("product");
+      if (productFind != ""){
+        productList = findProduct(productFind)
+
+        if(productList.length == 1){
+          //redirect("/product.html?product_id=" + productList[1])
+          OK(res,JSON.stringify(["product" , id]))
+        }else{
+          //redirect(FRONT_PATH + "/error.html")
+          OK(res,JSON.stringify(["searchPage" , productList]))
+        }
+
+
+      }else{
+        productList = []
+      }
+      OK(res,JSON.stringify(productList))
 
     }else{
       fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
