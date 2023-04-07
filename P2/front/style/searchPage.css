@@ -142,8 +142,8 @@ header{
 }
 
 .headerFormulary .headerInputs .searchDiv .elementSearched:hover{
-    background-color: #b4b4b4;
-    color: #2b2b2b;
+    background-color: #dcdcdc;
+    color: #151515;
 }
 
 
@@ -261,13 +261,20 @@ header{
 
 
 .suggestionButton:hover{
-    background-color: #555555;
-    color: #2b2b2b;
+    background-color: #ebebeb;
+    color: #171717;
 
 }
 
 
-
+#gatoTiste{
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 25%;
+    height: auto;
+    border-radius: 32px;
+}
 
 
 

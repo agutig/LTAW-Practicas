@@ -51,8 +51,9 @@ function OK(res,data){
 function NOT_OK(res){
   res.statusCode = 404;
   res.statusMessage = "Not Found"
+  console.log("no encontrado")
   res.setHeader('Content-Type','text/html');
-  fs.readFile('error.html', (err, data) => { if(!err){
+  fs.readFile(FRONT_PATH + 'error.html', (err, data) => { if(!err){
     res.write(data)
     res.end();
     console.log("    Error 404 NOT FOUND")
@@ -113,7 +114,8 @@ const server = http.createServer((req, res) => {
         OK(res,data)}else{NOT_OK(res)}});
 
     }else{
-      fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
+      fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{
+        NOT_OK(res)}});
     }
 
   }
@@ -159,7 +161,8 @@ function manageSearchPage(html ,list){
 
   html = html.toString()
   if (list.length == 0){
-    html = html.replace("replaceText" , "Lo sentimos, \n no tenemos ninguna sugerencia para esta busqueda :(")
+    html = html.replace("replaceText" , "Lo sentimos,no tenemos ninguna sugerencia para esta busqueda." + "\n" +
+     "Es probable que no tengamos ese producto :(  <img id='gatoTiste' src='images/gatoTiste.png'> ")
   }else{
     text = "<p>Estos son los productos mas similares a tu busqueda:</p>"
     for (let i=0; i < list.length; i++) {
