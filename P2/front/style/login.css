@@ -15,6 +15,19 @@ html {
 
 }
 
+#mainLogo{
+    text-align: left;
+    font-size: 8vh;
+    color: #000000;
+}
+
+#slogan{
+    text-align: left;
+    margin-top: -2.6vh;
+    font-size: 5vh;
+    color: #000000;
+}
+
 .formularyDiv{
     display: flex;
     flex-direction: column;
@@ -66,3 +79,5 @@ html {
                 
     transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease
 }
+
+
