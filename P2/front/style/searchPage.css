@@ -1,0 +1,312 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+header{
+    height: auto;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
+    background-color: #111111;
+    opacity: 1;
+    animation: opacityLoad  1s normal backwards ease-in-out;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    
+}
+
+
+.headerFormulary{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+}
+
+.headerFormulary .headerInputs{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-right: 0vw;
+    text-align: left;
+    width: 80%;
+    min-height: 4vh;
+}
+
+.headerFormulary .headerInputs .logButton{
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    margin-left: 1%;
+    border-radius: 8px;
+    font-weight: 550;
+    width: 7vw;
+    height: 3vh;
+    border: none;
+    color: #fafafa;
+    background-color: #363636;
+    font-size: large;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.headerFormulary .headerInputs .logButton:hover{
+    background-color: #555555;
+    color: #2b2b2b;
+}
+
+.headerFormulary .headerInputs .logButtonSearch{
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    margin-left: 0.5%;
+    margin-right: 10%;
+    border-radius: 8px;
+    font-weight: 550;
+    width: 3%;
+    height: 3vh;
+    border: none;
+    color: #fafafa;
+    font-size: large;
+    background-color: #363636;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.headerFormulary .headerInputs .logButtonSearch:hover{
+    background-color: #5e5e5e;
+    color: #2b2b2b;
+}
+
+.headerFormulary .headerInputs .searchDiv{
+    margin-bottom: 1vh;
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 8.5%;
+
+}
+
+.headerFormulary .headerInputs .searchDiv .searchBar{
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    min-height: 3vh;
+    height: auto;
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    width: 100%;
+    font-size: large;
+    color: #fafafa;
+    background-color: #363636;
+}
+
+.headerFormulary .headerInputs .searchDiv #searchElements{
+    margin-top: 0.5%;
+    height: auto;
+    width: 100%;
+
+}
+
+.headerFormulary .headerInputs .searchDiv .elementSearched{
+    margin: auto;
+    margin-bottom: 1%;
+    width: 100%;
+    border: none;
+    border-radius: 32px;
+    color: #fafafa;
+    text-align: center;
+    border: solid 1px rgb(32, 32, 32);
+    border-radius: 16px;
+    background-color: #363636;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+
+}
+
+.headerFormulary .headerInputs .searchDiv .elementSearched:hover{
+    background-color: #b4b4b4;
+    color: #2b2b2b;
+}
+
+
+.headerMenu{
+    width: 100%;
+    min-height: 3vh;
+    height: auto;
+    text-align: center;
+    border-bottom: 1px solid #363636;
+    border-top: 1px solid #363636;
+    background-color: #000000;
+}
+
+
+.menuButton{
+    border-radius: 8px;
+    margin-top: 0.5vh;
+    margin-right: 1vw;
+    font-size: 0.80vw;
+    font-weight: 550;
+    width: 8vw;
+    border: none;
+    color: #fafafa;
+    background-color: #000000;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+                
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease
+}
+
+
+.menuButton:hover{
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2),
+                0px -3px 3px rgba(0, 0, 0, 0.3),
+                3px  0px 3px rgba(0, 0, 0, 0.3),
+                -3px 0px 3px rgba(0, 0, 0, 0.3);
+    color: #fafafa;
+    background-color: #363636;
+}
+
+.menuButton:active{
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#mainLogo{
+    text-align: left;
+    margin-left: 6vw;
+    margin-top: 0.5vh;
+    font-size: 3vh;
+    color: #ffffff;
+}
+
+#slogan{
+    text-align: left;
+    margin-left: 6.2vw;
+    margin-top: -2.6vh;
+    font-size: 1.2vh;
+    color: #ffffff;
+}
+
+/* Main */
+
+.mainBody{
+
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    font-size: 4vh;
+    width: 100%;
+    min-height: 56vh;
+    text-align: center;
+    color: #3b3b3b;
+    background-color: #fafafa;
+}
+
+.responseText{
+    height: auto;
+    min-height: 20%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10%;
+    border: 1px solid rgb(47, 47, 47);
+    border-radius: 32px;
+    width: 70%;
+}
+
+.suggestionButton{
+    height: auto;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 75%;
+    font-weight: 550;
+    border: none;
+    color: #fafafa;
+    background-color: #363636;
+    font-size: 150%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 32px;
+
+}
+
+
+.suggestionButton:hover{
+    background-color: #555555;
+    color: #2b2b2b;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Footer */
+
+footer{
+    display: block;
+    min-width: 100%;
+    margin-bottom: -1vh;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
+    background-color: #111111;
+    text-align: center;
+
+}
+
+
+ /*Barra lateral */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-thumb {
+background-color: #747474;
+}
+
+::-webkit-scrollbar-track {
+background-color: #000000;
+}
+
+
+
+
+
+
+
+

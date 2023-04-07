@@ -94,22 +94,23 @@ const server = http.createServer((req, res) => {
 
     }else if (url.pathname == '/searchProduct'){
       let productFind = url.searchParams.get("product");
-      if (productFind != ""){
-        productList = findProduct(productFind)
+      productList = findProduct(productFind)
 
-        if(productList.length == 1){
-          //redirect("/product.html?product_id=" + productList[1])
-          OK(res,JSON.stringify(["product" , id]))
-        }else{
-          //redirect(FRONT_PATH + "/error.html")
-          OK(res,JSON.stringify(["searchPage" , productList]))
-        }
-
-
+      if(productList.length == 1){
+        //redirect("/product.html?product_id=" + productList[1])
+        OK(res,JSON.stringify(["product" , productList[0][1]]))
       }else{
-        productList = []
+        //redirect(FRONT_PATH + "/error.html")
+        OK(res,JSON.stringify(["searchPage" , productList]))
       }
-      OK(res,JSON.stringify(productList))
+
+    }else if (url.pathname == '/searchPage'){
+      fs.readFile(FRONT_PATH + "searchPage.html", (err, data) => { if(!err){
+
+        let productFind = url.searchParams.get("product");
+        productList = findProduct(productFind)
+        data = manageSearchPage(data ,productList)
+        OK(res,data)}else{NOT_OK(res)}});
 
     }else{
       fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
@@ -154,17 +155,32 @@ function manageProductData(data, DATABASE , id){
 }
 
 
+function manageSearchPage(html ,list){
+
+  html = html.toString()
+  if (list.length == 0){
+    html = html.replace("replaceText" , "Lo sentimos, \n no tenemos ninguna sugerencia para esta busqueda :(")
+  }else{
+    text = "<p>Estos son los productos mas similares a tu busqueda:</p>"
+    for (let i=0; i < list.length; i++) {
+      text += "<button class='suggestionButton' onclick=\"location.href='/product.html?product_id=" + list[i][1]+"';\">"+ list[i][0] +"</button>"
+    }
+    html = html.replace("replaceText" , text)
+  }
+
+  return html
+
+}
+
+
 function findProduct(search){
 
   const filteredArray = []
-  console.log(search)
   DATABASE[0].map(function(elemento) {
     if ((elemento.name).toUpperCase().startsWith(search.toUpperCase())) {
       filteredArray.push([elemento.name ,elemento.id]);
     }
   });
-  
-  console.log(filteredArray)
   return filteredArray
 }
 

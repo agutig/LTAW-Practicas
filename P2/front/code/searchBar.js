@@ -29,30 +29,28 @@ function searchPreview() {
     m.send();  //Envío de la petición
   }
 
-
-function productSearch(){
-    search = searchBar.value
-    console.log(search)
-    const m = new XMLHttpRequest();
-    m.open("GET", "/searchProduct?product="+search, true);
-    m.onreadystatechange = () => {
-      if (m.readyState==4 && m.status == 200) {
-        results = JSON.parse(m.responseText)
-        if (results[0] == "product"){
-          window.location.href = '/product.html?product_id=' + results[1];
-        }else if (results[0] == "searchPage"){
-          window.location.href = '/searchpage.html'
-        }else{
-          window.location.href = '/error.html'
-        }
-      }
-    }
-    m.send();  //Envío de la petición
-}
-
-
-
 })
 
 
 
+function productSearch(){
+
+  const searchBar = document.getElementsByClassName('searchBar')[0];
+  search = searchBar.value
+  console.log(search)
+  const m = new XMLHttpRequest();
+  m.open("GET", "/searchProduct?product="+search, true);
+  m.onreadystatechange = () => {
+    if (m.readyState==4 && m.status == 200) {
+      results = JSON.parse(m.responseText)
+      if (results[0] == "product"){
+        window.location.href = '/product.html?product_id=' + results[1];
+      }else if (results[0] == "searchPage"){
+        window.location.href = "/searchPage?product="+ search
+      }else{
+        window.location.href = '/error.html'
+      }
+    }
+  }
+  m.send();  //Envío de la petición
+}
