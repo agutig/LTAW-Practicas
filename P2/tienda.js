@@ -134,7 +134,7 @@ const server = http.createServer((req, res) => {
             res.setHeader('Set-Cookie', "userName="+content['userName'] );
             OK(res,"")
           }else{
-              NOT_OK(res)
+            NOT_OK(res)
           }
 
         }else{

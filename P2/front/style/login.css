@@ -97,3 +97,12 @@ html {
                 -4px 0px 4px rgba(62, 62, 62, 0.2);
 }
 
+
+#errorText{
+    margin: auto;
+    margin-top: -4vh;
+    text-align: center;
+    color: rgb(233, 4, 4);
+    font-weight: 700;
+    font-size: 3vh;
+}
