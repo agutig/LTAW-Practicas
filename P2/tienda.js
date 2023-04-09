@@ -65,22 +65,34 @@ const FRONT_PATH = "front/"
 const server = http.createServer((req, res) => {
     
   let url = print_info_req(req)
-  cookies = getCookies(req)
 
   if (req.method == "GET" ){
 
     if (url.pathname == '/'){ fs.readFile(FRONT_PATH + 'index.html', (err, data) => { if(!err){
-
+        cookies = getCookies(req)
         data = manageMain(data, DATABASE ,cookies)  
         OK(res,data)
       }else{NOT_OK(res)}});
 
-
     }else if (url.pathname == '/product.html'){
       fs.readFile(FRONT_PATH + '/product.html', (err, data) => { if(!err){
-        data = manageProductData(data, DATABASE,url.searchParams.get("product_id") )
+        cookies = getCookies(req)
+        data = manageProductData(data, DATABASE,url.searchParams.get("product_id") ,cookies)
         OK(res,data)
       }else{NOT_OK(res)}});
+
+    }else if(url.pathname == "/profile.html"){
+      fs.readFile(FRONT_PATH + "profile.html", (err, data) => { if(!err){
+        data = manageProfilePage(data, DATABASE ,cookies)
+        OK(res,data)}else{NOT_OK(res)}});
+
+    }else if (url.pathname == '/searchPage'){
+      fs.readFile(FRONT_PATH + "searchPage.html", (err, data) => { if(!err){
+        let productFind = url.searchParams.get("product");
+        productList = findProduct(productFind)
+        cookies = getCookies(req)
+        data = manageSearchPage(data ,productList,cookies)
+        OK(res,data)}else{NOT_OK(res)}});
 
     }else if (url.pathname == '/productos'){
         let productFind = url.searchParams.get("product");
@@ -99,19 +111,6 @@ const server = http.createServer((req, res) => {
       }else{
         OK(res,JSON.stringify(["searchPage" , productList]))
       }
-
-    }else if (url.pathname == '/searchPage'){
-      fs.readFile(FRONT_PATH + "searchPage.html", (err, data) => { if(!err){
-
-        let productFind = url.searchParams.get("product");
-        productList = findProduct(productFind)
-        data = manageSearchPage(data ,productList)
-        OK(res,data)}else{NOT_OK(res)}});
-
-    }else if(url.pathname == "/profile.html"){
-      fs.readFile(FRONT_PATH + "profile.html", (err, data) => { if(!err){
-        data = manageProfilePage(data, DATABASE ,cookies)
-        OK(res,data)}else{NOT_OK(res)}});
 
     }else if(url.pathname == "/closeSesion"){
       res.setHeader('Set-Cookie', ["userName= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"] );
@@ -168,8 +167,15 @@ function manageMain(data, DATABASE , cookies){
   return data
 }
 
-function manageProductData(data, DATABASE , id){
+function manageProductData(data, DATABASE , id ,cookies){
+
+  
   data = data.toString()
+  if(cookies['userName'] != null){
+    data = data.replace("Log in",cookies["userName"]);
+    data = data.replace("login.html", "profile.html");
+  }
+
   for (let i = 0; i < DATABASE.products.length; i++){
       if (id ==  DATABASE.products[i].id){
         data = data.replace("placeholderTittle",  DATABASE.products[i].name);
@@ -184,8 +190,14 @@ function manageProductData(data, DATABASE , id){
 }
 
 
-function manageSearchPage(html ,list){
+function manageSearchPage(html ,list,cookies){
+
   html = html.toString()
+  if(cookies['userName'] != null){
+    html = html.replace("Log in",cookies["userName"]);
+    html = html.replace("login.html", "profile.html");
+  }
+
   if (list.length == 0){
     html = html.replace("replaceText" , "Lo sentimos,no tenemos ninguna sugerencia para esta busqueda." + "\n" +
      "Es probable que no tengamos ese producto :(  <img id='gatoTiste' src='images/gatoTiste.png'> ")
