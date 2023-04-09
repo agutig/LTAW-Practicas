@@ -6,6 +6,7 @@
   <link rel="icon" type="image/ico" href="/icon.ico"/>   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/login.css">
+  <script type="text/javascript" src="/code/login.js"></script>
 </head>
 
 
@@ -17,13 +18,11 @@
 </div>
 
 <div class="formularyDiv">
-  <form action="login" method="POST">
 		<p >Usuario</p>
-		<input type="text" id="textInput" name="userName"><br><br>
+		<input type="text" class="textInput" id="userName"/>
 		<p for="password">Contraseña</p>
-		<input type="password" id="textInput" name="password"><br><br>
-		<input type="submit" id="submitInput" value="Iniciar sesión">
-	</form>
+		<input type="password" class="textInput" id="password"/>
+		<button  id="submitInput" onclick="login()">Iniciar sesión</button>
 </div>
 
 </body>

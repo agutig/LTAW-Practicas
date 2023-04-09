@@ -13,7 +13,6 @@ function searchPreview() {
 
     search = searchBar.value
     if (search.length >= 3){
-      console.log(search)
       const m = new XMLHttpRequest();
       m.open("GET", "/productos?product="+search, true);
       m.onreadystatechange = () => {

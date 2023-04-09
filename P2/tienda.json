@@ -1,6 +1,6 @@
 
-[
-    [
+{
+    "products" : [
 
         {
             "name": "Iphone 14 pro",
@@ -248,6 +248,27 @@
             ],
             "img": ["mv_xiaomi_2_0.png", "mv_xiaomi_2_1.png", "mv_xiaomi_2_2.png"]
         }
+    ],
+
+    "clients" : [
+        {
+            "userName": "guti",
+            "password": "password",
+            "name": "Alvaro Gutierrez",
+            "email": "guti@guti.com",
+            "image": "/images/gatoTiste",
+            "pedidos":[]
+        },
+
+        {
+            "userName": "root",
+            "password": "root",
+            "name": "Root",
+            "email": "root@root.com",
+            "image": "images/none.png",
+            "pedidos":[]
+        }
+
     ]
 
-]
+}

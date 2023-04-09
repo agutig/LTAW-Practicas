@@ -4,6 +4,7 @@
 //Modules
 const fs = require('fs');
 const http = require('http');
+const { url } = require('inspector');
 
 
 /////////////////////////////////////////////////////  DOWNLOAD DATA
@@ -37,21 +38,17 @@ function print_info_req(req) {
 }
 
 function OK(res,data){
-
     res.statusCode = 200;
     res.statusMessage = "OK"
-    //res.setHeader("content-Type" , String(type[0]));
     res.write(data);
     res.end();
-    console.log("    200 OK")
-
+    //console.log("    200 OK")
 }
 
 
 function NOT_OK(res){
   res.statusCode = 404;
   res.statusMessage = "Not Found"
-  console.log("no encontrado")
   res.setHeader('Content-Type','text/html');
   fs.readFile(FRONT_PATH + 'error.html', (err, data) => { if(!err){
     res.write(data)
@@ -63,17 +60,18 @@ function NOT_OK(res){
 
 
 const PUERTO = 9000;
-
 const FRONT_PATH = "front/"
 
 const server = http.createServer((req, res) => {
     
-  url = print_info_req(req)
+  let url = print_info_req(req)
+  cookies = getCookies(req)
 
   if (req.method == "GET" ){
 
     if (url.pathname == '/'){ fs.readFile(FRONT_PATH + 'index.html', (err, data) => { if(!err){
-        data = manageMain(data, DATABASE)  
+
+        data = manageMain(data, DATABASE ,cookies)  
         OK(res,data)
       }else{NOT_OK(res)}});
 
@@ -96,12 +94,9 @@ const server = http.createServer((req, res) => {
     }else if (url.pathname == '/searchProduct'){
       let productFind = url.searchParams.get("product");
       productList = findProduct(productFind)
-
       if(productList.length == 1){
-        //redirect("/product.html?product_id=" + productList[1])
         OK(res,JSON.stringify(["product" , productList[0][1]]))
       }else{
-        //redirect(FRONT_PATH + "/error.html")
         OK(res,JSON.stringify(["searchPage" , productList]))
       }
 
@@ -113,6 +108,15 @@ const server = http.createServer((req, res) => {
         data = manageSearchPage(data ,productList)
         OK(res,data)}else{NOT_OK(res)}});
 
+    }else if(url.pathname == "/profile.html"){
+      fs.readFile(FRONT_PATH + "profile.html", (err, data) => { if(!err){
+        data = manageProfilePage(data, DATABASE ,cookies)
+        OK(res,data)}else{NOT_OK(res)}});
+
+    }else if(url.pathname == "/closeSesion"){
+      res.setHeader('Set-Cookie', ["userName= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"] );
+      OK(res,"200 OK")
+
     }else{
       fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{
         NOT_OK(res)}});
@@ -122,16 +126,17 @@ const server = http.createServer((req, res) => {
     
     if (url.pathname == '/login'){
       req.on('data', (content)=> {
+        
         content = (content.toString()).split("&")
         content =  convertDic(content)
         if(content['userName'] != ""){
-          fs.readFile(FRONT_PATH + "loginResponse.html", (err, data) => { if(!err){
-            res.setHeader('Set-Cookie', "user=" + content['userName'] );
-            data = data.toString()
-            data = data.replace("REPLACENAME", content['userName']);
-            OK(res,data)
+          if (checkUser(content['userName'] , content['password'] ,DATABASE)) {
+            res.setHeader('Set-Cookie', "userName="+content['userName'] );
+            OK(res,"")
           }else{
-            NOT_OK(res)}});
+              NOT_OK(res)
+          }
+
         }else{
           NOT_OK(res)
         }
@@ -147,27 +152,31 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 
 /////////////////////////////////////////////////////  DINAMIC HTML 
 
-function manageMain(data, DATABASE){
+function manageMain(data, DATABASE , cookies){
   data = data.toString()
-  for (let i = 0; i < DATABASE[0].length; i++){
-    data = data.replace("placeholderTittle", DATABASE[0][i].name);
-    data = data.replace("placeholderSlogan", DATABASE[0][i].slogan);
-    data = data.replace("placeholderImage", imagePath + String(DATABASE[0][i].img[0]));
-    data = data.replace("placeholderID" ,DATABASE[0][i].id )
-    
+  if(cookies['userName'] != null){
+    data = data.replace("Log in",cookies["userName"]);
+    data = data.replace("login.html", "profile.html");
+  }
+
+  for (let i = 0; i <  DATABASE.products.length; i++){
+    data = data.replace("placeholderTittle",  DATABASE.products[i].name);
+    data = data.replace("placeholderSlogan",  DATABASE.products[i].slogan);
+    data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
+    data = data.replace("placeholderID" , DATABASE.products[i].id )
   }
   return data
 }
 
 function manageProductData(data, DATABASE , id){
   data = data.toString()
-  for (let i = 0; i < DATABASE[0].length; i++){
-      if (id == DATABASE[0][i].id){
-        data = data.replace("placeholderTittle", DATABASE[0][i].name);
-        data = data.replace("placeholderIntro", DATABASE[0][i].intro);
-        data = data.replace("placeholderImage", imagePath + String(DATABASE[0][i].img[0]));
-        for (let j = 0; j < DATABASE[0][i].description.length; j++){
-          data = data.replace("placeholderESP", DATABASE[0][i].description[j]);
+  for (let i = 0; i < DATABASE.products.length; i++){
+      if (id ==  DATABASE.products[i].id){
+        data = data.replace("placeholderTittle",  DATABASE.products[i].name);
+        data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
+        data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
+        for (let j = 0; j <  DATABASE.products[i].description.length; j++){
+          data = data.replace("placeholderESP",  DATABASE.products[i].description[j]);
         }
       }
   }
@@ -176,7 +185,6 @@ function manageProductData(data, DATABASE , id){
 
 
 function manageSearchPage(html ,list){
-
   html = html.toString()
   if (list.length == 0){
     html = html.replace("replaceText" , "Lo sentimos,no tenemos ninguna sugerencia para esta busqueda." + "\n" +
@@ -188,16 +196,24 @@ function manageSearchPage(html ,list){
     }
     html = html.replace("replaceText" , text)
   }
-
   return html
+}
 
+
+function manageProfilePage(data,DATABASE, cookies){
+
+  data = data.toString()
+  if(cookies['userName'] != null){
+    data = data.replace("userTag",cookies["userName"]);
+  }
+
+  return data
 }
 
 
 function findProduct(search){
-
   const filteredArray = []
-  DATABASE[0].map(function(elemento) {
+   DATABASE.products.map(function(elemento) {
     if ((elemento.name).toUpperCase().startsWith(search.toUpperCase())) {
       filteredArray.push([elemento.name ,elemento.id]);
     }
@@ -214,16 +230,27 @@ function convertDic(params){
   return dict
 }
 
-function getCookies(){
-  const cookie = req.headers.cookie;
+function getCookies(req){
+  let cookie = req.headers.cookie;
   if (cookie) {
-
-    let cookie = cookie.split(";");
-    convertDic(cookie)
-
+    cookie = cookie.split(";")
+    cookie = convertDic(cookie)
+    console.log(cookie)
     return cookie
   }else{
-    return []
+    console.log("No cookies encontradas: "  + String([cookie]))
+    return {}
   }
+}
 
+function checkUser(user,password,DATABASE){
+  
+  found = false
+  for (let i = 0; i <  DATABASE.clients.length; i++){
+    if(DATABASE.clients[i].userName == user && DATABASE.clients[i].password == password ){
+      found = true;
+      break;
+    }
+  }
+  return found
 }
