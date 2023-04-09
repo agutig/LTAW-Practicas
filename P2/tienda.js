@@ -118,8 +118,26 @@ const server = http.createServer((req, res) => {
         NOT_OK(res)}});
     }
 
+  }else if (req.method == "POST" ){
+    
+    if (url.pathname == '/login'){
+      req.on('data', (content)=> {
+        content = (content.toString()).split("&")
+        content =  convertDic(content)
+        if(content['userName'] != ""){
+          fs.readFile(FRONT_PATH + "loginResponse.html", (err, data) => { if(!err){
+            res.setHeader('Set-Cookie', "user=" + content['userName'] );
+            data = data.toString()
+            data = data.replace("REPLACENAME", content['userName']);
+            OK(res,data)
+          }else{
+            NOT_OK(res)}});
+        }else{
+          NOT_OK(res)
+        }
+      });
+    }
   }
-
 });
 
 server.listen(PUERTO);
@@ -187,3 +205,25 @@ function findProduct(search){
   return filteredArray
 }
 
+function convertDic(params){
+  const dict = {};
+  for (let i = 0; i < params.length; i++){
+    param = params[i].split("=")
+    dict[param[0]] = param[1];
+  }
+  return dict
+}
+
+function getCookies(){
+  const cookie = req.headers.cookie;
+  if (cookie) {
+
+    let cookie = cookie.split(";");
+    convertDic(cookie)
+
+    return cookie
+  }else{
+    return []
+  }
+
+}
