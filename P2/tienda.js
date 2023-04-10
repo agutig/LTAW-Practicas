@@ -180,7 +180,6 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 function manageMain(data, DATABASE , cookies){
   data = data.toString()
   if(cookies['userName'] != null){
-    console.log("caca")
     data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
   }
@@ -306,7 +305,6 @@ function convertDic(params , split){
 function getCookies(req){
   let cookie = req.headers.cookie.replace(/\s/g, "");;
   if (cookie) {
-    console.log(req.headers.cookie)
     cookie = cookie.split(";")
     cookie = convertDic(cookie,"=")
     return cookie
