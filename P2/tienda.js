@@ -99,15 +99,11 @@ const server = http.createServer((req, res) => {
       cookies = getCookies(req)
       if (findProductId(product)){
         if(cookies['cart']  == null){
-          console.log("Nuevo carrito")
           res.setHeader('Set-Cookie', "cart="+product+"_1" );
           OK(res,"200 OK")
         }else{
           cart = cookies['cart']
-          console.log("Nuevo producto")
-          console.log(cart)
           cart = convertDic(cart,"_")
-          console.log(cart)
           OK(res,"200 OK")
         }
       }else{
@@ -154,7 +150,7 @@ const server = http.createServer((req, res) => {
     
     if (url.pathname == '/login'){
       req.on('data', (content)=> {
-        
+
         content = (content.toString()).split("&")
         content =  convertDic(content,"=")
         if(content['userName'] != ""){
@@ -210,8 +206,9 @@ function manageProductData(data, DATABASE , id ,cookies){
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
         data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
+        data = data.replace("REPLACE_ID", id);
         for (let j = 0; j <  DATABASE.products[i].description.length; j++){
-          data = data.replace("REPLACE_ID",  id);
+          data = data.replace("placeholderESP",  DATABASE.products[i].description[j]);
         }
       }
   }
@@ -295,12 +292,11 @@ function findProductId(search){
 
 
 function convertDic(params , split){
-  
+
   const dict = {};
   for (let i = 0; i < params.length; i++){
     param = params[i].split(split)
-    console.log(param)
-    dict[param[i][0]] = param[i][1];
+    dict[param[0]] = param[1];
   }
   return dict
 }
@@ -318,7 +314,7 @@ function getCookies(req){
 }
 
 function checkUser(user,password,DATABASE){
-  
+  console.log([user , password])
   found = false
   for (let i = 0; i <  DATABASE.clients.length; i++){
     if(DATABASE.clients[i].userName == user && DATABASE.clients[i].password == password ){
