@@ -54,6 +54,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     };
 
-    
-
 });
+
+function buyButton(id){
+
+    feedback = document.getElementById("addFeedback");
+
+    var m = new XMLHttpRequest();
+    m.open("GET", "/addCart?cart=" + String(id), true);
+    m.setRequestHeader("Content-Type", "application/json");
+    m.onreadystatechange = function() {
+        if (m.readyState==4 && m.status == 200) {
+            feedback.innerHTML = "Producto añadido al carrito"
+        } else if (m.readyState==4 && m.status == 404) {
+            feedback.innerHTML = "Error añadido al carrito"
+        }
+    };
+    m.send();
+}

@@ -83,8 +83,37 @@ const server = http.createServer((req, res) => {
 
     }else if(url.pathname == "/profile.html"){
       fs.readFile(FRONT_PATH + "profile.html", (err, data) => { if(!err){
+        cookies = getCookies(req)
         data = manageProfilePage(data, DATABASE ,cookies)
         OK(res,data)}else{NOT_OK(res)}});
+
+    }else if (url.pathname == '/cart.html'){
+      fs.readFile(FRONT_PATH + "cart.html", (err, data) => { if(!err){
+        cookies = getCookies(req)
+        data = manageCart(data,cookies)
+        OK(res,data)}else{NOT_OK(res)}});
+
+    }else if (url.pathname == '/addCart'){
+
+      let product = url.searchParams.get("cart");
+      cookies = getCookies(req)
+      if (findProductId(product)){
+        if(cookies['cart']  == null){
+          console.log("Nuevo carrito")
+          res.setHeader('Set-Cookie', "cart="+product+"_1" );
+          OK(res,"200 OK")
+        }else{
+          cart = cookies['cart']
+          console.log("Nuevo producto")
+          console.log(cart)
+          cart = convertDic(cart,"_")
+          console.log(cart)
+          OK(res,"200 OK")
+        }
+      }else{
+        //Si pasa por aqui, es debido a que hay un error y el id que se busca NO existe
+        NOT_OK(res)
+      }
 
     }else if (url.pathname == '/searchPage'){
       fs.readFile(FRONT_PATH + "searchPage.html", (err, data) => { if(!err){
@@ -94,13 +123,13 @@ const server = http.createServer((req, res) => {
         data = manageSearchPage(data ,productList,cookies)
         OK(res,data)}else{NOT_OK(res)}});
 
-    }else if (url.pathname == '/productos'){
-        let productFind = url.searchParams.get("product");
-        if (productFind != ""){
-           productList = findProduct(productFind)
-        }else{
-          productList = []
-        }
+  }else if (url.pathname == '/productos'){
+      let productFind = url.searchParams.get("product");
+      if (productFind != ""){
+          productList = findProduct(productFind)
+      }else{
+        productList = []
+      }
         OK(res,JSON.stringify(productList))
 
     }else if (url.pathname == '/searchProduct'){
@@ -127,7 +156,7 @@ const server = http.createServer((req, res) => {
       req.on('data', (content)=> {
         
         content = (content.toString()).split("&")
-        content =  convertDic(content)
+        content =  convertDic(content,"=")
         if(content['userName'] != ""){
           if (checkUser(content['userName'] , content['password'] ,DATABASE)) {
             res.setHeader('Set-Cookie', "userName="+content['userName'] );
@@ -169,7 +198,6 @@ function manageMain(data, DATABASE , cookies){
 
 function manageProductData(data, DATABASE , id ,cookies){
 
-  
   data = data.toString()
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies["userName"]);
@@ -181,8 +209,9 @@ function manageProductData(data, DATABASE , id ,cookies){
         data = data.replace("placeholderTittle",  DATABASE.products[i].name);
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
         data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
+        data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
         for (let j = 0; j <  DATABASE.products[i].description.length; j++){
-          data = data.replace("placeholderESP",  DATABASE.products[i].description[j]);
+          data = data.replace("REPLACE_ID",  id);
         }
       }
   }
@@ -213,12 +242,33 @@ function manageSearchPage(html ,list,cookies){
 
 
 function manageProfilePage(data,DATABASE, cookies){
-
   data = data.toString()
   if(cookies['userName'] != null){
     data = data.replace("userTag",cookies["userName"]);
   }
+  return data
+}
 
+
+function manageCart(data,cookies){
+  data = data.toString()
+  if(cookies['userName'] != null){
+    data = data.replace("Log in",cookies["userName"]);
+    data = data.replace("login.html", "profile.html");
+    if(cookies['cart'] != null && cookies['cart'].length != 0  ){
+      data = data.replace("<!--REPLACE_PRODUCTS-->","Cookies de compra TODO :)");
+      data = data.replace("REPLACE_URL","buy");
+    }else{
+      data = data.replace("<!--REPLACE_PRODUCTS-->","No tienes ningun producto en la cesta :(");
+      data = data.replace("REPLACE_TEXT","Volver a la pagina de inicio");
+      data = data.replace("REPLACE_URL","");
+    }
+    
+  }else{
+    data = data.replace("<!--REPLACE_PRODUCTS-->","Inicia sesion para poder realizar la compra");
+    data = data.replace("REPLACE_URL","login.html");
+    data = data.replace("REPLACE_TEXT","Inicia sesion");
+  }
   return data
 }
 
@@ -233,11 +283,24 @@ function findProduct(search){
   return filteredArray
 }
 
-function convertDic(params){
+function findProductId(search){
+  let found = false
+  DATABASE.products.map(function(elemento) {
+    if (elemento.id == search) {
+      found = true
+    }
+  });
+  return found
+}
+
+
+function convertDic(params , split){
+  
   const dict = {};
   for (let i = 0; i < params.length; i++){
-    param = params[i].split("=")
-    dict[param[0]] = param[1];
+    param = params[i].split(split)
+    console.log(param)
+    dict[param[i][0]] = param[i][1];
   }
   return dict
 }
@@ -246,8 +309,7 @@ function getCookies(req){
   let cookie = req.headers.cookie;
   if (cookie) {
     cookie = cookie.split(";")
-    cookie = convertDic(cookie)
-    console.log(cookie)
+    cookie = convertDic(cookie,"=")
     return cookie
   }else{
     console.log("No cookies encontradas: "  + String([cookie]))
