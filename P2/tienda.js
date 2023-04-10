@@ -18,7 +18,7 @@ function print_info_req(req) {
 
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
 
-  if (true){
+  if (false){
     console.log("");
     console.log("Mensaje de solicitud");
     console.log("====================");
@@ -150,12 +150,13 @@ const server = http.createServer((req, res) => {
     
     if (url.pathname == '/login'){
       req.on('data', (content)=> {
-
+        
         content = (content.toString()).split("&")
         content =  convertDic(content,"=")
+
         if(content['userName'] != ""){
           if (checkUser(content['userName'] , content['password'] ,DATABASE)) {
-            res.setHeader('Set-Cookie', "userName="+content['userName'] );
+            res.setHeader('Set-Cookie',"userName="+content['userName'] );
             OK(res,"")
           }else{
             NOT_OK(res)
@@ -179,7 +180,8 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 function manageMain(data, DATABASE , cookies){
   data = data.toString()
   if(cookies['userName'] != null){
-    data = data.replace("Log in",cookies["userName"]);
+    console.log("caca")
+    data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
   }
 
@@ -196,7 +198,7 @@ function manageProductData(data, DATABASE , id ,cookies){
 
   data = data.toString()
   if(cookies['userName'] != null){
-    data = data.replace("Log in",cookies["userName"]);
+    data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
   }
 
@@ -220,7 +222,7 @@ function manageSearchPage(html ,list,cookies){
 
   html = html.toString()
   if(cookies['userName'] != null){
-    html = html.replace("Log in",cookies["userName"]);
+    html = html.replace("Log in",cookies['userName']);
     html = html.replace("login.html", "profile.html");
   }
 
@@ -302,8 +304,9 @@ function convertDic(params , split){
 }
 
 function getCookies(req){
-  let cookie = req.headers.cookie;
+  let cookie = req.headers.cookie.replace(/\s/g, "");;
   if (cookie) {
+    console.log(req.headers.cookie)
     cookie = cookie.split(";")
     cookie = convertDic(cookie,"=")
     return cookie
@@ -314,7 +317,6 @@ function getCookies(req){
 }
 
 function checkUser(user,password,DATABASE){
-  console.log([user , password])
   found = false
   for (let i = 0; i <  DATABASE.clients.length; i++){
     if(DATABASE.clients[i].userName == user && DATABASE.clients[i].password == password ){
@@ -323,4 +325,5 @@ function checkUser(user,password,DATABASE){
     }
   }
   return found
+
 }
