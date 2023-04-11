@@ -111,8 +111,22 @@ const server = http.createServer((req, res) => {
           res.setHeader('Set-Cookie', "cart="+product+"_1" );
           OK(res,"200 OK")
         }else{
-          cart = cookies['cart']
-          cart = convertDic(cart,"_")
+          cart = cookies['cart'].split(":")
+          console.log(cart)
+          cart = convert2Dic(cart,"_")
+          console.log(cart)
+          if(cart[product] != null){
+            console.log(cart[product])
+            cart[product] = String(Number(cart[product]) + 1) 
+          }else{
+            cart[product] = "1";
+          }
+          let cartCokie = ""
+          Object.keys(cart).forEach(function(id) {
+            cartCokie += id + "_" + cart[id] +":"
+          });
+          cartCokie = cartCokie.substring(0, cartCokie.length - 1);
+          res.setHeader('Set-Cookie', "cart="+cartCokie );
           OK(res,"200 OK")
         }
       }else{
@@ -161,7 +175,7 @@ const server = http.createServer((req, res) => {
       req.on('data', (content)=> {
         
         content = (content.toString()).split("&")
-        content =  convertDic(content,"=")
+        content =  convert2Dic(content,"=")
 
         if(content['userName'] != ""){
           if (checkUser(content['userName'] , content['password'] ,DATABASE)) {
@@ -320,7 +334,7 @@ function findProductById(id){
 }
 
 
-function convertDic(params , split){
+function convert2Dic(params , split){
 
   const dict = {};
   for (let i = 0; i < params.length; i++){
@@ -334,7 +348,7 @@ function getCookies(req){
   let cookie = req.headers.cookie.replace(/\s/g, "");;
   if (cookie) {
     cookie = cookie.split(";")
-    cookie = convertDic(cookie,"=")
+    cookie = convert2Dic(cookie,"=")
     return cookie
   }else{
     console.log("No cookies encontradas: "  + String([cookie]))
