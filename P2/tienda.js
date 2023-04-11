@@ -2,6 +2,7 @@
 //Test:  http://localhost:9000/
 
 //Modules
+const { error } = require('console');
 const fs = require('fs');
 const http = require('http');
 const { url } = require('inspector');
@@ -90,14 +91,22 @@ const server = http.createServer((req, res) => {
     }else if (url.pathname == '/cart.html'){
       fs.readFile(FRONT_PATH + "cart.html", (err, data) => { if(!err){
         cookies = getCookies(req)
-        data = manageCart(data,cookies)
-        OK(res,data)}else{NOT_OK(res)}});
+         manageCart(data,cookies ,function(error, data) {
+          if (error) {
+            console.error("error");
+          } else {
+            OK(res,data) 
+          }
+        });
+
+        }else{NOT_OK(res)}});
+
 
     }else if (url.pathname == '/addCart'){
 
       let product = url.searchParams.get("cart");
       cookies = getCookies(req)
-      if (findProductId(product)){
+      if (checkIDExists(product)){
         if(cookies['cart']  == null){
           res.setHeader('Set-Cookie', "cart="+product+"_1" );
           OK(res,"200 OK")
@@ -248,26 +257,46 @@ function manageProfilePage(data,DATABASE, cookies){
 }
 
 
-function manageCart(data,cookies){
+async function manageCart(data,cookies , callback){
   data = data.toString()
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies["userName"]);
     data = data.replace("login.html", "profile.html");
     if(cookies['cart'] != null && cookies['cart'].length != 0  ){
-      data = data.replace("<!--REPLACE_PRODUCTS-->","Cookies de compra TODO :)");
-      data = data.replace("REPLACE_URL","buy");
+      fs.readFile(FRONT_PATH + "cartProduct.html", (err, component) => { 
+        if(!err){
+          component = component.toString()
+          productsComponents = ""
+          for (let i = 0; i < cookies.length; i++){
+            newComponent = component
+            [id,stock] = cookies['cart'].split("_")
+            componentData = findProductById(id)
+            newComponent = newComponent.replace("TITTLE",componentData.name);
+            newComponent = newComponent.replace("PRICE",componentData.price);
+            newComponent = newComponent.replace("value='0'", "value='" + stock+"'");
+            productsComponents += newComponent + "\n";
+          }
+          data = data.replace("<!--REPLACE_PRODUCTS-->",productsComponents);
+          data = data.replace("REPLACE_URL","buy");
+          callback(null,data)
+        }else{console.log("error de lectura")}
+      })
+      
+
     }else{
       data = data.replace("<!--REPLACE_PRODUCTS-->","No tienes ningun producto en la cesta :(");
       data = data.replace("REPLACE_TEXT","Volver a la pagina de inicio");
       data = data.replace("REPLACE_URL","");
+      callback(null,data)
     }
     
   }else{
     data = data.replace("<!--REPLACE_PRODUCTS-->","Inicia sesion para poder realizar la compra");
     data = data.replace("REPLACE_URL","login.html");
     data = data.replace("REPLACE_TEXT","Inicia sesion");
+    callback(null,data)
   }
-  return data
+  
 }
 
 
@@ -281,14 +310,13 @@ function findProduct(search){
   return filteredArray
 }
 
-function findProductId(search){
-  let found = false
-  DATABASE.products.map(function(elemento) {
-    if (elemento.id == search) {
-      found = true
+function findProductById(id){
+
+   DATABASE.products.map(function(elemento) {
+    if (elemento.id == id) {
+      return elemento
     }
-  });
-  return found
+  }); 
 }
 
 
@@ -323,5 +351,14 @@ function checkUser(user,password,DATABASE){
     }
   }
   return found
+}
 
+function checkIDExists(search){
+  let found = false
+  DATABASE.products.map(function(elemento) {
+    if (elemento.id == search) {
+      found = true
+    }
+  });
+  return found
 }
