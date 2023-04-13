@@ -226,28 +226,61 @@ header{
 }
 
 
-#cartTittle{
+#showCart{
+    display: flex;
+    flex-direction: row;
     margin: auto;
+    height: auto;
+}
+
+#cartTittle{
+    text-align: left;
+    margin-left: 25%;
     margin-top: 7%;
     margin-bottom: 2vh;
-    font-size: 140%
+    font-size: 180%;
+    
 }
+
+#showCart #productDiv{
+   text-align: right;
+   display: flex;
+   flex-direction: column;
+   width: 60%;
+   margin-top: 2%;
+   margin-left: 2%;
+   border-left: 2px solid rgb(110, 110, 110);
+}
+
 
 #cartButton{
     margin: auto;
-    height: 3vh;
+    margin-top: 1%;
+    margin-left: 18%;
+    height: auto;
     border: none;
     border-radius: 8px;
-    font-size: 2vh;
+    font-size: 4vh;
     background-color: #4a64f8;
     color:#fafafa;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.082), 0 -4px 4px rgba(0, 0, 0, 0.034);
+    transition: background-color 0.3s ease,  box-shadow 0.3s ease , border-radius 0.3s ease , font-size 0.3s ease;
 }
 
+#cartButton:hover{
+    border-radius: 16px;
+    font-size: 4.5vh;
+
+    background-color: #415dfa;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.247), 0 -6px 6px rgba(0, 0, 0, 0.233);
+}
+
+
 #cartProductId{
-    margin-right: 5%;
-    margin-left: 55%;
-    width: 40%;
+
+    width: 60%;
+    margin-bottom: 2%;
+    margin-left: 2%;
     height: auto;
     border-radius: 16px;
     box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
@@ -260,14 +293,14 @@ header{
     text-align: left;
     margin-top: 4%;
     margin-left: 4%;
-    font-size: 120%;
+    font-size: 90%;
 }
 
 #cartProductPriceDiv{
     height: auto;
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 80%;
     margin: auto;
     margin-left: 4%;
 }
@@ -284,11 +317,20 @@ header{
     text-align: center;
     margin: auto;
     margin-left: 0;
+    margin-right: 0;
     border-radius: 16px;
     height: 40%;
     font-size: 60%;
     color: #4a64f8;
     margin-bottom: 10%;
+}
+
+
+#productDiv #totalPrice{
+    text-align: left;
+    font-weight: 700;
+    color: #4d4d4d;
+    margin-left: 2%;
 }
 
 /* footer */

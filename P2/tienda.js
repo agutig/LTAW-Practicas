@@ -283,7 +283,8 @@ async function manageCart(data,cookies , callback){
           cartCookie = cookies['cart'].split(":")
           cartCookie = convert2Dic(cartCookie,"_")
           console.log(cartCookie)
-          productsComponents = ""
+          productsComponents = "<p id='cartTittle'>Lista de productos</p> \n <div id='productDiv' >"
+          totalPrice = 0
           for (let key in cartCookie) {
             console.log(cartCookie[key])
             newComponent = component
@@ -294,24 +295,29 @@ async function manageCart(data,cookies , callback){
             newComponent = newComponent.replace("TITTLE",componentData.name);
             newComponent = newComponent.replace("PRICE", String(componentData.price) + " €");
             newComponent = newComponent.replace("value='0'", "value='" + stock+"'");
+            newComponent = newComponent.replace("TOTALPRICE", String(Number(stock) * Number(componentData.price)));
+            totalPrice += Number(stock) * Number(componentData.price)
             productsComponents += newComponent + "\n";
           }
+          productsComponents += " <p id='totalPrice'>Total: " + String(totalPrice) + "</p> </div>";
           data = data.replace("<!--REPLACE_PRODUCTS-->",productsComponents);
-          data = data.replace("REPLACE_TEXT","buy");
+          data = data.replace("REPLACE_TEXT","Realizar pedido");
           callback(null,data)
         }else{console.log("error de lectura")}
       })
       
 
     }else{
-      data = data.replace("<!--REPLACE_PRODUCTS-->","No tienes ningun producto en la cesta :(");
+      data = data.replace("<!--REPLACE_PRODUCTS-->", "<p id='cartTittle' style='margin: auto; margin-top: 2%'> No tienes ningun producto en la cesta :( </p>");
+      data = data.replace("extraStyle=''","style='margin: auto; margin-top: 2%'");
       data = data.replace("REPLACE_TEXT","Volver a la pagina de inicio");
       data = data.replace("REPLACE_URL","");
       callback(null,data)
     }
     
   }else{
-    data = data.replace("<!--REPLACE_PRODUCTS-->","Inicia sesion para poder realizar la compra");
+    data = data.replace("<!--REPLACE_PRODUCTS-->"," <p id='cartTittle'  style='margin: auto; margin-top: 2%'> Inicia sesion para poder realizar la compra </p>");
+    data = data.replace("extraStyle=''","style='margin: auto; margin-top: 2%'");
     data = data.replace("REPLACE_URL","login.html");
     data = data.replace("REPLACE_TEXT","Inicia sesion");
     callback(null,data)
@@ -353,8 +359,9 @@ function convert2Dic(params , split){
 }
 
 function getCookies(req){
-  let cookie = req.headers.cookie.replace(/\s/g, "");;
+  let cookie = req.headers.cookie
   if (cookie) {
+    cookie = cookie.replace(/\s/g, "");
     cookie = cookie.split(";")
     cookie = convert2Dic(cookie,"=")
     return cookie
