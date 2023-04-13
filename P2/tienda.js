@@ -280,18 +280,24 @@ async function manageCart(data,cookies , callback){
       fs.readFile(FRONT_PATH + "cartProduct.html", (err, component) => { 
         if(!err){
           component = component.toString()
+          cartCookie = cookies['cart'].split(":")
+          cartCookie = convert2Dic(cartCookie,"_")
+          console.log(cartCookie)
           productsComponents = ""
-          for (let i = 0; i < cookies.length; i++){
+          for (let key in cartCookie) {
+            console.log(cartCookie[key])
             newComponent = component
-            [id,stock] = cookies['cart'].split("_")
-            componentData = findProductById(id)
+            let id = key
+            let stock = cartCookie[key]
+            let componentData = findProductById(id)
+            console.log(component)
             newComponent = newComponent.replace("TITTLE",componentData.name);
-            newComponent = newComponent.replace("PRICE",componentData.price);
+            newComponent = newComponent.replace("PRICE", String(componentData.price) + " €");
             newComponent = newComponent.replace("value='0'", "value='" + stock+"'");
             productsComponents += newComponent + "\n";
           }
           data = data.replace("<!--REPLACE_PRODUCTS-->",productsComponents);
-          data = data.replace("REPLACE_URL","buy");
+          data = data.replace("REPLACE_TEXT","buy");
           callback(null,data)
         }else{console.log("error de lectura")}
       })
@@ -326,11 +332,13 @@ function findProduct(search){
 
 function findProductById(id){
 
-   DATABASE.products.map(function(elemento) {
-    if (elemento.id == id) {
-      return elemento
+  let element;
+  DATABASE.products.map(function(elemento) {
+    if (elemento['id'] == id) {
+      element = elemento
     }
-  }); 
+  });
+  return element
 }
 
 

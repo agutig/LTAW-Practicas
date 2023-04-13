@@ -1,0 +1,323 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #fafafa;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+header{
+    height: auto;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
+    background-color: #111111;
+    opacity: 1;
+    animation: opacityLoad  1s normal backwards ease-in-out;
+    animation-delay: 3s;
+    animation-iteration-count: 1;
+    
+}
+
+
+.headerFormulary{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+}
+
+.headerFormulary .headerInputs{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-right: 0vw;
+    text-align: left;
+    width: 80%;
+    min-height: 4vh;
+}
+
+.headerFormulary .headerInputs .logButton{
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    margin-left: 1%;
+    border-radius: 8px;
+    font-weight: 550;
+    width: 7vw;
+    height: 3vh;
+    border: none;
+    color: #fafafa;
+    background-color: #363636;
+    font-size: large;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.headerFormulary .headerInputs .logButton:hover{
+    background-color: #555555;
+    color: #2b2b2b;
+}
+
+.headerFormulary .headerInputs .logButtonSearch{
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    margin-left: 0.5%;
+    margin-right: 10%;
+    border-radius: 8px;
+    font-weight: 550;
+    width: 3%;
+    height: 3vh;
+    border: none;
+    color: #fafafa;
+    font-size: large;
+    background-color: #363636;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.headerFormulary .headerInputs .logButtonSearch:hover{
+    background-color: #5e5e5e;
+    color: #2b2b2b;
+}
+
+.headerFormulary .headerInputs .searchDiv{
+    margin-bottom: 1vh;
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 8.5%;
+
+}
+
+.headerFormulary .headerInputs .searchDiv .searchBar{
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+    min-height: 3vh;
+    height: auto;
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    width: 100%;
+    font-size: large;
+    color: #fafafa;
+    background-color: #363636;
+}
+
+.headerFormulary .headerInputs .searchDiv #searchElements{
+    margin-top: 0.5%;
+    height: auto;
+    width: 100%;
+
+}
+
+.headerFormulary .headerInputs .searchDiv .elementSearched{
+    margin: auto;
+    margin-bottom: 1%;
+    width: 100%;
+    border: none;
+    border-radius: 32px;
+    color: #fafafa;
+    text-align: center;
+    border: solid 1px rgb(32, 32, 32);
+    border-radius: 16px;
+    background-color: #363636;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+
+}
+
+.headerFormulary .headerInputs .searchDiv .elementSearched:hover{
+    background-color: #b4b4b4;
+    color: #2b2b2b;
+}
+
+
+.headerMenu{
+    width: 100%;
+    min-height: 3vh;
+    height: auto;
+    text-align: center;
+    border-bottom: 1px solid #363636;
+    border-top: 1px solid #363636;
+    background-color: #000000;
+}
+
+
+.menuButton{
+    border-radius: 8px;
+    margin-top: 0.5vh;
+    margin-right: 1vw;
+    font-size: 0.80vw;
+    font-weight: 550;
+    width: 8vw;
+    border: none;
+    color: #fafafa;
+    background-color: #000000;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+                
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease
+}
+
+
+.menuButton:hover{
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2),
+                0px -3px 3px rgba(0, 0, 0, 0.3),
+                3px  0px 3px rgba(0, 0, 0, 0.3),
+                -3px 0px 3px rgba(0, 0, 0, 0.3);
+    color: #fafafa;
+    background-color: #363636;
+}
+
+.menuButton:active{
+    box-shadow: none;
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#mainLogo{
+    text-align: left;
+    margin-left: 6vw;
+    margin-top: 0.5vh;
+    font-size: 3vh;
+    color: #ffffff;
+}
+
+#slogan{
+    text-align: left;
+    margin-left: 6.2vw;
+    margin-top: -2.6vh;
+    font-size: 1.2vh;
+    color: #ffffff;
+}
+
+/* BODY */
+
+
+.mainBody{
+
+    margin: auto;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    font-size: 4vh;
+    width: 100%;
+    min-height: 65vh;
+    text-align: center;
+    color: #3b3b3b;
+    background-color: #fafafa;
+}
+
+
+#cartTittle{
+    margin: auto;
+    margin-top: 7%;
+    margin-bottom: 2vh;
+    font-size: 140%
+}
+
+#cartButton{
+    margin: auto;
+    height: 3vh;
+    border: none;
+    border-radius: 8px;
+    font-size: 2vh;
+    background-color: #4a64f8;
+    color:#fafafa;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2), 0 -4px 4px rgba(0,0,0,0.2);
+}
+
+#cartProductId{
+    margin-right: 5%;
+    margin-left: 55%;
+    width: 40%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.2),
+                0px -2px 2px rgba(62, 62, 62, 0.2),
+                2px  0px 2px rgba(62, 62, 62, 0.2),
+                -2px 0px 2px rgba(62, 62, 62, 0.2);
+}
+
+#cartProductName{
+    text-align: left;
+    margin-top: 4%;
+    margin-left: 4%;
+    font-size: 120%;
+}
+
+#cartProductPriceDiv{
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: auto;
+    margin-left: 4%;
+}
+
+#cartProductPriceDiv #cartProductPrice{
+    text-align: left;
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 10%;
+    font-size: 80%;
+}
+
+#cartProductPriceDiv #cartProductInput{
+    text-align: center;
+    margin: auto;
+    margin-left: 0;
+    border-radius: 16px;
+    height: 40%;
+    font-size: 60%;
+    color: #4a64f8;
+    margin-bottom: 10%;
+}
+
+/* footer */
+
+footer{
+    display: block;
+    min-width: 100%;
+    margin-bottom: -1vh;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fafafa;
+    background-color: #111111;
+    text-align: center;
+
+}
+
+
+/* Establecer el ancho del scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Establecer el color del thumb y del track del scrollbar */
+  ::-webkit-scrollbar-thumb {
+    background-color: #747474;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #000000;
+  }
+  
