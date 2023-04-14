@@ -282,16 +282,13 @@ async function manageCart(data,cookies , callback){
           component = component.toString()
           cartCookie = cookies['cart'].split(":")
           cartCookie = convert2Dic(cartCookie,"_")
-          console.log(cartCookie)
           productsComponents = "<p id='cartTittle'>Lista de productos</p> \n <div id='productDiv' >"
           totalPrice = 0
           for (let key in cartCookie) {
-            console.log(cartCookie[key])
             newComponent = component
             let id = key
             let stock = cartCookie[key]
             let componentData = findProductById(id)
-            console.log(component)
             newComponent = newComponent.replace("TITTLE",componentData.name);
             newComponent = newComponent.replace("PRICE", String(componentData.price) + " €");
             newComponent = newComponent.replace("value='0'", "value='" + stock+"'");

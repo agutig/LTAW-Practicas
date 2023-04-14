@@ -305,7 +305,7 @@ header{
     margin-left: 4%;
 }
 
-#cartProductPriceDiv #cartProductPrice{
+#cartProductPriceDiv .cartProductPrice{
     text-align: left;
     margin: auto;
     margin-left: 0;
@@ -313,7 +313,16 @@ header{
     font-size: 80%;
 }
 
-#cartProductPriceDiv #cartProductInput{
+
+#cartProductPriceDiv .cartProductPrice2{
+    text-align: left;
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 10%;
+    font-size: 80%;
+}
+
+#cartProductPriceDiv .cartProductInput{
     text-align: center;
     margin: auto;
     margin-left: 0;
