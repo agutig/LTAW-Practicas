@@ -276,7 +276,7 @@ header{
 }
 
 
-#cartProductId{
+.cartProductId{
 
     width: 60%;
     margin-bottom: 2%;
@@ -322,6 +322,14 @@ header{
     font-size: 80%;
 }
 
+#cartProductPriceDiv .cartProductPrice3{
+    text-align: left;
+    margin: auto;
+    margin-left: 0;
+    margin-bottom: 10%;
+    font-size: 80%;
+}
+
 #cartProductPriceDiv .cartProductInput{
     text-align: center;
     margin: auto;
@@ -335,7 +343,7 @@ header{
 }
 
 
-#productDiv #totalPrice{
+#productDiv #totalPriceFinal{
     text-align: left;
     font-weight: 700;
     color: #4d4d4d;

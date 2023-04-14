@@ -1,10 +1,12 @@
 
-<div id="cartProductId">
+<div class="cartProductId" productId="REPLACE_ID">
     <p id="cartProductName">TITTLE</p>
     <div id="cartProductPriceDiv">
-        <p class ="cartProductPrice">PRICE</p>
+        <p class ="cartProductPrice">PRICEUNIT</p>
         <p class="cartProductPrice2">x</p>
-        <input type="number"  min="0" max="100" value='0' step="1" class="cartProductInput">
-        <p class="cartProductPrice2"> = TOTALPRICE</p>
+        <input  unit="PRICEUNIT" type="number"  min="1" max="100" value='0' step="1" class="cartProductInput">
+        <p class="cartProductPrice2"> = </p>
+        <p class="cartProductPrice3" id="totalPrice">TOTALPRICE</p>
+        <p class="cartProductPrice2"> € </p>
     </div>
 </div>

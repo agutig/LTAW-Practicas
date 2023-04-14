@@ -290,13 +290,14 @@ async function manageCart(data,cookies , callback){
             let stock = cartCookie[key]
             let componentData = findProductById(id)
             newComponent = newComponent.replace("TITTLE",componentData.name);
-            newComponent = newComponent.replace("PRICE", String(componentData.price) + " €");
+            newComponent = newComponent.replace("REPLACE_ID",id);
+            newComponent = newComponent.replace(/PRICEUNIT/g, String(componentData.price));
             newComponent = newComponent.replace("value='0'", "value='" + stock+"'");
             newComponent = newComponent.replace("TOTALPRICE", String(Number(stock) * Number(componentData.price)));
             totalPrice += Number(stock) * Number(componentData.price)
             productsComponents += newComponent + "\n";
           }
-          productsComponents += " <p id='totalPrice'>Total: " + String(totalPrice) + "</p> </div>";
+          productsComponents += " <p id='totalPriceFinal'> Total: " + String(totalPrice) + "</p> </div>";
           data = data.replace("<!--REPLACE_PRODUCTS-->",productsComponents);
           data = data.replace("REPLACE_TEXT","Realizar pedido");
           callback(null,data)
