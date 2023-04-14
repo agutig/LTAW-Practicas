@@ -32,12 +32,16 @@ function sendPurchase(){
         purchase.push([ids[i].getAttribute('productId'), stock[i].value])
     }
 
+    console.log(purchase)
     var m = new XMLHttpRequest();
-    m.open("POST", "/Purchase", true);
+    m.open("POST", "/purchase", true);
     m.setRequestHeader("Content-Type", 'application/json');
     m.onreadystatechange = function() {
         if (m.readyState==4 && m.status == 200) {
-            location.href='/';
+            body = document.getElementsByClassName('mainBody')[0];
+            body.innerHTML = "<p id='cartTittle' style='margin: auto; margin-top: 2%'> Compra realizada con exito, puedes comprobar el pedido en tu perfil</p>" 
+            body.innerHTML += "<button id='cartButton'  style='margin: auto; margin-top: 2%' onclick=\"location.href='/' \" ;>Volver a la pagina de inicio</button>"
+
         } else if (m.readyState==4 && m.status == 404) {
             console.log("Error")
             errorText.innerHTML = "Email o contraseña incorrecta"
