@@ -191,16 +191,24 @@ const server = http.createServer((req, res) => {
     }else if(url.pathname == '/purchase'){
       req.on('data', (content)=> {
         content =  JSON.parse(content.toString())
-        let cookie = ""
-        for (let i = 0; i < content.length; i++){
-          let product = content[i][0] + "_" + content[i][1] + ":"
-          cookie +=product 
-        }
-
-        cookie = cookie + ":"
-        res.setHeader('Set-Cookie', ["orders=" + cookie]); //Eliminar cookies carrito 
-        res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"]); //Eliminar cookies carrito 
+        cookies = getCookies(req)
         console.log(content)
+        console.log(cookies.userName)
+        for (let i = 0; i <  DATABASE.clients.length; i++){
+          console.log("heyy")
+          console.log(DATABASE.clients[i])
+          if (DATABASE.clients[i].userName == cookies.userName){
+              DATABASE.clients[i].pedidos.push(content)
+              fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
+                if (err) throw err;
+                console.log('Updated JSON');
+              });
+              break; 
+          }
+        }
+        //res.setHeader('Set-Cookie', ["orders=" + cookie , "cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"]); //Añadir cookies de pedido, eliminar cookie carrito
+        res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"]); //Eliminar cookies carrito 
+        
         OK(res,"OK")
       });
     }
