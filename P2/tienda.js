@@ -8,11 +8,18 @@ const http = require('http');
 const { url } = require('inspector');
 
 
+
+///////////////////////////////////////////////////// SET
+const PUERTO = 9000;
+const FRONT_PATH = "front/"
+
 /////////////////////////////////////////////////////  DOWNLOAD DATA
 DATABASE =  fs.readFileSync('tienda.json', 'utf-8')
 DATABASE = JSON.parse(DATABASE)
 const imagePath = "images/"
 
+///////////////////////////////////////////////////// LOAD STATIC COMPONENTS
+let SEARCHBAR = fs.readFileSync(FRONT_PATH + 'searchBar.html', 'utf-8')
 
 /////////////////////////////////////////////////////  BASIC STATIC HTML 
 function print_info_req(req) {
@@ -59,9 +66,6 @@ function NOT_OK(res){
   
 }
 
-
-const PUERTO = 9000;
-const FRONT_PATH = "front/"
 
 const server = http.createServer((req, res) => {
     
@@ -241,6 +245,7 @@ function manageMain(data, DATABASE , cookies){
 function manageProductData(data, DATABASE , id ,cookies){
 
   data = data.toString()
+  data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
@@ -256,6 +261,7 @@ function manageProductData(data, DATABASE , id ,cookies){
         for (let j = 0; j <  DATABASE.products[i].description.length; j++){
           data = data.replace("placeholderESP",  DATABASE.products[i].description[j]);
         }
+        break;
       }
   }
   return data
