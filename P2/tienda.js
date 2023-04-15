@@ -2,10 +2,8 @@
 //Test:  http://localhost:9000/
 
 //Modules
-const { error } = require('console');
 const fs = require('fs');
 const http = require('http');
-const { url } = require('inspector');
 
 
 
@@ -26,7 +24,7 @@ function print_info_req(req) {
 
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
 
-  if (true){
+  if (false){
     console.log("");
     console.log("Mensaje de solicitud");
     console.log("====================");
@@ -89,7 +87,7 @@ const server = http.createServer((req, res) => {
     }else if(url.pathname == "/profile.html"){
       fs.readFile(FRONT_PATH + "profile.html", (err, data) => { if(!err){
         cookies = getCookies(req)
-        data = manageProfilePage(data, DATABASE ,cookies)
+        data = manageProfilePage(data,cookies)
         OK(res,data)}else{NOT_OK(res)}});
 
     }else if (url.pathname == '/cart.html'){
@@ -291,11 +289,23 @@ function manageSearchPage(html ,list,cookies){
 }
 
 
-function manageProfilePage(data,DATABASE, cookies){
+function manageProfilePage(data,cookies){
   data = data.toString()
   data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
   if(cookies['userName'] != null){
+    user = findUserByTag(cookies["userName"])
+    console.log(user.pedidos)
     data = data.replace("userTag",cookies["userName"]);
+    data = data.replace("userName",user["name"]);
+    data = data.replace("userEmail",user["email"]);
+    if(user.pedidos.length == 0){
+      data = data.replace("<!--REPLACEORDERS-->","<p>No tienes ningun pedido</p>");
+    }else{
+      for (let i = 0; i <  DATABASE.clients.length; i++){
+        console.log(user.pedidos[i])
+      }
+    }
+
   }
   return data
 }
@@ -377,6 +387,17 @@ function findProductById(id){
   return element
 }
 
+function findUserByTag(tag){
+
+  let user;
+  DATABASE.clients.map(function(client) {
+    if (client['userName'] == tag) {
+      user = client;
+
+    }
+  });
+  return user
+}
 
 function convert2Dic(params , split){
 
