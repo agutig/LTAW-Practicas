@@ -18,6 +18,7 @@ const imagePath = "images/"
 
 ///////////////////////////////////////////////////// LOAD STATIC COMPONENTS
 let SEARCHBAR = fs.readFileSync(FRONT_PATH + 'searchBar.html', 'utf-8')
+let ORDERTEMPLATE = fs.readFileSync(FRONT_PATH + 'orderTemplate.html', 'utf-8')
 
 /////////////////////////////////////////////////////  BASIC STATIC HTML 
 function print_info_req(req) {
@@ -294,16 +295,28 @@ function manageProfilePage(data,cookies){
   data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
   if(cookies['userName'] != null){
     user = findUserByTag(cookies["userName"])
-    console.log(user.pedidos)
+    data = data.replace("Log in",cookies['userName']);
+    data = data.replace("login.html", "profile.html");
     data = data.replace("userTag",cookies["userName"]);
     data = data.replace("userName",user["name"]);
     data = data.replace("userEmail",user["email"]);
     if(user.pedidos.length == 0){
       data = data.replace("<!--REPLACEORDERS-->","<p>No tienes ningun pedido</p>");
     }else{
-      for (let i = 0; i <  DATABASE.clients.length; i++){
-        console.log(user.pedidos[i])
+      let components = ""
+      for (let i = 0; i <  user.pedidos.length; i++){
+        components += "<div class='order'>"
+        for (let j = 0; j <  user.pedidos[i].length; j++){
+          newOrder = ORDERTEMPLATE
+          console.log(user.pedidos[i][j])
+          let product = findProductById(user.pedidos[i][j][0])
+          newOrder = newOrder.replace("TITTLE",product.name);
+          newOrder = newOrder.replace("UNITS",user.pedidos[i][j][1]);
+          components += newOrder
+        }
+        components += "</div>"
       }
+      data = data.replace("<!--REPLACEORDERS-->",components);
     }
 
   }

@@ -267,3 +267,15 @@ header{
     color: #fafafa;
     background-color: #766cff;
 }
+
+
+#ordersDiv .order {
+    border: 1px solid black;
+}
+
+
+#ordersDiv .order .orderProductDiv{
+    display: flex;
+    flex-direction: row;
+
+}
