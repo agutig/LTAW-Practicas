@@ -228,6 +228,7 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 
 function manageMain(data, DATABASE , cookies){
   data = data.toString()
+  data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
@@ -292,6 +293,7 @@ function manageSearchPage(html ,list,cookies){
 
 function manageProfilePage(data,DATABASE, cookies){
   data = data.toString()
+  data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
   if(cookies['userName'] != null){
     data = data.replace("userTag",cookies["userName"]);
   }
@@ -301,6 +303,7 @@ function manageProfilePage(data,DATABASE, cookies){
 
 async function manageCart(data,cookies , callback){
   data = data.toString()
+  data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies["userName"]);
     data = data.replace("login.html", "profile.html");
