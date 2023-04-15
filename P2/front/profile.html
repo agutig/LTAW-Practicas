@@ -6,22 +6,24 @@
   <link rel="icon" type="image/ico" href="/icon.ico"/>   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script type="text/javascript" src="/code/profile.js"></script>
+  <link rel="stylesheet" href="style/profile.css"> 
 </head>
 
 
 <body>
 
-<div>
-    <img src="/images/gatoTiste.png">
-    <p>Nombre de usuario: userTag</p>
-    <p>Nombre: userName</p>
-    <p>Email: userEmail</p>
-    <p>Pedidos:</p>
-    <div>
-        <orders/>
+<div class="mainBody">
+    <div id="userDiv">
+      <img id="profileImage"  src="/images/gatoTiste.png">
+      <p>Nombre de usuario: userTag</p>
+      <p>Nombre: userName</p>
+      <p>Email: userEmail</p>
+      <p>Pedidos:</p>
+      <div id="ordersDiv">
+          <p>No tienes ningun pedido</p>
+      </div>
+      <button onclick="closeSesion()">Cerrar sesion</button>
     </div>
-    <button onclick="closeSesion()">Cerrar sesion</button>
-
 </div>
 
 </body>
