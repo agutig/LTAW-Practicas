@@ -161,7 +161,7 @@ const server = http.createServer((req, res) => {
       }
 
     }else if(url.pathname == "/closeSesion"){
-      res.setHeader('Set-Cookie', ["userName= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"] );
+      res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT", "userName= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"] );
       OK(res,"200 OK")
 
     }else{
@@ -296,6 +296,7 @@ function manageProfilePage(data,cookies){
     user = findUserByTag(cookies["userName"])
     data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
+    data = data.replace("REPLACEIMG",user['image']);
     data = data.replace("userTag",cookies["userName"]);
     data = data.replace("userName",user["name"]);
     data = data.replace("userEmail",user["email"]);

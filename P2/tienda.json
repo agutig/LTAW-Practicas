@@ -3,7 +3,7 @@
     {
       "name": "Iphone 14 pro",
       "id": 0,
-      "price": 1000,
+      "price": 1100,
       "marca": "apple",
       "stock": 6,
       "slogan": "Lo último de la manzana",
@@ -27,7 +27,7 @@
     {
       "name": "Samsung Galaxy S23 Ultra",
       "id": 1,
-      "price": 1000,
+      "price": 1020,
       "marca": "Samsung",
       "slogan": "Tecnología punta",
       "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
@@ -50,7 +50,7 @@
     {
       "name": "Xiaomi 13 pro",
       "id": 2,
-      "price": 1000,
+      "price": 900,
       "marca": "Xiaomi",
       "slogan": "El rey del mercado",
       "stock": 6,
@@ -74,7 +74,7 @@
     {
       "name": "OPPO find N2 flip",
       "id": 3,
-      "price": 1000,
+      "price": 1100,
       "marca": "OPPO",
       "slogan": "Doblando el color",
       "stock": 6,
@@ -98,7 +98,7 @@
     {
       "name": "Realme GT Neo 3T",
       "id": 4,
-      "price": 1000,
+      "price":450,
       "marca": "Realme",
       "slogan": "Rendimiento acelerado NEO",
       "stock": 6,
@@ -122,7 +122,7 @@
     {
       "name": "POCO X4 GT",
       "id": 5,
-      "price": 1000,
+      "price": 199,
       "marca": "Xiaomi",
       "slogan": "Velocidad sin límites",
       "stock": 6,
@@ -146,7 +146,7 @@
     {
       "name": "Samsung Galaxy A53 5G",
       "id": 6,
-      "price": 1000,
+      "price": 380,
       "marca": "Samsung",
       "slogan": "Sencillez que destaca",
       "stock": 6,
@@ -170,7 +170,7 @@
     {
       "name": "Xiaomi Redmi A1",
       "id": 7,
-      "price": 1000,
+      "price": 250,
       "marca": "Xiaomi",
       "slogan": "Diseño elegante y moderno",
       "stock": 6,
@@ -194,7 +194,7 @@
     {
       "name": "Vivo Y21s",
       "id": 8,
-      "price": 1000,
+      "price": 80,
       "marca": "Vivo",
       "slogan": "Diseñado para adaptarse a ti y a tu estilo de vida",
       "stock": 6,
@@ -218,7 +218,7 @@
     {
       "name": "Realme C35",
       "id": 9,
-      "price": 1000,
+      "price": 102,
       "marca": "Realme",
       "slogan": "Innovación, eficiencia y estilo en un solo dispositivo",
       "stock": 6,
@@ -242,7 +242,7 @@
     {
       "name": "Nokia G11",
       "id": 10,
-      "price": 1000,
+      "price": 130,
       "marca": "Nokia",
       "slogan": "El móvil que te lleva al futuro",
       "stock": 6,
@@ -266,7 +266,7 @@
     {
       "name": "POCO M5",
       "id": 11,
-      "price": 1000,
+      "price": 100,
       "marca": "Xiaomi",
       "slogan": "Todo lo que necesitas en un móvil, y más",
       "stock": 6,
@@ -294,7 +294,7 @@
       "password": "password",
       "name": "Alvaro Gutierrez",
       "email": "guti@guti.com",
-      "image": "/images/gatoTiste",
+      "image": "/images/gatoTiste.png",
       "pedidos": [
         [
           [
@@ -310,6 +310,29 @@
       "name": "Root",
       "email": "root@root.com",
       "image": "images/none.png",
+      "pedidos": []
+    },
+    {
+      "userName": "jbalvin",
+      "password": "jbalvinMejorQueMaluma",
+      "name": "José Álvaro Osorio Balvin",
+      "email": "jbalvin@jmail.com",
+      "image": "images/cliente_1.png",
+      "pedidos": [
+        [
+          [
+            "0",
+            "1"
+          ]
+        ]
+      ]
+    },
+    {
+      "userName": "deltoro",
+      "password": "pinocho",
+      "name": "Guillermo del Todo",
+      "email": "deltoro@jmail.com",
+      "image": "images/cliente_2.png",
       "pedidos": []
     }
   ]
