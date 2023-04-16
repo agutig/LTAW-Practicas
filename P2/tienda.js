@@ -18,6 +18,7 @@ const imagePath = "images/"
 
 ///////////////////////////////////////////////////// LOAD STATIC COMPONENTS
 let SEARCHBAR = fs.readFileSync(FRONT_PATH + 'searchBar.html', 'utf-8')
+let FOOTER = fs.readFileSync(FRONT_PATH + 'footer.html', 'utf-8')
 let ORDERTEMPLATE = fs.readFileSync(FRONT_PATH + 'orderTemplate.html', 'utf-8')
 
 /////////////////////////////////////////////////////  BASIC STATIC HTML 
@@ -49,7 +50,6 @@ function OK(res,data){
     res.statusMessage = "OK"
     res.write(data);
     res.end();
-    //console.log("    200 OK")
 }
 
 
@@ -115,11 +115,8 @@ const server = http.createServer((req, res) => {
           OK(res,"200 OK")
         }else{
           cart = cookies['cart'].split(":")
-          console.log(cart)
           cart = convert2Dic(cart,"_")
-          console.log(cart)
           if(cart[product] != null){
-            console.log(cart[product])
             cart[product] = String(Number(cart[product]) + 1) 
           }else{
             cart[product] = "1";
@@ -195,11 +192,7 @@ const server = http.createServer((req, res) => {
       req.on('data', (content)=> {
         content =  JSON.parse(content.toString())
         cookies = getCookies(req)
-        console.log(content)
-        console.log(cookies.userName)
         for (let i = 0; i <  DATABASE.clients.length; i++){
-          console.log("heyy")
-          console.log(DATABASE.clients[i])
           if (DATABASE.clients[i].userName == cookies.userName){
               DATABASE.clients[i].pedidos.push(content)
               fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
@@ -228,6 +221,7 @@ console.log("Servidor activado. Escuchando en puerto: " + PUERTO);
 function manageMain(data, DATABASE , cookies){
   data = data.toString()
   data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
+  data = data.replace("<!--INSERTFOOTER-->",FOOTER);
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
@@ -246,6 +240,7 @@ function manageProductData(data, DATABASE , id ,cookies){
 
   data = data.toString()
   data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
+  data = data.replace("<!--INSERTFOOTER-->",FOOTER);
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies['userName']);
     data = data.replace("login.html", "profile.html");
@@ -268,31 +263,35 @@ function manageProductData(data, DATABASE , id ,cookies){
 }
 
 
-function manageSearchPage(html ,list,cookies){
+function manageSearchPage(data ,list,cookies){
 
-  html = html.toString()
+  data = data.toString()
+  data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
+  data = data.replace("<!--INSERTFOOTER-->",FOOTER);
   if(cookies['userName'] != null){
-    html = html.replace("Log in",cookies['userName']);
-    html = html.replace("login.html", "profile.html");
-  }
+    data = data.replace("Log in",cookies['userName']);
+    data = data.replace("login.html", "profile.html");
+  }data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
+  data = data.replace("<!--INSERTFOOTER-->",FOOTER);
 
   if (list.length == 0){
-    html = html.replace("replaceText" , "Lo sentimos,no tenemos ninguna sugerencia para esta busqueda." + "\n" +
+    data = data.replace("replaceText" , "Lo sentimos,no tenemos ninguna sugerencia para esta busqueda." + "\n" +
      "Es probable que no tengamos ese producto :(  <img id='gatoTiste' src='images/gatoTiste.png'> ")
   }else{
     text = "<p>Estos son los productos mas similares a tu busqueda:</p>"
     for (let i=0; i < list.length; i++) {
       text += "<button class='suggestionButton' onclick=\"location.href='/product.html?product_id=" + list[i][1]+"';\">"+ list[i][0] +"</button>"
     }
-    html = html.replace("replaceText" , text)
+    data = data.replace("replaceText" , text)
   }
-  return html
+  return data
 }
 
 
 function manageProfilePage(data,cookies){
   data = data.toString()
   data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
+  data = data.replace("<!--INSERTFOOTER-->",FOOTER);
   if(cookies['userName'] != null){
     user = findUserByTag(cookies["userName"])
     data = data.replace("Log in",cookies['userName']);
@@ -305,16 +304,19 @@ function manageProfilePage(data,cookies){
     }else{
       let components = ""
       for (let i = 0; i <  user.pedidos.length; i++){
-        components += "<div class='order'>"
+        components += "<div class='order'> <p class='orderDivText'>Pedido</p>"
+        let total = 0
         for (let j = 0; j <  user.pedidos[i].length; j++){
           newOrder = ORDERTEMPLATE
-          console.log(user.pedidos[i][j])
           let product = findProductById(user.pedidos[i][j][0])
           newOrder = newOrder.replace("TITTLE",product.name);
           newOrder = newOrder.replace("UNITS",user.pedidos[i][j][1]);
+          let price = product.price * Number(user.pedidos[i][j][1])
+          newOrder = newOrder.replace("PRICE",price);
           components += newOrder
+          total +=price
         }
-        components += "</div>"
+        components += "<p class='orderDivText2'>Total: " + total +" €</p>  </div>"
       }
       data = data.replace("<!--REPLACEORDERS-->",components);
     }
@@ -327,6 +329,7 @@ function manageProfilePage(data,cookies){
 async function manageCart(data,cookies , callback){
   data = data.toString()
   data = data.replace("<!--INSERTSEARCHBAR-->",SEARCHBAR);
+  data = data.replace("<!--INSERTFOOTER-->",FOOTER);
   if(cookies['userName'] != null){
     data = data.replace("Log in",cookies["userName"]);
     data = data.replace("login.html", "profile.html");
