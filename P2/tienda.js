@@ -217,11 +217,9 @@ const server = http.createServer((req, res) => {
           }
         }
 
-        console.log(content)
         // This can be highly optimized
         for (let i = 0; i <  DATABASE.products.length; i++){
           for (let j = 0; j <  content.length; j++){
-            console.log(DATABASE.products[i])
             if (DATABASE.products[i].id == content[j][0]){
               DATABASE.products[i].stock = DATABASE.products[i].stock - content[j][1]
               break; 
@@ -283,7 +281,23 @@ function manageProductData(data, DATABASE , id ,cookies){
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
         data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
-        if (DATABASE.products[i].stock > 0 ){
+
+        let reservedStock = 0
+
+        if(cookies['cart'] != null){
+          cartCookie = cookies['cart'].split(":")
+          cartCookie = convert2Dic(cartCookie,"_")
+          console.log(cartCookie)
+          for (let key in cartCookie) {
+            if (key ==  DATABASE.products[i].id){
+                reservedStock = Number(cartCookie[key])
+            }
+          }
+        }
+        let stock = DATABASE.products[i].stock - reservedStock
+
+        data = data.replace("replaceStock",  stock);
+        if (stock > 0 ){
           data = data.replace("replaceClass", "'buyButton' onclick='buyButton(REPLACE_ID);'");
           data = data.replace("REPLACE_ID", id);
           data = data.replace("replaceButtonText", "Añadir al carrito");
@@ -391,6 +405,7 @@ async function manageCart(data,cookies , callback){
             newComponent = newComponent.replace(/PRICEUNIT/g, String(componentData.price));
             newComponent = newComponent.replace("value='0'", "value='" + stock+"'");
             newComponent = newComponent.replace("TOTALPRICE", String(Number(stock) * Number(componentData.price)));
+            newComponent = newComponent.replace("replaceMAX", componentData.stock);
             totalPrice += Number(stock) * Number(componentData.price)
             productsComponents += newComponent + "\n";
           }
@@ -473,7 +488,6 @@ function getCookies(req){
     cookie = convert2Dic(cookie,"=")
     return cookie
   }else{
-    console.log("No cookies encontradas: "  + String([cookie]))
     return {}
   }
 }

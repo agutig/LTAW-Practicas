@@ -350,7 +350,7 @@ header{
     font-weight: 500;
 }
 
-.dataDiv1 .dataIntro{
+.dataDiv1 .dataIntro1{
     font-weight: 300;
     margin-left: 10%;
     margin-right: 10%;
@@ -358,6 +358,26 @@ header{
     margin-top: -4vh;
     margin-bottom: 8vh;
 }
+
+
+.dataDiv1 .dataIntroStockDataDiv{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    margin-top: -4%;
+    margin-bottom: 8%;
+}
+
+
+.dataDiv1 .dataIntro2{
+    font-weight: 300;
+    font-size: 80%;
+    margin: auto;
+
+}
+
 
 .dataDiv1 .buyButton{
     margin-right: -60%;

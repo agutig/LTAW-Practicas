@@ -22,4 +22,8 @@
 
 - Dar varias veces al boton de añadir al carrito, SI aumenta el numero de productos en el carrito
 
-- Introducidos pequeños detalles de control de stock (seguramente se mejore mas)
+- Introducidos pequeños detalles de control de stock
+    - Cuando se hace una compra se actualiza el stock del JSON
+    - No te deja comprar mas del stock disponible
+    - La pagina de producto tiene un contador de stock que se va reduciendo segun va añadiendo productos al carrito,
+      si tienes cookies de ese producto se tienen en cuenta.

@@ -59,6 +59,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 function buyButton(id){
 
     feedback = document.getElementById("addFeedback");
+    stockNumber =  document.getElementById("stockNumber");
+    productButton =  document.getElementById("productButton");
+
+    stock = Number(stockNumber.innerHTML) - 1
+    stockNumber.innerHTML = String( stock )
+
+    if (stock <=0 ){
+        productButton.classList.replace("buyButton", "noStock");
+        productButton.onclick = null;
+    }
 
     var m = new XMLHttpRequest();
     m.open("GET", "/addCart?cart=" + String(id), true);
