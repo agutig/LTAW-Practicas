@@ -164,7 +164,8 @@ const server = http.createServer((req, res) => {
       cookies = getCookies(req)
       for (let i = 0; i <  DATABASE.clients.length; i++){
         if (DATABASE.clients[i].userName == cookies.userName){
-            DATABASE.clients[i].cart = cookies.cart
+
+            if(cookies.cart != undefined && cookies.cart != null  ){DATABASE.clients[i].cart = cookies.cart}else{DATABASE.clients[i].cart = ""}
             fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
               if (err) throw err;
               console.log('Updated JSON');
@@ -189,7 +190,12 @@ const server = http.createServer((req, res) => {
         if(content['userName'] != ""){
           check = checkUser(content['userName'] , content['password'] ,DATABASE)
           if (check[0]) {
-            res.setHeader('Set-Cookie',["userName="+content['userName'] ,"cart=" + check[1] ]);
+            if (check[1] != "" && check[1] != undefined){
+              res.setHeader('Set-Cookie',["userName="+content['userName'] ,"cart=" + check[1] ]);
+            }else{
+              res.setHeader('Set-Cookie',["userName="+content['userName']]);
+            }
+            
             OK(res,"")
           }else{
             NOT_OK(res)

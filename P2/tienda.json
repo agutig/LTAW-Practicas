@@ -313,8 +313,25 @@
       "name": "José Álvaro Osorio Balvin",
       "email": "jbalvin@jmail.com",
       "image": "images/cliente_1.png",
-      "pedidos": [],
-      "cart": "2_3:5_1"
+      "pedidos": [
+        [
+          [
+            "2",
+            "3"
+          ],
+          [
+            "5",
+            "1"
+          ]
+        ],
+        [
+          [
+            "2",
+            "1"
+          ]
+        ]
+      ],
+      "cart": "2_1"
     },
     {
       "userName": "deltoro",
