@@ -98,7 +98,7 @@
     {
       "name": "Realme GT Neo 3T",
       "id": 4,
-      "price":450,
+      "price": 450,
       "marca": "Realme",
       "slogan": "Rendimiento acelerado NEO",
       "stock": 6,
@@ -295,14 +295,8 @@
       "name": "Alvaro Gutierrez",
       "email": "guti@guti.com",
       "image": "/images/gatoTiste.png",
-      "pedidos": [
-        [
-          [
-            "2",
-            "1"
-          ]
-        ]
-      ]
+      "pedidos": [],
+      "cart": ""
     },
     {
       "userName": "root",
@@ -310,7 +304,8 @@
       "name": "Root",
       "email": "root@root.com",
       "image": "images/none.png",
-      "pedidos": []
+      "pedidos": [],
+      "cart": ""
     },
     {
       "userName": "jbalvin",
@@ -318,14 +313,8 @@
       "name": "José Álvaro Osorio Balvin",
       "email": "jbalvin@jmail.com",
       "image": "images/cliente_1.png",
-      "pedidos": [
-        [
-          [
-            "0",
-            "1"
-          ]
-        ]
-      ]
+      "pedidos": [],
+      "cart": "2_3:5_1"
     },
     {
       "userName": "deltoro",
@@ -333,7 +322,8 @@
       "name": "Guillermo del Todo",
       "email": "deltoro@jmail.com",
       "image": "images/cliente_2.png",
-      "pedidos": []
+      "pedidos": [],
+      "cart": ""
     }
   ]
 }

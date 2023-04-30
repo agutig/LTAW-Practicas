@@ -161,6 +161,17 @@ const server = http.createServer((req, res) => {
       }
 
     }else if(url.pathname == "/closeSesion"){
+      cookies = getCookies(req)
+      for (let i = 0; i <  DATABASE.clients.length; i++){
+        if (DATABASE.clients[i].userName == cookies.userName){
+            DATABASE.clients[i].cart = cookies.cart
+            fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
+              if (err) throw err;
+              console.log('Updated JSON');
+            });
+            break; 
+        }
+      }
       res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT", "userName= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"] );
       OK(res,"200 OK")
 
@@ -176,8 +187,9 @@ const server = http.createServer((req, res) => {
         content = (content.toString()).split("&")
         content =  convert2Dic(content,"=")
         if(content['userName'] != ""){
-          if (checkUser(content['userName'] , content['password'] ,DATABASE)) {
-            res.setHeader('Set-Cookie',"userName="+content['userName'] );
+          check = checkUser(content['userName'] , content['password'] ,DATABASE)
+          if (check[0]) {
+            res.setHeader('Set-Cookie',["userName="+content['userName'] ,"cart=" + check[1] ]);
             OK(res,"")
           }else{
             NOT_OK(res)
@@ -441,13 +453,15 @@ function getCookies(req){
 
 function checkUser(user,password,DATABASE){
   found = false
+  cart = ""
   for (let i = 0; i <  DATABASE.clients.length; i++){
     if(DATABASE.clients[i].userName == user && DATABASE.clients[i].password == password ){
       found = true;
+      cart = DATABASE.clients[i].cart
       break;
     }
   }
-  return found
+  return [found,cart]
 }
 
 function checkIDExists(search){
