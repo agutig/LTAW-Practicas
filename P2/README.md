@@ -27,3 +27,11 @@
     - No te deja comprar mas del stock disponible
     - La pagina de producto tiene un contador de stock que se va reduciendo segun va añadiendo productos al carrito,
       si tienes cookies de ese producto se tienen en cuenta.
+
+
+
+TODO: 
+    - Hacer que se actualice el precio de un producto con la base de datos
+    - actualizar el sombreado de la pagina de categorias
+    - actualizar con mejoras de practicas anteriores
+    - Eliminar productos del carrito 

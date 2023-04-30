@@ -5,7 +5,7 @@
       "id": 0,
       "price": 1100,
       "marca": "apple",
-      "stock": 19,
+      "stock": 18,
       "slogan": "Lo último de la manzana",
       "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
       "description": [
@@ -314,7 +314,14 @@
       "name": "José Álvaro Osorio Balvin",
       "email": "jbalvin@jmail.com",
       "image": "images/cliente_1.png",
-      "pedidos": [],
+      "pedidos": [
+        [
+          [
+            "0",
+            "1"
+          ]
+        ]
+      ],
       "cart": "0_19"
     },
     {
