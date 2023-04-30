@@ -5,7 +5,7 @@
       "id": 0,
       "price": 1100,
       "marca": "apple",
-      "stock": 6,
+      "stock": 4,
       "slogan": "Lo último de la manzana",
       "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
       "description": [
@@ -28,7 +28,7 @@
       "name": "Samsung Galaxy S23 Ultra",
       "id": 1,
       "price": 1020,
-      "stock": 6,
+      "stock": -2,
       "marca": "Samsung",
       "slogan": "Tecnología punta",
       "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
@@ -408,9 +408,31 @@
             "0",
             "3"
           ]
+        ],
+        [
+          [
+            "1",
+            "3"
+          ]
+        ],
+        [
+          [
+            "1",
+            "1"
+          ]
+        ],
+        [
+          [
+            "0",
+            "2"
+          ],
+          [
+            "1",
+            "2"
+          ]
         ]
       ],
-      "cart": "2_1"
+      "cart": ""
     },
     {
       "userName": "deltoro",

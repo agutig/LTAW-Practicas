@@ -398,6 +398,18 @@ header{
     box-shadow: none;
 }
 
+.dataDiv1 .noStock{
+    color: rgb(255, 63, 63);
+    margin-right: -60%;
+    font-size: 100%;
+    font-weight: 600;
+    text-align: left;
+    border: none;
+    border-radius: 20px;
+    background-color: #00000000;
+}
+
+
 #addFeedback{
     margin-top: -5%;
     margin-bottom: 2%;

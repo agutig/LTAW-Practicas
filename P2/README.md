@@ -19,3 +19,7 @@
     - No has iniciado sesion
     - No tienes ningun producto en la lista
     - La cesta de la compra en si
+
+- Dar varias veces al boton de añadir al carrito, SI aumenta el numero de productos en el carrito
+
+- Introducidos pequeños detalles de control de stock (seguramente se mejore mas)

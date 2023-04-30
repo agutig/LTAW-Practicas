@@ -283,7 +283,15 @@ function manageProductData(data, DATABASE , id ,cookies){
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
         data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
-        data = data.replace("REPLACE_ID", id);
+        if (DATABASE.products[i].stock > 0 ){
+          data = data.replace("replaceClass", "'buyButton' onclick='buyButton(REPLACE_ID);'");
+          data = data.replace("REPLACE_ID", id);
+          data = data.replace("replaceButtonText", "Añadir al carrito");
+        }else{
+          data = data.replace("replaceClass", "noStock");
+          data = data.replace("replaceButtonText", "Sin stock");
+        }
+        
         for (let j = 0; j <  DATABASE.products[i].description.length; j++){
           data = data.replace("placeholderESP",  DATABASE.products[i].description[j]);
         }
