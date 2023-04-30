@@ -28,7 +28,7 @@
       "name": "Samsung Galaxy S23 Ultra",
       "id": 1,
       "price": 1020,
-      "stock": 2,
+      "stock": 0,
       "marca": "Samsung",
       "slogan": "Tecnología punta",
       "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
@@ -54,7 +54,7 @@
       "price": 900,
       "marca": "Xiaomi",
       "slogan": "El rey del mercado",
-      "stock": 10,
+      "stock": 7,
       "intro": "Sumérgete en una experiencia única de navegación y entretenimiento con nuestro nuevo modelo de móvil. Con su pantalla curva de última generación, sonido envolvente y tecnología de vanguardia, sentirás que la magia está en tus manos. Además, con una batería de larga duración y resistencia al agua, nada te detendrá. ¡Bienvenido al futuro de la movilidad!",
       "description": [
         "Plataforma móvil Snapdragon® 8 Gen 2Proceso de fabricación de 4 nm y bajo consumo",
@@ -319,6 +319,16 @@
           [
             "0",
             "1"
+          ]
+        ],
+        [
+          [
+            "1",
+            "2"
+          ],
+          [
+            "2",
+            "3"
           ]
         ]
       ],
