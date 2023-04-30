@@ -213,13 +213,26 @@ const server = http.createServer((req, res) => {
         for (let i = 0; i <  DATABASE.clients.length; i++){
           if (DATABASE.clients[i].userName == cookies.userName){
               DATABASE.clients[i].pedidos.push(content)
-              fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
-                if (err) throw err;
-                console.log('Updated JSON');
-              });
               break; 
           }
         }
+
+        console.log(content)
+        // This can be highly optimized
+        for (let i = 0; i <  DATABASE.products.length; i++){
+          for (let j = 0; j <  content.length; j++){
+            console.log(DATABASE.products[i])
+            if (DATABASE.products[i].id == content[j][0]){
+              DATABASE.products[i].stock = DATABASE.products[i].stock - content[j][1]
+              break; 
+            }
+          }
+        }
+
+        fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
+          if (err) throw err;
+          console.log('Updated JSON');
+        });
         //res.setHeader('Set-Cookie', ["orders=" + cookie , "cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"]); //Añadir cookies de pedido, eliminar cookie carrito
         res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"]); //Eliminar cookies carrito 
         
