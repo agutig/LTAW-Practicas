@@ -19,8 +19,18 @@ const server = http.Server(app);
 const io = new socketServer(server);
 
 app.post('/login', (req, res) => {
-    console.log("hey")
-    res.send(CHAT_HTML);
+    let userName = ""
+    let data = '';
+    req.on('data', chunk => {
+        data += chunk;
+    });
+    req.on('end', () => {
+        const datos = new URLSearchParams(data);
+        userName = datos.get('userName');
+        res.send(CHAT_HTML);
+        io.emit("server", "Se ha conectado: " + userName);
+    });
+
 });
 /*
 app.get('/', (req, res) => {
@@ -34,6 +44,11 @@ io.on('connect', (socket) => {
 
     console.log('nueva conexión')
 
+    /*
+    socket.on('connect_login', (msg)=> {
+        socket.broadcast.emit("server", "Se ha conectado: " + msg);
+    });  
+    */
 
     socket.on('disconnect', function(){
         console.log('CONEXIÓN TERMINADA');
@@ -43,7 +58,7 @@ io.on('connect', (socket) => {
     socket.on("message", (msg)=> {
     //-- Mensaje recibido: Hacer eco
         console.log("Mensaje Recibido!: " + msg);
-        socket.send(msg);
+        socket.broadcast.emit("message",msg);
     });
 
 });
