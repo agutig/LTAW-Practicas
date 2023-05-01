@@ -1,4 +1,4 @@
-//http://localhost:8080/
+//http://localhost:9000/
 
 //-- Cargar las dependencias
 const socketServer = require('socket.io').Server;
@@ -7,8 +7,9 @@ const express = require('express');
 const fs = require('fs');
 
 
-const PUERTO = 8080;
-CHAT_HTML =  fs.readFileSync('public/userChat.html', 'utf-8')
+const PUERTO = 9000;
+const CHAT_HTML =  fs.readFileSync('public/userChat.html', 'utf-8')
+let clients = []
 const app = express();
 
 //Esto es necesario para que el servidor le envíe al cliente la biblioteca socket.io para el cliente
@@ -28,15 +29,10 @@ app.post('/login', (req, res) => {
         const datos = new URLSearchParams(data);
         userName = datos.get('userName');
         res.send(CHAT_HTML);
-        io.emit("server", "Se ha conectado: " + userName);
     });
 
 });
-/*
-app.get('/', (req, res) => {
-  res.send('Bienvenido a mi aplicación Web!!!');
-});
-*/
+
 
 /* GESTIÓN SOCKETS IO. */
 
@@ -44,21 +40,26 @@ io.on('connect', (socket) => {
 
     console.log('nueva conexión')
 
-    /*
-    socket.on('connect_login', (msg)=> {
+    socket.on("connect_login", (msg)=> {
+        console.log("Mensaje Recibido!: " + msg);
+        clients.push({name: msg , id: socket.id})
         socket.broadcast.emit("server", "Se ha conectado: " + msg);
-    });  
-    */
+        socket.emit("server", "Wuolololooo bienvenido " + msg);
+    });
 
     socket.on('disconnect', function(){
         console.log('CONEXIÓN TERMINADA');
+        clients = clients.filter(client => client.id != socket.id)
     });  
 
 
     socket.on("message", (msg)=> {
-    //-- Mensaje recibido: Hacer eco
         console.log("Mensaje Recibido!: " + msg);
-        socket.broadcast.emit("message",msg);
+        if (msg[1][0] == "/"){
+            spetialCommands(msg[1], socket , msg[0])
+        }else{
+            socket.broadcast.emit("message",msg);
+        }
     });
 
 });
@@ -66,3 +67,50 @@ io.on('connect', (socket) => {
 //-- Lanzar el servidor HTTP
 server.listen(PUERTO);
 console.log("Escuchando en puerto: " + PUERTO);
+
+
+function spetialCommands(comand, socket , name){
+
+    switch(comand){
+
+        case "/help":
+            socket.emit("server" ,"Comandos Disponibles: <br> - /list: Devuelve una lista con los comandos disponibles" + 
+            "<br> - /hello : Devuelve el saludo <br> - /date : Da la fehca actual ")
+            break;
+
+        case "/list":
+            let response = "Lista de usuarios conectados (menos tú, claro)"
+            for (let i = 0; i <  clients.length; i++){
+                if (socket.id != clients[i].id){
+                    response += "<br> - " + clients[i].name
+                }
+            }
+            console.log(clients)
+            socket.emit("server" ,response)
+            break;
+
+        case "/hello":
+            socket.emit("server" ,"Hola " + name + " !")
+            break;
+
+        case "/date":
+            socket.emit("server" ,"Esta es la fecha actual: " + getDate())
+            break;
+
+    }
+
+}
+
+
+function getDate(){
+    const fechaActual = new Date();
+    const dia = fechaActual.getDate().toString().padStart(2, '0');
+    const mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0');
+    const anio = fechaActual.getFullYear();
+    const hora = fechaActual.getHours().toString().padStart(2, '0');
+    const minutos = fechaActual.getMinutes().toString().padStart(2, '0');
+    const segundos = fechaActual.getSeconds().toString().padStart(2, '0');
+
+    const fechaHora = `${dia}/${mes}/${anio} ${hora}:${minutos}:${segundos}`;
+    return fechaHora
+}
