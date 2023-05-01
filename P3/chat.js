@@ -16,10 +16,11 @@ app.use(express.static('public'));
 const server = http.Server(app);
 const io = new socketServer(server);
 
+/*
 app.get('/', (req, res) => {
   res.send('Bienvenido a mi aplicación Web!!!');
 });
-
+*/
 
 /* GESTIÓN SOCKETS IO. */
 
