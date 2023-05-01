@@ -8,8 +8,6 @@ function login() {
     password = document.getElementById("password").value;
     errorText = document.getElementById("errorText");
     errorText.innerHTML = ""
-    console.log(userName)
-    console.log(password)
     var m = new XMLHttpRequest();
     m.open("POST", "/login", true);
     m.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

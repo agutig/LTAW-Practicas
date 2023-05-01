@@ -5,22 +5,14 @@
   <title>ChatGPT_REMIX</title>
   <link rel="icon" type="image/ico" href="/icon.ico"/>   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="index.css">
-  <script type="text/javascript" src="index.js" defer></script>
   <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="index.js" defer></script>
+  <script type="text/javascript" src="index.js" defer></script>
 </head>
 
 <body>
-    <h1>ChatGPT_REMIX</h1>
-    <div class="mainDiv">
-        <div class="messageDiv">
-            <p>Texto: </p>
-        </div>
-        <div class="inputDiv">
-            <input id="inputInput"/>
-            <button id="inputButton">Enviar</button>
-        </div>
+    <div>
+        <input type="text" id="userName" placeholder="User"/>
+        <button onclick="login()">Go to chat</button>
     </div>
-
-
 </body>

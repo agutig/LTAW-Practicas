@@ -13,11 +13,29 @@
 }
 
 
-.mainDiv .messageDiv{
+.mainDiv #messagesDiv{
     margin: auto;
     border: 1px solid rgb(0, 255, 200);
     height: 90%;
+    overflow: auto;
 
+}
+
+
+.mainDiv #messagesDiv .messageClassDiv1{
+    margin: auto;
+    margin-left: 0;
+    border: 1px solid green;
+    width: auto;
+    max-width: 45%;
+}
+
+.mainDiv #messagesDiv .messageClassDiv2{
+    margin: auto;
+    margin-right: 0;
+    border: 1px solid rgb(235, 0, 215);
+    width: auto;
+    max-width: 45%;
 }
 
 .mainDiv .inputDiv{
@@ -32,6 +50,7 @@
     margin: auto;
     margin-top: 0.5%;
     border-radius: 16px;
+    text-align: center;
 }
 
 .mainDiv .inputDiv #inputButton{
