@@ -1,0 +1,33 @@
+
+body{
+    margin: auto;
+    text-align: center;
+}
+
+#infoDIV{
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+#chatInfoDiv{
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 16px;
+}
+
+
+#chatInfoDiv #smallChatDiv{
+    height: 20vh;
+    margin: auto;
+    border: 1px solid rgb(255, 0, 0);
+    border-radius: 16px;
+}
+
+#chatInfoDiv #infoChatDiv{
+    margin: auto;
+    border: 1px solid rgb(0, 38, 255);
+    border-radius: 16px;
+}

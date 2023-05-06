@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>CHAT SERVER</title>
+  <link rel="icon" type="image/ico" href="/icon.ico"/>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="renderer.css"> 
+  <script type="text/javascript" src="renderer.js" defer></script>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
+</head>
+
+<body>
+    <h1>SERVER CONTROL MONITOR</h1>
+    <h1>CHAT JS</h1>
+    <div id="infoDIV">
+        <p>Version de node: <!--REPLACE_NODE_VERSION--> </p>
+        <p>Version de chromium: <!--REPLACE_NODE_CHROME--> </p>
+        <p>Version de electron: <!--REPLACE_NODE_ELECTRON--></p>
+        <p>URL lanzada en </p>
+        <div>http://localhost:9000/</div>
+        <div>QR jajajajajaj</div>
+    </div>
+
+    <div id="chatInfoDiv">
+        <div id="smallChatDiv">
+            <h2>Chat general</h2>
+            <p>Holaaa</p>
+            <button>Mandar un mensaje de prueba</button>
+        </div>
+        <div  id="infoChatDiv">
+            <p>Usuarios conectados:  <p id="usersConNum"> </p>  </p>
+            <p>Lista de usuarios conectados:</p>
+        </div>
+    </div>
+</body>
