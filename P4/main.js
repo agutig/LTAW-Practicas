@@ -73,7 +73,17 @@ electron.app.on('ready', () => {
 
         socket.on('disconnect', function(){
             console.log('CONEXIÓN TERMINADA');
-            clients = clients.filter(client => client.id != socket.id)
+            filtered_clients = []
+            for (let i = 0; i <  clients.length; i++){
+                if (clients[i].id == socket.id){
+                    win.webContents.send('genChat' , ["server", "Se ha desconectado: " + clients[i].name])
+                    io.emit("server", "Se ha desconectado: " + clients[i].name);
+                }else{
+                    filtered_clients.push(clients[i])
+                }
+
+            }
+            clients = filtered_clients
             win.webContents.send('usersCon' ,clients)
         });  
 
@@ -166,6 +176,10 @@ electron.app.on('ready', () => {
 
     win.on('ready-to-show', () => {
         win.webContents.send('usersCon' ,clients)
+    })
+
+    electron.ipcMain.handle('serverMess',(event,msg) => {
+            io.emit("server" ,msg)
     })
 
     win.loadFile("GUI/renderer.html")

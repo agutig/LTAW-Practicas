@@ -7,27 +7,73 @@ body{
 #infoDIV{
     width: 80%;
     margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
     border: 1px solid black;
     border-radius: 16px;
 }
 
 #chatInfoDiv{
+    display: flex;
+    flex-direction: row;
     width: 80%;
+    height: 70vh;
     margin: auto;
+    margin-bottom: 1%;
+    margin-top: 1%;
     border: 1px solid black;
     border-radius: 16px;
 }
 
 
 #chatInfoDiv #smallChatDiv{
-    height: 20vh;
+    height: 100%;
+    width: 80%;
     margin: auto;
     border: 1px solid rgb(255, 0, 0);
     border-radius: 16px;
 }
 
-#chatInfoDiv #infoChatDiv{
+#chatInfoDiv #smallChatDiv #smallChatDivDiv{
+    overflow: auto;
+    border: 1px solid black;
+    border-radius: 32px;
+    height: 90%;
+}
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv0{
+    max-width: 40%;
+    width: auto;
+    font-size: 80%;
+    border: 1px black solid;
+    background-color: aqua;
+    border-radius: 16px;
     margin: auto;
+    margin-left: 2%;
+    margin-top: 1%;
+    text-align: left;
+}
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv1{
+    max-width: 40%;
+    width: auto;
+    font-size: 80%;
+    border: 1px black solid;
+    background-color: rgb(255, 72, 0);
+    border-radius: 16px;
+    margin: auto;
+    margin-right: 2%;
+    margin-top: 1%;
+    text-align: left;
+}
+
+
+#chatInfoDiv #infoChatDiv{
+    height: 100%;
+    width: 18%;
+    margin: auto;
+    margin-bottom: 2%;
     border: 1px solid rgb(0, 38, 255);
     border-radius: 16px;
+    overflow: auto;
 }

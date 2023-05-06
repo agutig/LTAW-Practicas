@@ -12,25 +12,24 @@
 
 <body>
     <h1>SERVER CONTROL MONITOR</h1>
-    <h1>CHAT JS</h1>
-    <div id="infoDIV">
-        <p>Version de node: <!--REPLACE_NODE_VERSION--> </p>
-        <p>Version de chromium: <!--REPLACE_NODE_CHROME--> </p>
-        <p>Version de electron: <!--REPLACE_NODE_ELECTRON--></p>
-        <p>URL lanzada en </p>
-        <div>http://localhost:9000/</div>
-        <div>QR jajajajajaj</div>
-    </div>
 
     <div id="chatInfoDiv">
         <div id="smallChatDiv">
-            <h2>Chat general</h2>
-            <div id="smallChatDivDiv">Holaaa</div>
-            <button>Mandar un mensaje de prueba</button>
+            <div id="smallChatDivDiv"></div>
+            <button id="testButton">Mandar un mensaje de prueba</button>
         </div>
         <div  id="infoChatDiv">
             <p>Usuarios conectados:  <p id="usersConNum"> </p>  </p>
             <p>Lista de usuarios conectados: <p id="usersConList"></p>
         </div>
     </div>
+
+    <div id="infoDIV">
+        <p>Version de node: <!--REPLACE_NODE_VERSION-->  || Version de chromium: <!--REPLACE_NODE_CHROME--></p>
+        <p>Version de electron: <!--REPLACE_NODE_ELECTRON-->  || Version del server: 1.0.0</p>
+        <p>URL lanzada en </p>
+        <div>http://localhost:9000/</div>
+        <div>QR jajajajajaj</div>
+    </div>
+
 </body>

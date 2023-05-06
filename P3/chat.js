@@ -49,7 +49,16 @@ io.on('connect', (socket) => {
 
     socket.on('disconnect', function(){
         console.log('CONEXIÓN TERMINADA');
-        clients = clients.filter(client => client.id != socket.id)
+        filtered_clients = []
+        for (let i = 0; i <  clients.length; i++){
+            if (clients[i].id != socket.id){
+                io.emit("server", "Se ha desconectado: " + clients[i].name);
+            }else{
+                filtered_clients.push(clients[i])
+            }
+
+        }
+        clients = filtered_clients
     });  
 
 
