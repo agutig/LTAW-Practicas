@@ -21,7 +21,10 @@ electron.app.on('ready', () => {
   ___) | |___|  _ < \ V / | |___|  _ <   | |_| | |___|  _/ ___ \ |_| | |___| |   | |__| |_| | |\  |  _|  | | |_| | |_| |  _ <  / ___ \| |  | | |_| | |\  |
  |____/|_____|_| \_\ \_/  |_____|_| \_\  |____/|_____|_|/_/   \_\___/|_____|_|    \____\___/|_| \_|_|   |___\____|\___/|_| \_\/_/   \_\_| |___\___/|_| \_|
                                                                                                                                                         
- Just replace P3 code
+ Just replace P3 code  &   ADD these diferent events when needed
+
+    - Update number of users --> win.webContents.send('usersCon' ,clients)
+    - Update number of users --> win.webContents.send('genChat' ,message)
 */
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -64,11 +67,14 @@ electron.app.on('ready', () => {
             clients.push({name: msg , id: socket.id})
             socket.broadcast.emit("server", "Se ha conectado: " + msg);
             socket.emit("server", "Wuolololooo bienvenido " + msg);
+            win.webContents.send('usersCon' ,clients)
+            win.webContents.send('genChat' , ["server", "Se ha conectado: " + msg])
         });
 
         socket.on('disconnect', function(){
             console.log('CONEXIÓN TERMINADA');
             clients = clients.filter(client => client.id != socket.id)
+            win.webContents.send('usersCon' ,clients)
         });  
 
 
@@ -78,6 +84,7 @@ electron.app.on('ready', () => {
                 spetialCommands(msg[1], socket , msg[0])
             }else{
                 socket.broadcast.emit("message",msg);
+                win.webContents.send('genChat' , msg)
             }
         });
 
@@ -148,9 +155,18 @@ electron.app.on('ready', () => {
 
     //-- Crear la ventana principal de nuestra aplicación
     win = new electron.BrowserWindow({
-        width: 600,  //-- Anchura 
-        height: 400  //-- Altura
+        width: 1200,  //-- Anchura 
+        height: 800,  //-- Altura
+        webPreferences: {
+            nodeIntegration: true,
+            contextIsolation: false
+        }
+
     });
+
+    win.on('ready-to-show', () => {
+        win.webContents.send('usersCon' ,clients)
+    })
 
     win.loadFile("GUI/renderer.html")
 
