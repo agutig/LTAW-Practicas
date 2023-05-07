@@ -51,7 +51,7 @@ io.on('connect', (socket) => {
         console.log('CONEXIÓN TERMINADA');
         filtered_clients = []
         for (let i = 0; i <  clients.length; i++){
-            if (clients[i].id != socket.id){
+            if (clients[i].id == socket.id){
                 io.emit("server", "Se ha desconectado: " + clients[i].name);
             }else{
                 filtered_clients.push(clients[i])
