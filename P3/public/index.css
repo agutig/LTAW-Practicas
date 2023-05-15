@@ -22,7 +22,7 @@ html {
     margin-top: 35vh;
     text-align: center;
     color: rgb(234, 234, 234);
-    background-color: #2a2a2a;
+    background-color: #363636;
     box-shadow: 
               0 3px 3px rgba(0,0,0,0.35),
               0 3px 3px rgba(0,0,0,0.35), 
@@ -62,7 +62,7 @@ html {
     margin-bottom: 5%;
     border-radius: 16px;
     border: 1px solid #0b0b0b79;
-    background-color: #363636;
+    background-color: #444444;
     color: #fafafa;
     box-shadow: 
               0 1.5px 1.5px rgba(0,0,0,0.35),
@@ -76,7 +76,7 @@ html {
 
 #loginDiv #userButton:hover{
 
-    background-color: #3c3c3c;
+    background-color: rgb(71, 71, 71);
     box-shadow: 
               0 4px 4px rgba(0,0,0,0.35),
               0 4px 4px rgba(0,0,0,0.35), 

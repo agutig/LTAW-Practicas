@@ -17,7 +17,9 @@
 
 .mainDiv #messagesDiv{
     margin: auto;
-    border: 1px solid rgb(0, 255, 200);
+    background-color: #363636;
+    border: 1px solid #0b0b0b79;
+    border-radius: 16px;
     height: 90%;
     overflow: auto;
 
@@ -26,32 +28,56 @@
 
 .mainDiv #messagesDiv .messageClassDiv1{
     margin: auto;
+    margin-top: 1%;
     margin-left: 0;
     border: 1px solid green;
+    border-radius: 16px;
     width: auto;
     max-width: 45%;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
 .mainDiv #messagesDiv .messageClassDiv2{
     margin: auto;
+    margin-top: 1%;
     margin-right: 0;
     border: 1px solid rgb(235, 0, 215);
+    border-radius: 16px;
     width: auto;
     max-width: 45%;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
 .mainDiv #messagesDiv .messageClassDiv3{
     margin: auto;
+    margin-top: 1%;
     border: 1px solid rgb(51, 51, 51);
+    border-radius: 16px;
     width: auto;
     max-width: 45%;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
 
 
 .mainDiv .inputDiv{
     height: 10%;
-    border: 1px red solid;
+    border: 1px solid #0b0b0b79;
 }
 
 
@@ -62,8 +88,17 @@
     margin-top: 0.5%;
     border-radius: 16px;
     text-align: center;
+    border: 1px solid #0b0b0b79;
 }
 
 .mainDiv .inputDiv #inputButton{
     border-radius: 32px;
+    border: 1px solid #0b0b0b79;
+}
+
+
+#footerText{
+    margin: auto;
+    text-align: center;
+    color: #fafafa;
 }
