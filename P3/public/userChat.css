@@ -14,12 +14,19 @@
                 -6px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
+#tittleChat{
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+    color: #fafafa;
+}
 
 .mainDiv #messagesDiv{
     margin: auto;
     background-color: #363636;
     border: 1px solid #0b0b0b79;
-    border-radius: 16px;
+    border-radius: 16px 16px 0 0;
     height: 90%;
     overflow: auto;
 
@@ -30,7 +37,8 @@
     margin: auto;
     margin-top: 1%;
     margin-left: 0;
-    border: 1px solid green;
+    border: 1px solid rgb(0, 233, 0);
+    background-color: rgb(0, 233, 0);
     border-radius: 16px;
     width: auto;
     max-width: 45%;
@@ -47,6 +55,7 @@
     margin-top: 1%;
     margin-right: 0;
     border: 1px solid rgb(235, 0, 215);
+    background-color: rgb(235, 0, 215);
     border-radius: 16px;
     width: auto;
     max-width: 45%;
@@ -62,6 +71,7 @@
     margin: auto;
     margin-top: 1%;
     border: 1px solid rgb(51, 51, 51);
+    background-color: rgb(77, 77, 77);
     border-radius: 16px;
     width: auto;
     max-width: 45%;
@@ -78,6 +88,8 @@
 .mainDiv .inputDiv{
     height: 10%;
     border: 1px solid #0b0b0b79;
+    border-radius: 0 0 32px 32px;
+    background-color: #363636;
 }
 
 
@@ -99,6 +111,7 @@
 
 #footerText{
     margin: auto;
+    margin-top: 2%;
     text-align: center;
     color: #fafafa;
 }
