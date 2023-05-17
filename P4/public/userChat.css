@@ -6,50 +6,195 @@
     border: none;
     border-radius: 32px;
     text-align: center;
+    background-color: #212121;
+    color: rgb(234, 234, 234);
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2),
                 0px -6px 6px rgba(0, 0, 0, 0.3),
                 6px  0px 6px rgba(0, 0, 0, 0.3),
                 -6px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
+#tittleChat{
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-align: center;
+    color: #fafafa;
+}
 
 .mainDiv #messagesDiv{
     margin: auto;
-    border: 1px solid rgb(0, 255, 200);
+    background-color: #363636;
+    border: 1px solid #0b0b0b79;
+    border-radius: 16px 16px 0 0;
     height: 90%;
+    width: 100%;
     overflow: auto;
 
 }
 
+.mainDiv #messagesDiv::-webkit-scrollbar {
+    width: 0.25vw; /* Ancho de la barra */
+    border-radius: 150%;
+  }  
+
+.mainDiv #messagesDiv::-webkit-scrollbar-track {
+    background: #363636; /* Color del fondo de la barra */
+    border-radius: 100%;
+}
+  
+.mainDiv #messagesDiv::-webkit-scrollbar-thumb {
+    background: #888; /* Color del "pulgador" de la barra */
+    border-radius: 150%;
+}
+
+.mainDiv #messagesDiv::-webkit-scrollbar-thumb:hover {
+    background: #363636; /* Color del "pulgador" de la barra al pasar el cursor por encima */
+    border-radius: 150%;
+}
 
 .mainDiv #messagesDiv .messageClassDiv1{
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    margin-left: 0;
-    border: 1px solid green;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    border: 1px solid rgb(179, 83, 179);
+    background-color: rgb(175, 83, 175);
+    border-radius: 16px;
+    width: min-content;
+    max-width: 40%;
+    min-width: 5%;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
+}
+
+.mainDiv #messagesDiv .messageClassDiv1 .userName{
+    font-weight: 800;
+    text-align: left;
+    margin-left: 1vw;
+    margin-top: 1vh;
     width: auto;
-    max-width: 45%;
+    max-width: 80%;
+    min-width: 20%;
+    display: inline;
+}
+
+.mainDiv #messagesDiv .messageClassDiv1 .chatText{
+    padding-left:  0.75vw;
+    padding-right: 0.75vw;
+    font-weight: 400;
+    font-size: 110;
+    text-align: left;
+    margin: auto;
+    margin-left: 2.5vw;
+    margin-right: 1vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    width: max-content;
+    max-width: 25vw;
+    border-radius: 16px;
+    color: #fafafa;
+    background-color: rgb(92, 45, 92);
+    word-break: break-all;
+
 }
 
 .mainDiv #messagesDiv .messageClassDiv2{
+    display: flex;
+    flex-direction: column;
     margin: auto;
-    margin-right: 0;
-    border: 1px solid rgb(235, 0, 215);
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    border: 1px solid rgb(0, 179, 95);
+    background-color: rgb(0, 179, 95);
+    border-radius: 16px;
+    width: min-content;
+    max-width: 40%;
+    min-width: 5%;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
+}
+
+.mainDiv #messagesDiv .messageClassDiv2 .userName{
+    font-weight: 800;
+    text-align: left;
+    margin-left: 1vw;
+    margin-top: 1vh;
     width: auto;
-    max-width: 45%;
+    max-width: 80%;
+    min-width: 20%;
+    display: inline;
+
+}
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatText{
+
+    padding-left:  0.75vw;
+    padding-right: 0.75vw;
+    font-weight: 400;
+    font-size: 110;
+    text-align: left;
+    margin: auto;
+    margin-left: 2.5vw;
+    margin-right: 1vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    width: max-content;
+    max-width: 25vw;
+    border-radius: 16px;
+    color: #fafafa;
+    background-color: rgb(0, 119, 64);
+    word-break: break-all;
+
 }
 
 .mainDiv #messagesDiv .messageClassDiv3{
     margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
     border: 1px solid rgb(51, 51, 51);
+    background-color: rgb(77, 77, 77);
+    border-radius: 16px;
     width: auto;
     max-width: 45%;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
 }
+
+.mainDiv #messagesDiv .messageClassDiv3 .userName{
+    font-weight: 800;
+    font-size: 120%;
+}
+
+.mainDiv #messagesDiv .messageClassDiv3 .chatText{
+    font-weight: 400;
+    font-size: 110;
+    text-align: center;
+}
+
 
 
 
 .mainDiv .inputDiv{
     height: 10%;
-    border: 1px red solid;
+    border: 1px solid #0b0b0b79;
+    border-radius: 0 0 32px 32px;
+    background-color: #464646;
 }
 
 
@@ -57,11 +202,52 @@
     width: 90%;
     height: 60%;
     margin: auto;
-    margin-top: 0.5%;
+    margin-top: 1%;
     border-radius: 16px;
     text-align: center;
+    border: 1px solid #0b0b0b79;
+    background-color: #cbcbcb;
+    font-size: 150%;
+    color: rgb(51, 51, 51);
 }
 
 .mainDiv .inputDiv #inputButton{
+    
+    margin: auto;
+    margin-top: 0.55%;
+    margin-left: 1%;
+    font-size: 150%;
+    height: 5vh;
+    width: 5vh;
     border-radius: 32px;
+    border: 1px solid #0b0b0b79;
+    background-color: #4b4b4b;
+    color: #d8d8d8;
+    font-weight: 800;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
+
+    transition: background-color 1s , box-shadow 1s;
+}
+
+.mainDiv .inputDiv #inputButton:hover{
+    background-color: rgb(0, 179, 95);
+    box-shadow: 
+              0 4px 4px rgba(0,0,0,0.20),
+              0 4px 4px rgba(0,0,0,0.20), 
+              0 4px 4px rgba(0,0,0,0.20), 
+              0 4px 4px rgba(0,0,0,0.20),
+              0 4px 4px rgba(0,0,0,0.20);
+}
+
+
+#footerText{
+    margin: auto;
+    margin-top: 2%;
+    text-align: center;
+    color: #fafafa;
 }

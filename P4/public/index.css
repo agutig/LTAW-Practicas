@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #212121;
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+#loginDiv{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 35vh;
+    text-align: center;
+    color: rgb(234, 234, 234);
+    background-color: #363636;
+    box-shadow: 
+              0 3px 3px rgba(0,0,0,0.35),
+              0 3px 3px rgba(0,0,0,0.35), 
+              0 3px 3px rgba(0,0,0,0.35), 
+              0 3px 3px rgba(0,0,0,0.35),
+              0 3px 3px rgba(0,0,0,0.35);
+
+    border-radius: 16px;
+    width: 40%;
+    height: 40%;
+    font-size: 200%;
+}
+
+#loginDiv #userName{
+    margin: auto;
+    min-height: 3vh;
+    height: auto;
+    text-align: center;
+    border: 3px rgb(51, 51, 51) solid;
+    border-radius: 8px;
+    width: 60%;
+    font-size: 100%;
+    color: #fafafa;
+    background-color: #787878;
+    box-shadow: 
+              0 3px 3px rgba(0,0,0,0.35),
+              0 3px 3px rgba(0,0,0,0.35), 
+              0 3px 3px rgba(0,0,0,0.35), 
+              0 3px 3px rgba(0,0,0,0.35),
+              0 3px 3px rgba(0,0,0,0.35);
+}
+
+#loginDiv #userButton{
+    margin: auto;
+    font-size: 120%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    border-radius: 16px;
+    border: 1px solid #0b0b0b79;
+    background-color: #444444;
+    color: #fafafa;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
+
+    transition: background-color 0.5s , box-shadow 0.5s;
+}
+
+#loginDiv #userButton:hover{
+
+    background-color: rgb(71, 71, 71);
+    box-shadow: 
+              0 4px 4px rgba(0,0,0,0.35),
+              0 4px 4px rgba(0,0,0,0.35), 
+              0 4px 4px rgba(0,0,0,0.35), 
+              0 4px 4px rgba(0,0,0,0.35),
+              0 4px 4px rgba(0,0,0,0.35);
+}
+
+#feedbackText{
+    height: 10%;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+#feedbackResponse{
+    color: red;
+    font-size: 120%;
+    opacity: 1;
+    animation: aparecer-desaparecer 8s ease-out forwards;
+  }
+  
+@keyframes aparecer-desaparecer {
+0% {
+    opacity: 0;
+}
+
+5%{
+    opacity: 1;
+}
+
+50%{
+    opacity: 1;
+}
+
+100% {
+    opacity: 0;
+}
+}

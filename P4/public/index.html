@@ -2,17 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <title>ChatGPT_REMIX</title>
+  <title>Minimalist Chat</title>
   <link rel="icon" type="image/ico" href="/icon.ico"/>   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="/socket.io/socket.io.js"></script>
   <script type="text/javascript" src="index.js" defer></script>
-  <script type="text/javascript" src="index.js" defer></script>
+  <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-    <div>
+    <div id="loginDiv">
+        <p>Inserta un nombre de usuario</p>
         <input type="text" id="userName" placeholder="User"/>
-        <button onclick="login()">Go to chat</button>
+        <button onclick="login()" id="userButton">Go to chat</button>
     </div>
+    <p id="feedbackText"></p>
 </body>
