@@ -95,7 +95,7 @@ function spetialCommands(comand, socket , name){
     switch(comand){
 
         case "/help":
-            socket.emit("server" ,"Comandos Disponibles: <br> - /list: Devuelve una lista con los comandos disponibles" + 
+            socket.emit("server" ,"Comandos Disponibles: <br> - /list: Devuelve una lista con los usuarios conectados" + 
             "<br> - /hello : Devuelve el saludo <br> - /date : Da la fehca actual ")
             break;
 

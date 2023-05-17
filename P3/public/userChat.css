@@ -27,6 +27,14 @@
     text-align: center;
 }
 
+#chatsDiv .userChat{
+    text-align: left;
+    border: 1px red solid;
+}
+
+#chatsDiv .userChat .greenDot{
+    color: greenyellow;
+}
 
 .mainDiv{
     

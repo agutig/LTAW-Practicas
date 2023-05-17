@@ -54,7 +54,7 @@ socket.on("chatList", (msg)=>{
   usersListDiv.innerHTML = ""
   for (let i = 0; i < list.length ; i++) {
     if (USERNAME != list[i].name){
-      usersListDiv.innerHTML += "<p>" + list[i].name+ "</p>"
+      usersListDiv.innerHTML +=  "<div class='userChat'> <p>" + list[i].name+ "</p> <p class='greenDot'> · </p> </div>"
     }
   }
 
