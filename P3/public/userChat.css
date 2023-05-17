@@ -1,17 +1,45 @@
+
+
+#contentDiv{
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    width: 90vw;
+    height: 80vh;
+    border: none;
+    border-radius: 32px;
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2),
+    0px -6px 6px rgba(0, 0, 0, 0.3),
+    6px  0px 6px rgba(0, 0, 0, 0.3),
+    -6px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+#chatsDiv{
+    height: 100.2%;
+    border-radius: 32px 0 0 32px;
+    width: 10%;
+    margin: auto;
+    margin-top: 0;
+    margin-right: 0;
+    background-color: #464646;
+    border: 1px solid #0b0b0b79;
+    color: #fafafa;
+    text-align: center;
+}
+
+
 .mainDiv{
     
     margin: auto;
-    width: 75%;
-    height: 75vh;
+    margin-top: 0;
+    width: 90%;
+    height: 100%;
     border: none;
-    border-radius: 32px;
+    border-radius: 0 32px 32px 0;
     text-align: center;
     background-color: #212121;
     color: rgb(234, 234, 234);
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2),
-                0px -6px 6px rgba(0, 0, 0, 0.3),
-                6px  0px 6px rgba(0, 0, 0, 0.3),
-                -6px 0px 6px rgba(0, 0, 0, 0.3);
+
 }
 
 #tittleChat{
@@ -26,7 +54,7 @@
     margin: auto;
     background-color: #363636;
     border: 1px solid #0b0b0b79;
-    border-radius: 16px 16px 0 0;
+    border-radius: 0 16px 0 0;
     height: 90%;
     width: 100%;
     overflow: auto;
@@ -193,7 +221,7 @@
 .mainDiv .inputDiv{
     height: 10%;
     border: 1px solid #0b0b0b79;
-    border-radius: 0 0 32px 32px;
+    border-radius: 0 0 32px 0;
     background-color: #464646;
 }
 
@@ -243,6 +271,8 @@
               0 4px 4px rgba(0,0,0,0.20),
               0 4px 4px rgba(0,0,0,0.20);
 }
+
+
 
 
 #footerText{

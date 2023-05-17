@@ -3,6 +3,7 @@ const socket = io();
 button = document.getElementById("inputButton");
 messagesDiv = document.getElementById("messagesDiv");
 input = document.getElementById("inputInput");
+usersListDiv = document.getElementById("usersListDiv")
 
 //Send User-server messages
 
@@ -45,5 +46,17 @@ socket.on("message", (msg)=>{
 socket.on("server", (msg)=>{
   console.log(msg)
   messagesDiv.innerHTML += "<div class='messageClassDiv3'> <p class='userName'>Server</p>  <p class='chatText' >" + msg + "</p>"
+});
+
+socket.on("chatList", (msg)=>{
+  list = JSON.parse(msg)
+  console.log(list)
+  usersListDiv.innerHTML = ""
+  for (let i = 0; i < list.length ; i++) {
+    if (USERNAME != list[i].name){
+      usersListDiv.innerHTML += "<p>" + list[i].name+ "</p>"
+    }
+  }
+
 });
 

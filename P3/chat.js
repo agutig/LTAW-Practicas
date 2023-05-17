@@ -54,6 +54,7 @@ io.on('connect', (socket) => {
         console.log("Mensaje Recibido!: " + msg);
         clients.push({name: msg , id: socket.id})
         socket.broadcast.emit("server", "Se ha conectado: " + msg);
+        io.emit("chatList", JSON.stringify(clients));
         socket.emit("server", "Wuolololooo bienvenido " + msg);
     });
 
@@ -69,6 +70,7 @@ io.on('connect', (socket) => {
 
         }
         clients = filtered_clients
+        io.emit("chatList", JSON.stringify(clients));
     });  
 
 
