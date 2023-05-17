@@ -54,6 +54,8 @@
 }
 
 .mainDiv #messagesDiv .messageClassDiv1{
+    display: flex;
+    flex-direction: column;
     margin: auto;
     margin-top: 1%;
     margin-left: 1%;
@@ -61,8 +63,9 @@
     border: 1px solid rgb(179, 83, 179);
     background-color: rgb(175, 83, 175);
     border-radius: 16px;
-    width: auto;
-    display: inline-block;
+    width: min-content;
+    max-width: 40%;
+    min-width: 5%;
     box-shadow: 
               0 1.5px 1.5px rgba(0,0,0,0.35),
               0 1.5px 1.5px rgba(0,0,0,0.35), 
@@ -74,16 +77,32 @@
 .mainDiv #messagesDiv .messageClassDiv1 .userName{
     font-weight: 800;
     text-align: left;
-    margin-left: 2%;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    width: auto;
+    max-width: 80%;
+    min-width: 20%;
+    display: inline;
 }
 
 .mainDiv #messagesDiv .messageClassDiv1 .chatText{
+    padding-left:  0.75vw;
+    padding-right: 0.75vw;
     font-weight: 400;
     font-size: 110;
     text-align: left;
     margin: auto;
-    margin-left: 10%;
-    width: auto;
+    margin-left: 2.5vw;
+    margin-right: 1vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    width: max-content;
+    max-width: 25vw;
+    border-radius: 16px;
+    color: #fafafa;
+    background-color: rgb(92, 45, 92);
+    word-break: break-all;
+
 }
 
 .mainDiv #messagesDiv .messageClassDiv2{

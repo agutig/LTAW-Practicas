@@ -39,11 +39,11 @@ socket.on("disconnect", ()=> {
 
 socket.on("message", (msg)=>{
   console.log(msg)
-  messagesDiv.innerHTML += "<div class='messageClassDiv1' white-space: pre-wrap;> <p class='userName' >" + msg[0] + "</p> <p class='chatText' >"+ msg[1] +"</p> <div>"
+  messagesDiv.innerHTML += "<div class='messageClassDiv1'> <p class='userName' >" + msg[0] + "</p> <p class='chatText' >"+ msg[1] +"</p> <div>"
 });
 
 socket.on("server", (msg)=>{
   console.log(msg)
-  messagesDiv.innerHTML += "<div class='messageClassDiv3' white-space: pre-wrap;> <p class='userName'>Server</p>  <p class='chatText' >" + msg + "</p>"
+  messagesDiv.innerHTML += "<div class='messageClassDiv3'> <p class='userName'>Server</p>  <p class='chatText' >" + msg + "</p>"
 });
 
