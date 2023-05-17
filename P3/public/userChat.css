@@ -28,12 +28,26 @@
 }
 
 #chatsDiv .userChat{
+    display: flex;
+    margin: auto;
+    flex-direction: row;
     text-align: left;
-    border: 1px red solid;
+    border-bottom: 1px rgb(42, 42, 42) solid;
+}
+
+#chatsDiv .userChat .userNameUserChat{
+    margin: auto;
+    margin-left: 10%;
+    font-weight: 600;
+    font-size: 130%;
 }
 
 #chatsDiv .userChat .greenDot{
     color: greenyellow;
+    margin: auto;
+    margin-right: 10%;
+    font-size: 200%;
+    font-weight: 900;
 }
 
 .mainDiv{
