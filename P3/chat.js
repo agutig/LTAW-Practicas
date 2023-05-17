@@ -28,7 +28,17 @@ app.post('/login', (req, res) => {
     req.on('end', () => {
         const datos = new URLSearchParams(data);
         userName = datos.get('userName');
-        res.send(CHAT_HTML);
+        const clientsName = clients.map(objeto => objeto.name);
+        console.log(clientsName.includes(userName))
+        console.log(clientsName)
+        if (clientsName.includes(userName)){
+            res.status(404).send("Nombre de usuario ya utilizado por otro usuario");
+        }
+        else if(userName.toLowerCase() == "server" ){
+            res.status(404).send("Nombre de usuario no disponible");
+        }else{
+            res.send(CHAT_HTML);
+        }
     });
 
 });

@@ -26,7 +26,11 @@ function login() {
 
 
         } else if (m.readyState==4 && m.status == 404) {
+            
             console.log("Error")
+            console.log(m.responseText)
+            document.getElementById("feedbackText").innerHTML =  ""
+            document.getElementById("feedbackText").innerHTML =  "<p id='feedbackResponse' >" + m.responseText + "</p>"
         }
     };
     m.send(`userName=${USERNAME}`);

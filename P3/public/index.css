@@ -84,3 +84,35 @@ html {
               0 4px 4px rgba(0,0,0,0.35),
               0 4px 4px rgba(0,0,0,0.35);
 }
+
+#feedbackText{
+    height: 10%;
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+#feedbackResponse{
+    color: red;
+    font-size: 120%;
+    opacity: 1;
+    animation: aparecer-desaparecer 8s ease-out forwards;
+  }
+  
+@keyframes aparecer-desaparecer {
+0% {
+    opacity: 0;
+}
+
+5%{
+    opacity: 1;
+}
+
+50%{
+    opacity: 1;
+}
+
+100% {
+    opacity: 0;
+}
+}
