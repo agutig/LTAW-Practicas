@@ -14,7 +14,13 @@ let USERS_LIST = []
 function setState(id){
   STATE = id
   messagesDiv.innerHTML = CHAT_DATABASE[id]
+  var usersChats = document.getElementsByClassName("userChat")
+  for (var i = 0; i < usersChats.length; i++) {
+    usersChats[i].style.backgroundColor = "#464646";
+  }
+
   var fatherDiv = document.getElementById(id);
+  fatherDiv.style.backgroundColor = "#666666";
   let counter = fatherDiv.querySelector("#unread");
   counter.innerHTML =  ""
 
@@ -25,7 +31,6 @@ function setState(id){
     for (let i = 0; i < USERS_LIST.length ; i++) {
       if (id == USERS_LIST[i].id){
         document.getElementById("tittleConversationH1").innerHTML = USERS_LIST[i].name
-        break;
       }
     }
   }

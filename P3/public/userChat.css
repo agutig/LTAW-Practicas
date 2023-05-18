@@ -44,7 +44,7 @@
     flex-direction: row;
     text-align: left;
     border-bottom: 1px rgb(42, 42, 42) solid;
-    transition: background-color 0.5s , box-shadow 1s;
+    transition: background-color 0.15s , box-shadow 1s;
 }
 
 #chatsDiv .userChat:hover{
