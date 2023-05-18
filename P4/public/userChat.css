@@ -1,33 +1,120 @@
-.mainDiv{
-    
+
+
+#contentDiv{
+    display: flex;
     margin: auto;
-    width: 75%;
-    height: 75vh;
+    margin-top: 5vh;
+    flex-direction: row;
+    width: 90vw;
+    height: 80vh;
     border: none;
     border-radius: 32px;
-    text-align: center;
-    background-color: #212121;
-    color: rgb(234, 234, 234);
     box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.2),
-                0px -6px 6px rgba(0, 0, 0, 0.3),
-                6px  0px 6px rgba(0, 0, 0, 0.3),
-                -6px 0px 6px rgba(0, 0, 0, 0.3);
+    0px -6px 6px rgba(0, 0, 0, 0.3),
+    6px  0px 6px rgba(0, 0, 0, 0.3),
+    -6px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
-#tittleChat{
+#chatsDiv{
+    height: 100.2%;
+    border-radius: 32px 0 0 32px;
+    width: 10%;
     margin: auto;
-    margin-top: 1%;
-    margin-bottom: 1%;
-    text-align: center;
+    margin-top: 0;
+    margin-right: 0;
+    background-color: #464646;
+    border: 1px solid #0b0b0b79;
     color: #fafafa;
+    text-align: center;
+}
+
+
+
+#chatsDiv #secondaryText{
+    padding-bottom: 10%;
+    margin-bottom: -0.25%;
+    border-radius: 32px 0 0 0px;
+    border-bottom: 2px rgb(42, 42, 42) solid;
+    background-color: #464646
+}
+
+#chatsDiv .userChat{
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    text-align: left;
+    border-bottom: 1px rgb(42, 42, 42) solid;
+    transition: background-color 0.15s , box-shadow 1s;
+}
+
+#chatsDiv .userChat:hover{
+    background-color: #888;
+}
+
+#chatsDiv .userChat .userNameUserChat{
+    margin: auto;
+    margin-left: 10%;
+    font-weight: 600;
+    font-size: 130%;
+}
+
+#chatsDiv .userChat .greenDot{
+    color: greenyellow;
+    margin: auto;
+    margin-right: 10%;
+    font-size: 200%;
+    font-weight: 900;
+}
+
+.mainDiv{
+    margin: auto;
+    position: relative;
+    margin-top: 0;
+    width: 90%;
+    height: 100%;
+    border: none;
+    border-radius: 0 32px 32px 0;
+    text-align: center;
+    background-color: #363636;
+    color: rgb(234, 234, 234);
+
+}
+
+
+.mainDiv #tittleConversation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0 ;
+    z-index: 1;
+    margin: auto;
+    border-radius: 0 0 32px 32px;
+    text-align: center;
+    width: 75%;
+    height: 7.5%;
+    background-color: #464646;
+    box-shadow: 
+    0 1.5px 1.5px rgba(0,0,0,0.35),
+    0 1.5px 1.5px rgba(0,0,0,0.35), 
+    0 1.5px 1.5px rgba(0,0,0,0.35), 
+    0 1.5px 1.5px rgba(0,0,0,0.35),
+    0 1.5px 1.5px rgba(0,0,0,0.35);
+}
+
+.mainDiv #tittleConversation #tittleConversationH1{
+    margin: auto;
+    margin-top: 2%;
+    font-size: 150%;
+    font-weight: 700;
+    width: fit-content;
 }
 
 .mainDiv #messagesDiv{
     margin: auto;
     background-color: #363636;
-    border: 1px solid #0b0b0b79;
-    border-radius: 16px 16px 0 0;
-    height: 90%;
+    border: 0% 1% 1% 1% solid #0b0b0b79;
+    border-radius: 0 16px 0 0;
+    height: 90.3%;
     width: 100%;
     overflow: auto;
 
@@ -51,6 +138,10 @@
 .mainDiv #messagesDiv::-webkit-scrollbar-thumb:hover {
     background: #363636; /* Color del "pulgador" de la barra al pasar el cursor por encima */
     border-radius: 150%;
+}
+
+.invisibleDiv{
+    height: 10%;
 }
 
 .mainDiv #messagesDiv .messageClassDiv1{
@@ -182,9 +273,17 @@
 }
 
 .mainDiv #messagesDiv .messageClassDiv3 .chatText{
+    margin: auto;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
     font-weight: 400;
     font-size: 110;
     text-align: center;
+    border-radius: 16px;
+    color: #fafafa;
+    max-width: 30vw;
+    background-color: rgb(36, 36, 36);
+    word-break: break-all;
 }
 
 
@@ -193,7 +292,7 @@
 .mainDiv .inputDiv{
     height: 10%;
     border: 1px solid #0b0b0b79;
-    border-radius: 0 0 32px 32px;
+    border-radius: 0 0 32px 0;
     background-color: #464646;
 }
 
@@ -243,6 +342,8 @@
               0 4px 4px rgba(0,0,0,0.20),
               0 4px 4px rgba(0,0,0,0.20);
 }
+
+
 
 
 #footerText{
