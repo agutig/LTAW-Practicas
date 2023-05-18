@@ -3,6 +3,7 @@
 #contentDiv{
     display: flex;
     margin: auto;
+    margin-top: 5vh;
     flex-direction: row;
     width: 90vw;
     height: 80vh;
@@ -33,6 +34,7 @@
     padding-bottom: 10%;
     margin-bottom: -0.25%;
     border-bottom: 2px rgb(42, 42, 42) solid;
+    background-color: #464646
 }
 
 #chatsDiv .userChat{
@@ -64,33 +66,54 @@
 }
 
 .mainDiv{
-    
     margin: auto;
+    position: relative;
     margin-top: 0;
     width: 90%;
     height: 100%;
     border: none;
     border-radius: 0 32px 32px 0;
     text-align: center;
-    background-color: #212121;
+    background-color: #363636;
     color: rgb(234, 234, 234);
 
 }
 
-#tittleChat{
+
+.mainDiv #tittleConversation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0 ;
+    z-index: 1;
     margin: auto;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    border-radius: 0 0 32px 32px;
     text-align: center;
-    color: #fafafa;
+    width: 75%;
+    height: 7.5%;
+    background-color: #464646;
+    box-shadow: 
+    0 1.5px 1.5px rgba(0,0,0,0.35),
+    0 1.5px 1.5px rgba(0,0,0,0.35), 
+    0 1.5px 1.5px rgba(0,0,0,0.35), 
+    0 1.5px 1.5px rgba(0,0,0,0.35),
+    0 1.5px 1.5px rgba(0,0,0,0.35);
+}
+
+.mainDiv #tittleConversation #tittleConversationH1{
+    margin: auto;
+    margin-top: 2%;
+    font-size: 150%;
+    font-weight: 700;
+    width: fit-content;
 }
 
 .mainDiv #messagesDiv{
     margin: auto;
     background-color: #363636;
-    border: 1px solid #0b0b0b79;
+    border: 0% 1% 1% 1% solid #0b0b0b79;
     border-radius: 0 16px 0 0;
-    height: 90%;
+    height: 90.3%;
     width: 100%;
     overflow: auto;
 

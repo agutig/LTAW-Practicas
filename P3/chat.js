@@ -58,7 +58,7 @@ io.on('connect', (socket) => {
         clients.push({name: msg , id: socket.id})
         socket.broadcast.emit("server", "Se ha conectado: " + msg);
         io.emit("chatList", JSON.stringify(clients));
-        socket.emit("message", JSON.stringify([ "general", "server" ,"Wuolololooo bienvenido " + msg]) );
+        socket.emit("message", JSON.stringify(["general", "server" ,"Wuolololooo bienvenido " + msg]) );
     });
 
     socket.on('disconnect', function(){
@@ -82,7 +82,16 @@ io.on('connect', (socket) => {
         if (msg[1][0] == "/"){
             spetialCommands(msg[1], socket , msg[0])
         }else{
-            socket.broadcast.emit("message",JSON.stringify(msg));
+            if (msg[0] == "general"){
+                socket.broadcast.emit("message",JSON.stringify(msg));
+
+            }else{
+
+                destinatary = msg[0]
+                msg[0] = socket.id
+                io.to(destinatary).emit('message', JSON.stringify(msg));
+            }
+            
         }
     });
 
