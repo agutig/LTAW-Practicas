@@ -79,8 +79,8 @@ io.on('connect', (socket) => {
 
     socket.on("message", (msg)=> {
         console.log("Mensaje Recibido!: " + msg);
-        if (msg[1][0] == "/"){
-            spetialCommands(msg[1], socket , msg[0])
+        if (msg[2][0] == "/"){
+            spetialCommands(msg[2], socket , msg[1] , msg[0])
         }else{
             if (msg[0] == "general"){
                 socket.broadcast.emit("message",JSON.stringify(msg));
@@ -102,13 +102,14 @@ server.listen(PUERTO);
 console.log("Escuchando en puerto: " + PUERTO);
 
 
-function spetialCommands(comand, socket , name){
+function spetialCommands(comand, socket , name ,channel){
 
+    console.log("hey")
     switch(comand){
 
         case "/help":
-            socket.emit("server" ,"Comandos Disponibles: <br> - /list: Devuelve una lista con los usuarios conectados" + 
-            "<br> - /hello : Devuelve el saludo <br> - /date : Da la fehca actual ")
+            socket.emit("message" ,JSON.stringify([channel ,"server","Comandos Disponibles: <br> - /list: Devuelve una lista con los usuarios conectados" + 
+            "<br> - /hello : Devuelve el saludo <br> - /date : Da la fecha actual "]))
             break;
 
         case "/list":
@@ -119,15 +120,15 @@ function spetialCommands(comand, socket , name){
                 }
             }
             console.log(clients)
-            socket.emit("server" ,response)
+            socket.emit("message" ,JSON.stringify([channel ,"server",response]))
             break;
 
         case "/hello":
-            socket.emit("server" ,"Hola " + name + " !")
+            socket.emit("message" , JSON.stringify([channel ,"server","Hola " + name + " !"]))
             break;
 
         case "/date":
-            socket.emit("server" ,"Esta es la fecha actual: " + getDate())
+            socket.emit("message" , JSON.stringify([channel ,"server","Esta es la fecha actual: " + getDate()]))
             break;
 
     }
