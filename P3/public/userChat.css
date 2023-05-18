@@ -33,6 +33,7 @@
 #chatsDiv #secondaryText{
     padding-bottom: 10%;
     margin-bottom: -0.25%;
+    border-radius: 32px 0 0 0px;
     border-bottom: 2px rgb(42, 42, 42) solid;
     background-color: #464646
 }
@@ -137,6 +138,10 @@
 .mainDiv #messagesDiv::-webkit-scrollbar-thumb:hover {
     background: #363636; /* Color del "pulgador" de la barra al pasar el cursor por encima */
     border-radius: 150%;
+}
+
+.invisibleDiv{
+    height: 10%;
 }
 
 .mainDiv #messagesDiv .messageClassDiv1{

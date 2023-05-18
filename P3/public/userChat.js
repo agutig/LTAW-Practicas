@@ -5,7 +5,7 @@ messagesDiv = document.getElementById("messagesDiv");
 input = document.getElementById("inputInput");
 usersListDiv = document.getElementById("usersListDiv")
 
-let CHAT_DATABASE = {general:[]}
+let CHAT_DATABASE = {general:"<div class='invisibleDiv'></div>"}
 let STATE = "general"
 let USERS_LIST = []
 //Send User-server messages
@@ -92,7 +92,7 @@ socket.on("chatList", (msg)=>{
   usersListDiv.innerHTML = "<div class='userChat' id='general' onclick=setState('general') > <p class='userNameUserChat'> General </p>  <p id='unread'></p>  <p class='greenDot'> · </p> </div>"
   for (let i = 0; i < list.length ; i++) {
     if (USERNAME != list[i].name){
-      if (CHAT_DATABASE[list[i].id] == undefined){CHAT_DATABASE[list[i].id] = "" }
+      if (CHAT_DATABASE[list[i].id] == undefined){CHAT_DATABASE[list[i].id] = "<div class='invisibleDiv'></div>" }
       usersListDiv.innerHTML +=  "<div class='userChat' id='"+list[i].id+"' onclick=setState('" + list[i].id + "') > <p class='userNameUserChat'>" + list[i].name+ "</p> <p id='unread'></p> <p class='greenDot'> · </p> </div>"
     }
   }
