@@ -27,12 +27,25 @@
     text-align: center;
 }
 
+
+
+#chatsDiv #secondaryText{
+    padding-bottom: 10%;
+    margin-bottom: -0.25%;
+    border-bottom: 2px rgb(42, 42, 42) solid;
+}
+
 #chatsDiv .userChat{
     display: flex;
     margin: auto;
     flex-direction: row;
     text-align: left;
     border-bottom: 1px rgb(42, 42, 42) solid;
+    transition: background-color 0.5s , box-shadow 1s;
+}
+
+#chatsDiv .userChat:hover{
+    background-color: #888;
 }
 
 #chatsDiv .userChat .userNameUserChat{
@@ -232,9 +245,17 @@
 }
 
 .mainDiv #messagesDiv .messageClassDiv3 .chatText{
+    margin: auto;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
     font-weight: 400;
     font-size: 110;
     text-align: center;
+    border-radius: 16px;
+    color: #fafafa;
+    max-width: 30vw;
+    background-color: rgb(36, 36, 36);
+    word-break: break-all;
 }
 
 

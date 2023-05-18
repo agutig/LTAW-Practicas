@@ -33,9 +33,12 @@ app.post('/login', (req, res) => {
         console.log(clientsName)
         if (clientsName.includes(userName)){
             res.status(404).send("Nombre de usuario ya utilizado por otro usuario");
-        }
-        else if(userName.toLowerCase() == "server" ){
+        }else if(userName.toLowerCase() == "server" ){
             res.status(404).send("Nombre de usuario no disponible");
+
+        }else if(userName == "" ){
+            res.status(404).send("Necesitas un nombre de usuario, este campo no puede estar vacio");
+
         }else{
             res.send(CHAT_HTML);
         }
@@ -55,7 +58,7 @@ io.on('connect', (socket) => {
         clients.push({name: msg , id: socket.id})
         socket.broadcast.emit("server", "Se ha conectado: " + msg);
         io.emit("chatList", JSON.stringify(clients));
-        socket.emit("server", "Wuolololooo bienvenido " + msg);
+        socket.emit("message", JSON.stringify([ "general", "server" ,"Wuolololooo bienvenido " + msg]) );
     });
 
     socket.on('disconnect', function(){
@@ -63,7 +66,7 @@ io.on('connect', (socket) => {
         filtered_clients = []
         for (let i = 0; i <  clients.length; i++){
             if (clients[i].id == socket.id){
-                io.emit("server", "Se ha desconectado: " + clients[i].name);
+                io.emit("message", JSON.stringify([ "general", "server" ,"Se ha desconectado: " + clients[i].name]));
             }else{
                 filtered_clients.push(clients[i])
             }
@@ -79,7 +82,7 @@ io.on('connect', (socket) => {
         if (msg[1][0] == "/"){
             spetialCommands(msg[1], socket , msg[0])
         }else{
-            socket.broadcast.emit("message",msg);
+            socket.broadcast.emit("message",JSON.stringify(msg));
         }
     });
 
