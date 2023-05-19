@@ -29,11 +29,10 @@
       si tienes cookies de ese producto se tienen en cuenta.
 
 
+- Comentarios dinamicos en el main, estos son cargados de la base de datos de todos los usuarios MENOS ROOT
 
 TODO: 
-    - Hacer que se actualice el precio de un producto con la base de datos
-    - actualizar el sombreado de la pagina de categorias
-    - actualizar con mejoras de practicas anteriores
+    - Corregir estilo responsive
     - Eliminar productos del carrito 
     - Añadir seccion de comentarios al JSON y que se publiquen en el main
     - Añadir una animacion de opacidad al mensaje de "Añadido al carrito"

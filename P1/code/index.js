@@ -71,8 +71,8 @@ prevRev.onclick = function() {
 
 
 setInterval(function() {
-    showReview()
     index += 1
+    showReview()
   }, 5000);
 
 console.log(index)

@@ -1,7 +1,5 @@
 
 
-
-
 function showOnScroll() {
     deleteAnim = document.getElementsByClassName("opacityOnLoad3")
     for (var i = 0; i < deleteAnim.length; i++) {
@@ -23,24 +21,12 @@ function showOnScroll() {
 }
 
 
+//__________________________________________________________________
+
+
 document.addEventListener("DOMContentLoaded", function(event) { 
+
 window.addEventListener('scroll', showOnScroll);
-
-
-var jBalvin = {
-    name: 'J Balvin',
-    coment: 'Lo unico bueno que tienen es el front de la web, no les vuelvo a comprar.',
-    image: 'images/cliente_1.png'
-}
-
-var guillermo = {
-    name: 'Guillermo Del Todo',
-    coment: 'Han escrito mal mi nombre caguen la leche',
-    image: 'images/cliente_2.png'
-}
-
-reviews = [guillermo,jBalvin]
-
 names = document.getElementsByClassName("reviewName");
 coments = document.getElementsByClassName("reviewText");
 images = document.getElementsByClassName("reviewUserImage");    
@@ -50,6 +36,7 @@ var prevRev = document.getElementById("reviewButtonPrev");
 
 index = 0
 
+
 function showReview(){
     names[0].innerHTML = reviews[ Math.abs(index % reviews.length)].name
     coments[0].innerHTML = reviews[Math.abs(index % reviews.length)].coment
@@ -57,25 +44,55 @@ function showReview(){
 
 }
 
+
+auto = 0
+
+
+setInterval(function() {
+    auto += 1
+    if(auto >= 5){
+        index += 1
+        showReview()
+        auto=0
+    }
+}, 1000);
+
+
 nextRev.onclick = function() {
     index += 1
     showReview()
-    console.log(index)
+    auto = 0
+
 };
 
 prevRev.onclick = function() {
     index += -1
     showReview()
-    console.log(index)
+    auto = 0
 };
 
 
-setInterval(function() {
-    showReview()
-    index += 1
-  }, 5000);
 
-console.log(index)
+    
+
+reviews = []
+
+var m = new XMLHttpRequest();
+m.open("GET", "/getReviews", true);
+m.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+m.onreadystatechange = function() {
+    if (m.readyState==4 && m.status == 200) {
+        reviews = JSON.parse(m.responseText)
+        showReview()
+    }
+};
+m.send();
+
+
+console.log(reviews)
+
+
+
 
 });
 

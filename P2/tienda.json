@@ -54,7 +54,7 @@
       "price": 900,
       "marca": "Xiaomi",
       "slogan": "El rey del mercado",
-      "stock": 7,
+      "stock": 4,
       "intro": "Sumérgete en una experiencia única de navegación y entretenimiento con nuestro nuevo modelo de móvil. Con su pantalla curva de última generación, sonido envolvente y tecnología de vanguardia, sentirás que la magia está en tus manos. Además, con una batería de larga duración y resistencia al agua, nada te detendrá. ¡Bienvenido al futuro de la movilidad!",
       "description": [
         "Plataforma móvil Snapdragon® 8 Gen 2Proceso de fabricación de 4 nm y bajo consumo",
@@ -297,7 +297,8 @@
       "email": "guti@guti.com",
       "image": "/images/gatoTiste.png",
       "pedidos": [],
-      "cart": ""
+      "cart": "",
+      "review": "Miau"
     },
     {
       "userName": "root",
@@ -306,7 +307,8 @@
       "email": "root@root.com",
       "image": "images/none.png",
       "pedidos": [],
-      "cart": ""
+      "cart": "",
+      "review": "Caca"
     },
     {
       "userName": "jbalvin",
@@ -336,9 +338,16 @@
             "0",
             "18"
           ]
+        ],
+        [
+          [
+            "2",
+            "3"
+          ]
         ]
       ],
-      "cart": "0_19"
+      "cart": "2_3",
+      "review": "He comprado todos los Samsung Galaxy S23 muajajaj"
     },
     {
       "userName": "deltoro",
@@ -347,7 +356,8 @@
       "email": "deltoro@jmail.com",
       "image": "images/cliente_2.png",
       "pedidos": [],
-      "cart": ""
+      "cart": "",
+      "review": "Han escrito mal mi nombre, caguen la leche"
     }
   ]
 }

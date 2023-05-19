@@ -6,6 +6,8 @@ const fs = require('fs');
 const http = require('http');
 
 
+////OTHER
+const DIRECTORY = returnFiles("./" , "-")
 
 ///////////////////////////////////////////////////// SET
 const PUERTO = 9000;
@@ -26,7 +28,7 @@ function print_info_req(req) {
 
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
 
-  if (false){
+  if (true){
     console.log("");
     console.log("Mensaje de solicitud");
     console.log("====================");
@@ -129,6 +131,7 @@ const server = http.createServer((req, res) => {
           res.setHeader('Set-Cookie', "cart="+cartCokie );
           OK(res,"200 OK")
         }
+
       }else{
         //Si pasa por aqui, es debido a que hay un error y el id que se busca NO existe
         NOT_OK(res)
@@ -175,6 +178,25 @@ const server = http.createServer((req, res) => {
       }
       res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT", "userName= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"] );
       OK(res,"200 OK")
+
+    }else if (url.pathname == '/ls'){
+      OK(res,DIRECTORY)
+
+
+    }else if (url.pathname == '/getReviews'){
+      let reviews = []
+      for (let i = 0; i <  DATABASE.clients.length; i++){
+        if (DATABASE.clients[i].review != "" && DATABASE.clients[i].userName != "root"){
+            let reviewObj = {
+              name:DATABASE.clients[i].name,
+              coment: DATABASE.clients[i].review,
+              image: DATABASE.clients[i].image
+            }
+            reviews.push(reviewObj)
+        }
+      console.log(reviews)
+      }
+      OK(res,JSON.stringify(reviews))
 
     }else{
       fs.readFile(FRONT_PATH + url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{
@@ -281,6 +303,9 @@ function manageProductData(data, DATABASE , id ,cookies){
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
         data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
         data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
+
+        data = data.replace("<!--placeholderWholePrice-->",  DATABASE.products[i].price);
+        data = data.replace("<!--placeholderMonthPrice-->",  (DATABASE.products[i].price/12).toFixed(2));
 
         let reservedStock = 0
 
@@ -513,4 +538,19 @@ function checkIDExists(search){
     }
   });
   return found
+}
+
+
+function returnFiles(dir ,space){
+  let sendText = ""
+  const archivos = fs.readdirSync(dir);
+  for (let i = 0; i < archivos.length; i++) {
+    if(archivos[i].split(".").length > 1){
+      sendText += "<p> " + space + " " + archivos[i] + "</p>";
+    }else{
+      sendText += "<p> " + space + " " + archivos[i] + "</p>";
+      sendText += returnFiles(dir + "/" + archivos[i] , space + "---")
+    }
+  }
+  return sendText
 }
