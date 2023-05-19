@@ -50,6 +50,17 @@ var prevRev = document.getElementById("reviewButtonPrev");
 
 index = 0
 
+auto = 0
+setInterval(function() {
+    auto += 1
+    if(auto >= 5){
+        index += 1
+        showReview()
+        auto=0
+    }
+}, 1000);
+
+
 function showReview(){
     names[0].innerHTML = reviews[ Math.abs(index % reviews.length)].name
     coments[0].innerHTML = reviews[Math.abs(index % reviews.length)].coment
@@ -60,20 +71,24 @@ function showReview(){
 nextRev.onclick = function() {
     index += 1
     showReview()
-    console.log(index)
+    auto = 0
 };
 
 prevRev.onclick = function() {
     index += -1
     showReview()
-    console.log(index)
+    auto = 0
 };
 
 
 setInterval(function() {
-    index += 1
-    showReview()
-  }, 5000);
+    auto += 1
+    if(auto >= 5){
+        index += 1
+        showReview()
+        auto=0
+    }
+  }, 1000);
 
 console.log(index)
 
