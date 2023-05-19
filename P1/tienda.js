@@ -50,16 +50,35 @@ function NOT_OK(res){
   
 }
 
+function returnFiles(dir ,space){
+  let sendText = ""
+  const archivos = fs.readdirSync(dir);
+  for (let i = 0; i < archivos.length; i++) {
+    console.log(archivos[i])
+    if(archivos[i].split(".").length > 1){
+      sendText += "<p> " + space + " " + archivos[i] + "</p>";
+    }else{
+      sendText += "<p> " + space + " " + archivos[i] + "</p>";
+      sendText += returnFiles(dir + "/" + archivos[i] , space + "---")
+    }
+  }
+  return sendText
+}
 
 const PUERTO = 9000;
+const DIRECTORY = returnFiles("./" , "-")
 
 const server = http.createServer((req, res) => {
     
   url = print_info_req(req)
   if (req.method == "GET" ){
 
-    if (url.pathname == '/'){ url.pathname = "index.html"}
-    fs.readFile(url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
+    if(url.pathname != '/ls'){
+      if (url.pathname == '/'){ url.pathname = "index.html"}
+      fs.readFile(url.pathname.slice(1,), (err, data) => { if(!err){OK(res,data)}else{NOT_OK(res)}});
+    }else{
+      OK(res,DIRECTORY)
+    }
 
   }
 

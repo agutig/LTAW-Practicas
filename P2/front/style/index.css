@@ -416,6 +416,10 @@ header{
     animation: opacityLoad  1s normal backwards ease-in-out;
     animation-delay: 2s;
     animation-iteration-count: 1;
+    box-shadow: 0px 8px 8px rgba(62, 62, 62, 0.2),
+    0px -8px 8px rgba(62, 62, 62, 0.2),
+    8px  0px 8px rgba(62, 62, 62, 0.2),
+    -8px 0px 8px rgba(62, 62, 62, 0.2);
 }
 
 .fade{
