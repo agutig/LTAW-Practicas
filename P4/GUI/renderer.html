@@ -11,11 +11,31 @@
 </head>
 
 <body>
-    <h1>SERVER CONTROL MONITOR</h1>
+
+    <div id="infoDIV">
+        <div id="infoDIVDIV">
+            <h3>Versions</h3>
+            <p>Version de node: <!--REPLACE_NODE_VERSION--></p> 
+            <p>Version de chromium: <!--REPLACE_NODE_CHROME--></p>
+            <p>Version de electron: <!--REPLACE_NODE_ELECTRON--></p>
+            <p>Version del server: 1.0.0</p>
+        </div>
+        <div>
+            <h3>Connect</h3>
+            <p>URL lanzada en </p>
+            <div>http://localhost:9000/</div>
+            <div>QR jajajajajaj</div>
+        </div>
+    </div>
 
     <div id="chatInfoDiv">
         <div id="smallChatDiv">
-            <div id="smallChatDivDiv"></div>
+            <div id="tittleConversation">
+                <p id="tittleConversationH1">General</p>
+            </div>
+            <div id="smallChatDivDiv">
+                <div class="invisibleDiv"></div>
+            </div>
             <button id="testButton">Mandar un mensaje de prueba</button>
         </div>
         <div  id="infoChatDiv">
@@ -24,12 +44,5 @@
         </div>
     </div>
 
-    <div id="infoDIV">
-        <p>Version de node: <!--REPLACE_NODE_VERSION-->  || Version de chromium: <!--REPLACE_NODE_CHROME--></p>
-        <p>Version de electron: <!--REPLACE_NODE_ELECTRON-->  || Version del server: 1.0.0</p>
-        <p>URL lanzada en </p>
-        <div>http://localhost:9000/</div>
-        <div>QR jajajajajaj</div>
-    </div>
 
 </body>

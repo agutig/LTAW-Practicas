@@ -29,3 +29,7 @@ clase: mv,pc,pf , g(general)
 
     * Carrusel de hasta 3 imagenes por producto que pueden ser ajustadas con los botones dados
     * Boton de "Añadir al carrito" con animacion que pide una pagina inaccesible, invocando un error.
+
+
+TODO:
+- limpiar consolelogs
