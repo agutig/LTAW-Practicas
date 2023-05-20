@@ -36,3 +36,4 @@ TODO:
     - Eliminar productos del carrito 
     - Añadir una animacion de opacidad al mensaje de "Añadido al carrito"
     - limpiar console logs
+    - Añadir una busqueda por categorias

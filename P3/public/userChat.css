@@ -347,7 +347,9 @@
 
 
 #footerText{
+    
     margin: auto;
+    margin-left: 10%;
     margin-top: 2%;
     text-align: center;
     color: #fafafa;

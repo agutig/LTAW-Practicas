@@ -26,3 +26,4 @@
  - Limpiar console logs
  - iconos
  - hacer ux/ui de colores
+ - poner los border por dentro
