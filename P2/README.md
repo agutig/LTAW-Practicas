@@ -33,6 +33,5 @@
 
 TODO: 
     - Corregir estilo responsive
-    - Eliminar productos del carrito 
     - limpiar console logs
     - Hacer componente el css de la barra de busqueda
