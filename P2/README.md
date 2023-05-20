@@ -34,6 +34,5 @@
 TODO: 
     - Corregir estilo responsive
     - Eliminar productos del carrito 
-    - Añadir seccion de comentarios al JSON y que se publiquen en el main
     - Añadir una animacion de opacidad al mensaje de "Añadido al carrito"
     - limpiar console logs

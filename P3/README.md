@@ -25,3 +25,4 @@
  - Mensajes de colores en el back
  - Limpiar console logs
  - iconos
+ - hacer ux/ui de colores
