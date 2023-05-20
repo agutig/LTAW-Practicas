@@ -437,7 +437,27 @@ header{
     color: rgb(0, 212, 0);
     font-size: 70%;
     font-weight: 700;
+
 } 
+#innerFeedback{
+    animation: aparecer-desaparecer 5s ease-out forwards;
+}
+
+@keyframes aparecer-desaparecer {
+    0% {
+        opacity: 0;
+    }
+    5%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 
 @media(prefers-reduced-motion: no-preference) {
     .boujee-text {

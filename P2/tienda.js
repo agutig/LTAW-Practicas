@@ -28,7 +28,7 @@ function print_info_req(req) {
 
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
 
-  if (true){
+  if (false){
     console.log("");
     console.log("Mensaje de solicitud");
     console.log("====================");
@@ -112,7 +112,7 @@ const server = http.createServer((req, res) => {
       let product = url.searchParams.get("cart");
       cookies = getCookies(req)
       if (checkIDExists(product)){
-        if(cookies['cart']  == null){
+        if(cookies['cart']  == null || cookies['cart']  == "" ){
           res.setHeader('Set-Cookie', "cart="+product+"_1" );
           OK(res,"200 OK")
         }else{
@@ -128,7 +128,7 @@ const server = http.createServer((req, res) => {
             cartCokie += id + "_" + cart[id] +":"
           });
           cartCokie = cartCokie.substring(0, cartCokie.length - 1);
-          res.setHeader('Set-Cookie', "cart="+cartCokie );
+          res.setHeader('Set-Cookie', ["cart="+cartCokie] );
           OK(res,"200 OK")
         }
 
@@ -137,13 +137,21 @@ const server = http.createServer((req, res) => {
         NOT_OK(res)
       }
 
-    }else if (url.pathname == '/searchPage'){
-      fs.readFile(FRONT_PATH + "searchPage.html", (err, data) => { if(!err){
-        let productFind = url.searchParams.get("product");
-        productList = findProduct(productFind)
-        cookies = getCookies(req)
-        data = manageSearchPage(data ,productList,cookies)
-        OK(res,data)}else{NOT_OK(res)}});
+  }else if (url.pathname == '/searchPage'){
+    fs.readFile(FRONT_PATH + "searchPage.html", (err, data) => { if(!err){
+      let productFind = url.searchParams.get("product");
+      productList = findProduct(productFind)
+      cookies = getCookies(req)
+      data = manageSearchPage(data ,productList,cookies)
+      OK(res,data)}else{NOT_OK(res)}});
+
+  }else if (url.pathname == '/searchCategory'){
+    fs.readFile(FRONT_PATH + "searchPage.html", (err, data) => { if(!err){
+      let productFind = url.searchParams.get("category");
+      productList = findProductByCategory(productFind)
+      cookies = getCookies(req)
+      data = manageSearchPage(data ,productList,cookies)
+      OK(res,data)}else{NOT_OK(res)}});
 
   }else if (url.pathname == '/productos'){
       let productFind = url.searchParams.get("product");
@@ -227,6 +235,50 @@ const server = http.createServer((req, res) => {
           NOT_OK(res)
         }
       });
+
+    }else if(url.pathname == '/deleteProductCart') {
+      let id = url.searchParams.get("id");
+      console.log(id)
+      cookies = getCookies(req)
+      cartCookie = cookies['cart'].split(":")
+      cartCookie = convert2Dic(cartCookie,"_")
+      console.log(cookies)
+      console.log(cartCookie)
+      delete cartCookie[id]
+      console.log(cartCookie)
+      var updatedCart = '';
+
+      if (cartCookie.length <=0 ){
+        updatedCart = ''
+        res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"]);
+      }else{
+        for (var clave in cartCookie) {
+          updatedCart += clave + '_' + cartCookie[clave] + ':';
+        }
+        updatedCart = updatedCart.slice(0, -1);
+        res.setHeader('Set-Cookie',["cart="+updatedCart]);
+      }
+
+      console.log(updatedCart)
+      
+      /*
+      for (let i = 0; i <  DATABASE.clients.length; i++){
+        if (DATABASE.clients[i].userName == cookies.userName){
+
+            if(cookies.cart != undefined && cookies.cart != null  ){DATABASE.clients[i].cart = updatedCart}else{DATABASE.clients[i].cart = ""}
+            fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
+              if (err) throw err;
+              console.log('Updated JSON');
+            });
+            break; 
+        }
+      }
+      */
+     
+      OK(res,"200 OK")
+      //res.setHeader('Set-Cookie', "cart="+cartCokie );
+
+
 
     }else if(url.pathname == '/purchase'){
       req.on('data', (content)=> {
@@ -426,7 +478,7 @@ async function manageCart(data,cookies , callback){
             let stock = cartCookie[key]
             let componentData = findProductById(id)
             newComponent = newComponent.replace("TITTLE",componentData.name);
-            newComponent = newComponent.replace("REPLACE_ID",id);
+            newComponent = newComponent.replace(/REPLACE_ID/g,id);
             newComponent = newComponent.replace(/PRICEUNIT/g, String(componentData.price));
             newComponent = newComponent.replace("value='0'", "value='" + stock+"'");
             newComponent = newComponent.replace("TOTALPRICE", String(Number(stock) * Number(componentData.price)));
@@ -466,6 +518,16 @@ function findProduct(search){
   const filteredArray = []
    DATABASE.products.map(function(elemento) {
     if ((elemento.name).toUpperCase().startsWith(search.toUpperCase())) {
+      filteredArray.push([elemento.name ,elemento.id]);
+    }
+  });
+  return filteredArray
+}
+
+function findProductByCategory(search){
+  const filteredArray = []
+   DATABASE.products.map(function(elemento) {
+    if ((elemento.category).toUpperCase().startsWith(search.toUpperCase())) {
       filteredArray.push([elemento.name ,elemento.id]);
     }
   });

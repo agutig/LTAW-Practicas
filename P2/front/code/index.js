@@ -35,18 +35,13 @@ var nextRev = document.getElementById("reviewButtonNext");
 var prevRev = document.getElementById("reviewButtonPrev");
 
 index = 0
-
-
 function showReview(){
     names[0].innerHTML = reviews[ Math.abs(index % reviews.length)].name
     coments[0].innerHTML = reviews[Math.abs(index % reviews.length)].coment
     images[0].src = reviews[Math.abs(index % reviews.length)].image
 
 }
-
-
 auto = 0
-
 
 setInterval(function() {
     auto += 1
@@ -56,7 +51,6 @@ setInterval(function() {
         auto=0
     }
 }, 1000);
-
 
 nextRev.onclick = function() {
     index += 1
@@ -70,10 +64,6 @@ prevRev.onclick = function() {
     showReview()
     auto = 0
 };
-
-
-
-    
 
 reviews = []
 
@@ -91,9 +81,24 @@ m.send();
 
 console.log(reviews)
 
-
-
-
 });
+
+
+function categorySearch(category){
+
+    const m = new XMLHttpRequest();
+    m.open("GET", "/searchProduct?category="+category, true);
+    m.onreadystatechange = () => {
+      if (m.readyState==4 && m.status == 200) {
+        results = JSON.parse(m.responseText)
+        if (results[0] == "searchPage"){
+          window.location.href = "/searchPage?product="+ search
+        }else{
+          window.location.href = '/error.html'
+        }
+      }
+    }
+    m.send();  //Envío de la petición
+  }
 
 

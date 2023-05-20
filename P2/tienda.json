@@ -4,6 +4,7 @@
       "name": "Iphone 14 pro",
       "id": 0,
       "price": 1100,
+      "category": "high",
       "marca": "apple",
       "stock": 0,
       "slogan": "Lo último de la manzana",
@@ -28,6 +29,7 @@
       "name": "Samsung Galaxy S23 Ultra",
       "id": 1,
       "price": 1020,
+      "category": "high",
       "stock": 0,
       "marca": "Samsung",
       "slogan": "Tecnología punta",
@@ -52,9 +54,10 @@
       "name": "Xiaomi 13 pro",
       "id": 2,
       "price": 900,
+      "category": "high",
       "marca": "Xiaomi",
       "slogan": "El rey del mercado",
-      "stock": 4,
+      "stock": 2,
       "intro": "Sumérgete en una experiencia única de navegación y entretenimiento con nuestro nuevo modelo de móvil. Con su pantalla curva de última generación, sonido envolvente y tecnología de vanguardia, sentirás que la magia está en tus manos. Además, con una batería de larga duración y resistencia al agua, nada te detendrá. ¡Bienvenido al futuro de la movilidad!",
       "description": [
         "Plataforma móvil Snapdragon® 8 Gen 2Proceso de fabricación de 4 nm y bajo consumo",
@@ -76,6 +79,7 @@
       "name": "OPPO find N2 flip",
       "id": 3,
       "price": 1100,
+      "category": "high",
       "marca": "OPPO",
       "slogan": "Doblando el color",
       "stock": 0,
@@ -100,6 +104,7 @@
       "name": "Realme GT Neo 3T",
       "id": 4,
       "price": 450,
+      "category": "mid",
       "marca": "Realme",
       "slogan": "Rendimiento acelerado NEO",
       "stock": 6,
@@ -124,6 +129,7 @@
       "name": "POCO X4 GT",
       "id": 5,
       "price": 199,
+      "category": "mid",
       "marca": "Xiaomi",
       "slogan": "Velocidad sin límites",
       "stock": 6,
@@ -148,6 +154,7 @@
       "name": "Samsung Galaxy A53 5G",
       "id": 6,
       "price": 380,
+      "category": "mid",
       "marca": "Samsung",
       "slogan": "Sencillez que destaca",
       "stock": 6,
@@ -171,10 +178,11 @@
     {
       "name": "Xiaomi Redmi A1",
       "id": 7,
+      "category": "mid",
       "price": 250,
       "marca": "Xiaomi",
       "slogan": "Diseño elegante y moderno",
-      "stock": 6,
+      "stock": 1,
       "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
       "description": [
         "Cámara dual de 8 MP",
@@ -195,6 +203,7 @@
     {
       "name": "Vivo Y21s",
       "id": 8,
+      "category": "low",
       "price": 80,
       "marca": "Vivo",
       "slogan": "Diseñado para adaptarse a ti y a tu estilo de vida",
@@ -219,6 +228,7 @@
     {
       "name": "Realme C35",
       "id": 9,
+      "category": "low",
       "price": 102,
       "marca": "Realme",
       "slogan": "Innovación, eficiencia y estilo en un solo dispositivo",
@@ -244,9 +254,10 @@
       "name": "Nokia G11",
       "id": 10,
       "price": 130,
+      "category": "low",
       "marca": "Nokia",
       "slogan": "El móvil que te lleva al futuro",
-      "stock": 6,
+      "stock": 0,
       "intro": "Nuestro móvil es mucho más que un dispositivo. Es tu centro de entretenimiento, tu asistente personal y tu cámara de fotos en un solo dispositivo. Con su pantalla curva de gran tamaño, podrás sumergirte en tus juegos y vídeos favoritos como nunca antes. Y su sistema de carga rápida te permitirá tener tu móvil siempre listo para lo que necesites. No te pierdas la experiencia de tener nuestro móvil en tus manos.",
       "description": [
         "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
@@ -267,6 +278,7 @@
     {
       "name": "POCO M5",
       "id": 11,
+      "category": "low",
       "price": 100,
       "marca": "Xiaomi",
       "slogan": "Todo lo que necesitas en un móvil, y más",
@@ -296,8 +308,37 @@
       "name": "Alvaro Gutierrez",
       "email": "guti@guti.com",
       "image": "/images/gatoTiste.png",
-      "pedidos": [],
-      "cart": "",
+      "pedidos": [
+        [
+          [
+            "10",
+            "3"
+          ]
+        ],
+        [
+          [
+            "10",
+            "2"
+          ]
+        ],
+        [
+          [
+            "2",
+            "2"
+          ]
+        ],
+        [
+          [
+            "7",
+            "5"
+          ],
+          [
+            "10",
+            "1"
+          ]
+        ]
+      ],
+      "cart": "10_3",
       "review": "Miau"
     },
     {

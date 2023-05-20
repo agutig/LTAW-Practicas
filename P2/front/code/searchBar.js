@@ -56,3 +56,23 @@ function productSearch(){
   }
   m.send();  //Envío de la petición
 }
+
+
+function categorySearch(category){
+
+  const m = new XMLHttpRequest();
+  m.open("GET", "/searchProduct?category="+category, true);
+  m.onreadystatechange = () => {
+    if (m.readyState==4 && m.status == 200) {
+      results = JSON.parse(m.responseText)
+      if (results[0] == "searchPage"){
+        window.location.href = "/searchPage?product="+ search
+      }else{
+        window.location.href = '/error.html'
+      }
+    }
+  }
+  m.send();  //Envío de la petición
+}
+
+

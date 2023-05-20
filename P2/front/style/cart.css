@@ -289,6 +289,41 @@ header{
                 -2px 0px 2px rgba(62, 62, 62, 0.2);
 }
 
+#cartProductButton{
+    background-color: #fafafa;
+    text-align: center;
+    color: rgb(228, 10, 10);
+    font-size: 80%;
+    font-weight: 700;
+    border: 1px solid rgb(228, 10, 10);
+    border-radius: 8px;
+    height: 3.8vh;
+    width: 3.8vh;
+    margin: auto;
+    margin-left: 10%;
+    transition: background-color 0.3s ease, color 0.3s ease , box-shadow 0.2s ease;
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.1),
+                0px -2px 2px rgba(62, 62, 62, 0.1),
+                2px  0px 2px rgba(62, 62, 62, 0.1),
+                -2px 0px 2px rgba(62, 62, 62, 0.1);
+}
+
+#cartProductButton:hover{
+    background-color: rgb(228, 10, 10);
+    color: #fafafa;
+    box-shadow: 0px 4px 4px rgba(62, 62, 62, 0.2),
+                0px -4px 4px rgba(62, 62, 62, 0.2),
+                4px  0px 4px rgba(62, 62, 62, 0.2),
+                -4px 0px 4px rgba(62, 62, 62, 0.2);
+}
+
+#cartProductButton:active {
+    box-shadow: 0px 2px 2px rgba(62, 62, 62, 0.1),
+                0px -2px 2px rgba(62, 62, 62, 0.1),
+                2px  0px 2px rgba(62, 62, 62, 0.1),
+                -2px 0px 2px rgba(62, 62, 62, 0.1);
+}
+
 #cartProductName{
     text-align: left;
     margin-top: 4%;

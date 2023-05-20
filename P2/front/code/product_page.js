@@ -70,14 +70,15 @@ function buyButton(id){
         productButton.onclick = null;
     }
 
+
     var m = new XMLHttpRequest();
     m.open("GET", "/addCart?cart=" + String(id), true);
     m.setRequestHeader("Content-Type", "application/json");
     m.onreadystatechange = function() {
         if (m.readyState==4 && m.status == 200) {
-            feedback.innerHTML = "Producto añadido al carrito"
+            feedback.innerHTML = "<p id='innerFeedback'>Producto añadido al carrito</p>"
         } else if (m.readyState==4 && m.status == 404) {
-            feedback.innerHTML = "Error añadido al carrito"
+            feedback.innerHTML = "<p id='innerFeedback'>Error añadido al carrito</p>"
         }
     };
     m.send();
