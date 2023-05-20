@@ -54,7 +54,6 @@ function returnFiles(dir ,space){
   let sendText = ""
   const archivos = fs.readdirSync(dir);
   for (let i = 0; i < archivos.length; i++) {
-    console.log(archivos[i])
     if(archivos[i].split(".").length > 1){
       sendText += "<p> " + space + " " + archivos[i] + "</p>";
     }else{

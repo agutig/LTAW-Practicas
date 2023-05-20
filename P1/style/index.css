@@ -186,6 +186,7 @@ header{
     top: 1vh; /* ajusta la posición vertical del texto */
     left: 0.5vw; /* ajusta la posición horizontal del texto */
     color: #fafafa;
+    text-shadow: -0.5px -0.5px 0 rgb(41, 41, 41), 0.5px -0.5px 0 rgb(41, 41, 41), -0.5px 0.5px 0 rgb(41, 41, 41), 0.5px 0.5px 0 rgb(41, 41, 41);
 }
 
 .product .productSubTittle{
@@ -198,6 +199,7 @@ header{
     top: 10vh; /* ajusta la posición vertical del texto */
     left: 0.5vw; /* ajusta la posición horizontal del texto */
     color: #fafafa;
+    text-shadow: -0.5px -0.5px 0 rgb(41, 41, 41), 0.5px -0.5px 0 rgb(41, 41, 41), -0.5px 0.5px 0 rgb(41, 41, 41), 0.5px 0.5px 0 rgb(41, 41, 41);
 }
 
 .product .productPic{
