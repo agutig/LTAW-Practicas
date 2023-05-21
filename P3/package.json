@@ -5,7 +5,7 @@
   "main": "chat.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node chat.js"
+    "start": "node server.js"
   },
   "author": "ALVARO GUTIERREZ 'AGUTIG' ",
   "license": "ISC",
