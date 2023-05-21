@@ -6,7 +6,7 @@
       "price": 1100,
       "category": "high",
       "marca": "apple",
-      "stock": 5,
+      "stock": 20,
       "slogan": "Lo último de la manzana",
       "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
       "description": [
@@ -30,7 +30,7 @@
       "id": 1,
       "price": 1020,
       "category": "high",
-      "stock": 6,
+      "stock": 0,
       "marca": "Samsung",
       "slogan": "Tecnología punta",
       "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
@@ -57,7 +57,7 @@
       "category": "high",
       "marca": "Xiaomi",
       "slogan": "El rey del mercado",
-      "stock": 6,
+      "stock": 12,
       "intro": "Sumérgete en una experiencia única de navegación y entretenimiento con nuestro nuevo modelo de móvil. Con su pantalla curva de última generación, sonido envolvente y tecnología de vanguardia, sentirás que la magia está en tus manos. Además, con una batería de larga duración y resistencia al agua, nada te detendrá. ¡Bienvenido al futuro de la movilidad!",
       "description": [
         "Plataforma móvil Snapdragon® 8 Gen 2Proceso de fabricación de 4 nm y bajo consumo",
@@ -82,7 +82,7 @@
       "category": "high",
       "marca": "OPPO",
       "slogan": "Doblando el color",
-      "stock": 6,
+      "stock": 2,
       "intro": "Con nuestro móvil, la seguridad es lo primero. Hemos integrado un sistema avanzado de reconocimiento facial, huella dactilar y encriptación de datos para que tus datos personales estén siempre protegidos. Además, su cámara de alta definición y su estabilizador de imagen te permitirán capturar momentos únicos y llenos de detalle. No te conformes con menos, ¡elige nuestro móvil Pro!",
       "description": [
         "Pantalla FHD+ de 6,8” AMOLED de 120 Hz.",
@@ -132,7 +132,7 @@
       "category": "mid",
       "marca": "Xiaomi",
       "slogan": "Velocidad sin límites",
-      "stock": 6,
+      "stock": 8,
       "intro": "La avanzada tecnología de proceso 5 nm de TSMC, que incorpora una nueva arquitectura de bajo consumo, proporciona una reducción del consumo de energía a la vez que ofrece un rendimiento de procesamiento más energético, además de permitir a todos los jugadores disfrutar de una nueva experiencia de juego a su alcance.",
       "description": [
         "Procesador Flagship MediaTek Dimensity 8100",
@@ -157,8 +157,8 @@
       "category": "mid",
       "marca": "Samsung",
       "slogan": "Sencillez que destaca",
-      "stock": 6,
-      "intro": "¿Quieres tener todo bajo control? Con nuestro móvil inteligente, podrás controlar tus electrodomésticos, luces y sistemas de seguridad desde la palma de tu mano. Además, con su procesador de última generación y su memoria expandible, podrás hacer más y más rápido. Y si eres un aficionado a la fotografía, su cámara de gran angular y su sistema de doble lente te permitirán capturar el mundo como nunca antes. ¿Te unes a la revolución móvil?",
+      "stock": 2,
+      "intro": "¿Quieres tener todo bajo control? Con nuestro móvil inteligente, podrás controlar tus electrodomésticos, luces y sistemas de seguridad desde la palma de tu mano. Además, con su procesador de última generación y su memoria expandible, podrás hacer más y más rápido. Y si eres un aficionado a la fotografía, su cámara de gran angular y su sistema de doble lente te permitirán capturar el mundo como nunca antes.",
       "description": [
         "La pantalla Super AMOLED de 120Hz de tu Galaxy está preparada para mostrarte cualquier cosa",
         "Cámara OIS e 64MP, conseguirás fotos más nítidas y claras",
@@ -182,7 +182,7 @@
       "price": 250,
       "marca": "Xiaomi",
       "slogan": "Diseño elegante y moderno",
-      "stock": 6,
+      "stock": 20,
       "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
       "description": [
         "Cámara dual de 8 MP",
@@ -207,8 +207,8 @@
       "price": 80,
       "marca": "Vivo",
       "slogan": "Diseñado para adaptarse a ti y a tu estilo de vida",
-      "stock": 6,
-      "intro": "¿Quieres rendimiento? Con nuestro móvil de última generación, tendrás el procesador más potente y la mayor velocidad de conexión. Además, con su pantalla de alta definición y su sistema de sonido envolvente, podrás disfrutar de tus contenidos favoritos como nunca antes. Y para los amantes de la fotografía, su cámara con inteligencia artificial y zoom óptico te permitirá capturar imágenes con calidad profesional.",
+      "stock": 25,
+      "intro": "¿Quieres rendimiento? Con nuestro móvil de última generación, tendrás el procesador más potente y la mayor velocidad de conexión. Además, con su pantalla de alta definición y su sistema de sonido envolvente, podrás disfrutar de tus contenidos favoritos como nunca antes. Y para los amantes de la fotografía, su cámara con inteligencia artificial.",
       "description": [
         "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
         "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
@@ -232,7 +232,7 @@
       "price": 102,
       "marca": "Realme",
       "slogan": "Innovación, eficiencia y estilo en un solo dispositivo",
-      "stock": 6,
+      "stock": 15,
       "intro": "La vida es impredecible, pero nuestro móvil no. Con su diseño resistente y su protección contra el agua y el polvo, podrás llevarlo contigo a cualquier parte sin preocupaciones. Además, su batería de larga duración y su carga inalámbrica te permitirán estar conectado en todo momento. Y con su sistema de reconocimiento de voz y asistente personal, podrás hacer tus tareas diarias con mayor eficiencia.",
       "description": [
         "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
@@ -257,8 +257,8 @@
       "category": "low",
       "marca": "Nokia",
       "slogan": "El móvil que te lleva al futuro",
-      "stock": 6,
-      "intro": "Nuestro móvil es mucho más que un dispositivo. Es tu centro de entretenimiento, tu asistente personal y tu cámara de fotos en un solo dispositivo. Con su pantalla curva de gran tamaño, podrás sumergirte en tus juegos y vídeos favoritos como nunca antes. Y su sistema de carga rápida te permitirá tener tu móvil siempre listo para lo que necesites. No te pierdas la experiencia de tener nuestro móvil en tus manos.",
+      "stock": 13,
+      "intro": "Nuestro móvil es mucho más que un dispositivo. Es tu centro de entretenimiento, tu asistente personal y tu cámara de fotos en un solo dispositivo. Con su pantalla curva de gran tamaño, podrás sumergirte en tus juegos y vídeos favoritos como nunca antes. Y su sistema de carga rápida te permitirá tener tu móvil siempre listo para lo que necesites.",
       "description": [
         "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
         "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
@@ -283,7 +283,7 @@
       "marca": "Xiaomi",
       "slogan": "Todo lo que necesitas en un móvil, y más",
       "stock": 6,
-      "intro": "La creatividad no tiene límites con nuestro móvil. Con su sistema de lápiz digital integrado y su pantalla de alta resolución, podrás dibujar y escribir como nunca antes. Además, su sistema de reconocimiento de voz y su asistente virtual te permitirán hacer tus tareas de forma más eficiente. Y si eres un amante de la fotografía, su cámara de alta definición y su sistema de estabilización de imagen te permitirán capturar momentos únicos con calidad profesional.",
+      "intro": "Con su sistema de lápiz digital integrado y su pantalla de alta resolución, podrás dibujar y escribir como nunca antes. Además, su sistema de reconocimiento de voz y su asistente virtual te permitirán hacer tus tareas de forma más eficiente. Y si eres un amante de la fotografía, su cámara de alta definición y su sistema de estabilización de imagen te permitirán capturar momentos únicos con calidad profesional.",
       "description": [
         "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
         "Chip A16 Bionic CPU de 6 núcleos (2 de rendimiento y 4 de eficiencia) GPU de 5 núcleos Neural Engine de 16 núcleos",
@@ -308,14 +308,7 @@
       "name": "Alvaro Gutierrez",
       "email": "guti@guti.com",
       "image": "/images/gatoTiste.png",
-      "pedidos": [
-        [
-          [
-            "0",
-            "1"
-          ]
-        ]
-      ],
+      "pedidos": [],
       "cart": "",
       "review": "Miau"
     },
@@ -335,7 +328,14 @@
       "name": "José Álvaro Osorio Balvin",
       "email": "jbalvin@jmail.com",
       "image": "images/cliente_1.png",
-      "pedidos": [],
+      "pedidos": [
+        [
+          [
+            "1",
+            "100"
+          ]
+        ]
+      ],
       "cart": "",
       "review": "He comprado todos los Samsung Galaxy S23 muajajaj"
     },
