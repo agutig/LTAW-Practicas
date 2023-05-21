@@ -13,6 +13,7 @@
     0px -6px 6px rgba(0, 0, 0, 0.3),
     6px  0px 6px rgba(0, 0, 0, 0.3),
     -6px 0px 6px rgba(0, 0, 0, 0.3);
+    
 }
 
 #chatsDiv{
@@ -23,7 +24,8 @@
     margin-top: 0;
     margin-right: 0;
     background-color: #464646;
-    border: 1px solid #0b0b0b79;
+    border-right: 1px solid #0b0b0b79;
+    box-sizing: border-box;
     color: #fafafa;
     text-align: center;
 }
@@ -102,17 +104,20 @@
 }
 
 .mainDiv #tittleConversation #tittleConversationH1{
+    height: fit-content;
     margin: auto;
-    margin-top: 2%;
+    margin-top: 1.25%;
     font-size: 150%;
     font-weight: 700;
     width: fit-content;
+    height: fit-content;
 }
 
 .mainDiv #messagesDiv{
     margin: auto;
     background-color: #363636;
     border: 0% 1% 1% 1% solid #0b0b0b79;
+    box-sizing: border-box;
     border-radius: 0 16px 0 0;
     height: 90.3%;
     width: 100%;
@@ -164,16 +169,32 @@
               0 1.5px 1.5px rgba(0,0,0,0.35),
               0 1.5px 1.5px rgba(0,0,0,0.35);
 }
+.mainDiv #messagesDiv .messageClassDiv1 .chatTimeText{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
 
 .mainDiv #messagesDiv .messageClassDiv1 .userName{
     font-weight: 800;
     text-align: left;
-    margin-left: 1vw;
-    margin-top: 1vh;
+    margin: auto;
+    margin-left: 1.1vw;
     width: auto;
     max-width: 80%;
     min-width: 20%;
     display: inline;
+}
+
+.mainDiv #messagesDiv .messageClassDiv1 .chatTimeText .messDate{
+    margin: auto;
+    margin-right: 1.1vw;
+    margin-left: 0.5vw;
+    color: #fafafa;
+    font-size: 80%;
 }
 
 .mainDiv #messagesDiv .messageClassDiv1 .chatText{
@@ -183,9 +204,8 @@
     font-size: 110;
     text-align: left;
     margin: auto;
-    margin-left: 2.5vw;
-    margin-right: 1vw;
-    margin-top: 0.5vh;
+    margin-left: 1vw;
+    margin-right: 0.75vw;
     margin-bottom: 0.5vh;
     width: max-content;
     max-width: 25vw;
@@ -217,16 +237,35 @@
               0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
-.mainDiv #messagesDiv .messageClassDiv2 .userName{
+
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatTimeText{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatTimeText .userName{
     font-weight: 800;
     text-align: left;
-    margin-left: 1vw;
-    margin-top: 1vh;
+    margin: auto;
+    margin-left: 1.1vw;
     width: auto;
     max-width: 80%;
     min-width: 20%;
     display: inline;
 
+}
+
+.mainDiv #messagesDiv .messageClassDiv2 .chatTimeText .messDate{
+    margin: auto;
+    margin-right: 1.1vw;
+    margin-left: 0.5vw;
+    color: #fafafa;
+    font-size: 80%;
 }
 
 .mainDiv #messagesDiv .messageClassDiv2 .chatText{
@@ -237,12 +276,12 @@
     font-size: 110;
     text-align: left;
     margin: auto;
-    margin-left: 2.5vw;
-    margin-right: 1vw;
-    margin-top: 0.5vh;
+    margin-left: 1vw;
+    margin-right: 0.75vw;
     margin-bottom: 0.5vh;
     width: max-content;
     max-width: 25vw;
+    min-width: 1.75vw;
     border-radius: 16px;
     color: #fafafa;
     background-color: rgb(0, 119, 64);
@@ -255,7 +294,7 @@
     margin-top: 1%;
     margin-bottom: 1%;
     border: 1px solid rgb(51, 51, 51);
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(43, 173, 224);
     border-radius: 16px;
     width: auto;
     max-width: 45%;
@@ -282,7 +321,7 @@
     border-radius: 16px;
     color: #fafafa;
     max-width: 30vw;
-    background-color: rgb(36, 36, 36);
+    background-color: rgb(35, 106, 134);
     word-break: break-all;
 }
 
@@ -290,8 +329,10 @@
 
 
 .mainDiv .inputDiv{
-    height: 10%;
-    border: 1px solid #0b0b0b79;
+    height: 9.9%;
+    border-top: 1px solid #0b0b0b79;
+    border-bottom: 0px;
+    box-sizing: border-box;
     border-radius: 0 0 32px 0;
     background-color: #464646;
 }
@@ -305,6 +346,7 @@
     border-radius: 16px;
     text-align: center;
     border: 1px solid #0b0b0b79;
+    box-sizing: border-box;
     background-color: #cbcbcb;
     font-size: 150%;
     color: rgb(51, 51, 51);
@@ -320,6 +362,7 @@
     width: 5vh;
     border-radius: 32px;
     border: 1px solid #0b0b0b79;
+    box-sizing: border-box;
     background-color: #4b4b4b;
     color: #d8d8d8;
     font-weight: 800;
@@ -343,13 +386,15 @@
               0 4px 4px rgba(0,0,0,0.20);
 }
 
-
+.mainDiv .inputDiv #inputButton:active{
+    box-shadow: none;
+}
 
 
 #footerText{
     
     margin: auto;
-    margin-left: 10%;
+    margin-left: 9.75%;
     margin-top: 2%;
     text-align: center;
     color: #fafafa;

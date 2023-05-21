@@ -167,6 +167,10 @@ function spetialCommands(comand, socket , name ,channel){
             socket.emit("message" , JSON.stringify([channel ,"server","Esta es la fecha actual: " + getDate()]))
             break;
 
+        default:
+            socket.emit("message" , JSON.stringify([channel ,"server","Comando no reconocido, escribe /help para conocer todas las opciones"]))
+            break;
+
     }
 
 }

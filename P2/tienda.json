@@ -6,7 +6,7 @@
       "price": 1100,
       "category": "high",
       "marca": "apple",
-      "stock": 0,
+      "stock": 5,
       "slogan": "Lo último de la manzana",
       "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
       "description": [
@@ -30,7 +30,7 @@
       "id": 1,
       "price": 1020,
       "category": "high",
-      "stock": 0,
+      "stock": 6,
       "marca": "Samsung",
       "slogan": "Tecnología punta",
       "intro": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
@@ -57,7 +57,7 @@
       "category": "high",
       "marca": "Xiaomi",
       "slogan": "El rey del mercado",
-      "stock": 2,
+      "stock": 6,
       "intro": "Sumérgete en una experiencia única de navegación y entretenimiento con nuestro nuevo modelo de móvil. Con su pantalla curva de última generación, sonido envolvente y tecnología de vanguardia, sentirás que la magia está en tus manos. Además, con una batería de larga duración y resistencia al agua, nada te detendrá. ¡Bienvenido al futuro de la movilidad!",
       "description": [
         "Plataforma móvil Snapdragon® 8 Gen 2Proceso de fabricación de 4 nm y bajo consumo",
@@ -82,7 +82,7 @@
       "category": "high",
       "marca": "OPPO",
       "slogan": "Doblando el color",
-      "stock": 0,
+      "stock": 6,
       "intro": "Con nuestro móvil, la seguridad es lo primero. Hemos integrado un sistema avanzado de reconocimiento facial, huella dactilar y encriptación de datos para que tus datos personales estén siempre protegidos. Además, su cámara de alta definición y su estabilizador de imagen te permitirán capturar momentos únicos y llenos de detalle. No te conformes con menos, ¡elige nuestro móvil Pro!",
       "description": [
         "Pantalla FHD+ de 6,8” AMOLED de 120 Hz.",
@@ -182,7 +182,7 @@
       "price": 250,
       "marca": "Xiaomi",
       "slogan": "Diseño elegante y moderno",
-      "stock": 1,
+      "stock": 6,
       "intro": "Llega a tus manos una forma mágica de utilizar el iPhone, combinada con prestaciones de seguridad pensadas para salvar vidas, y una espectacular cámara de 48 Mpx que consigue un nivel de detalle descomunal. Todo bajo el control del chip más avanzado en un smartphone. ¿Lo ves? Es que no se puede ser más Pro.",
       "description": [
         "Cámara dual de 8 MP",
@@ -257,7 +257,7 @@
       "category": "low",
       "marca": "Nokia",
       "slogan": "El móvil que te lleva al futuro",
-      "stock": 0,
+      "stock": 6,
       "intro": "Nuestro móvil es mucho más que un dispositivo. Es tu centro de entretenimiento, tu asistente personal y tu cámara de fotos en un solo dispositivo. Con su pantalla curva de gran tamaño, podrás sumergirte en tus juegos y vídeos favoritos como nunca antes. Y su sistema de carga rápida te permitirá tener tu móvil siempre listo para lo que necesites. No te pierdas la experiencia de tener nuestro móvil en tus manos.",
       "description": [
         "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
@@ -311,34 +311,12 @@
       "pedidos": [
         [
           [
-            "10",
-            "3"
-          ]
-        ],
-        [
-          [
-            "10",
-            "2"
-          ]
-        ],
-        [
-          [
-            "2",
-            "2"
-          ]
-        ],
-        [
-          [
-            "7",
-            "5"
-          ],
-          [
-            "10",
+            "0",
             "1"
           ]
         ]
       ],
-      "cart": "10_3",
+      "cart": "",
       "review": "Miau"
     },
     {
@@ -357,37 +335,8 @@
       "name": "José Álvaro Osorio Balvin",
       "email": "jbalvin@jmail.com",
       "image": "images/cliente_1.png",
-      "pedidos": [
-        [
-          [
-            "0",
-            "1"
-          ]
-        ],
-        [
-          [
-            "1",
-            "2"
-          ],
-          [
-            "2",
-            "3"
-          ]
-        ],
-        [
-          [
-            "0",
-            "18"
-          ]
-        ],
-        [
-          [
-            "2",
-            "3"
-          ]
-        ]
-      ],
-      "cart": "0_1:2_1:5_2",
+      "pedidos": [],
+      "cart": "",
       "review": "He comprado todos los Samsung Galaxy S23 muajajaj"
     },
     {

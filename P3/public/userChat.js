@@ -10,10 +10,18 @@ let STATE = "general"
 let USERS_LIST = []
 //Send User-server messages
 
+function getDate(){
+  var date = new Date();
+  var hour = date.getHours().toString().padStart(2, '0');
+  var minutes = date.getMinutes().toString().padStart(2, '0');
+  return hour + ":" + minutes
+}
+
 
 function setState(id){
   STATE = id
   messagesDiv.innerHTML = CHAT_DATABASE[id]
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
   var usersChats = document.getElementsByClassName("userChat")
   for (var i = 0; i < usersChats.length; i++) {
     usersChats[i].style.backgroundColor = "#464646";
@@ -27,7 +35,6 @@ function setState(id){
   if(id == "general"){
     document.getElementById("tittleConversationH1").innerHTML = "General"
   }else{
-    console.log(USERS_LIST)
     for (let i = 0; i < USERS_LIST.length ; i++) {
       if (id == USERS_LIST[i].id){
         document.getElementById("tittleConversationH1").innerHTML = USERS_LIST[i].name
@@ -41,10 +48,14 @@ function setState(id){
 function sendMessage(){
   //Mandar un mensaje SI atado a un evento
   msg = input.value
-  input.value = ""
-  CHAT_DATABASE[STATE] += "<div class='messageClassDiv2'> <span class='userName'>Tú</span> <p class='chatText'>"+msg+"</p>  </div>"
-  messagesDiv.innerHTML = CHAT_DATABASE[STATE]
-  socket.emit("message" , [ STATE,USERNAME,msg])
+  date = getDate()
+  if(msg != ""){
+    input.value = ""
+    CHAT_DATABASE[STATE] += "<div class='messageClassDiv2'> <p class='chatTimeText'> <span class='userName'>Tú</span>  <span class='messDate'>" + getDate() + "</span>  </p>   <p class='chatText'>"+msg+"</p></div>"
+    messagesDiv.innerHTML = CHAT_DATABASE[STATE]
+    socket.emit("message" , [ STATE,USERNAME,msg])
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
 }
 
 
@@ -72,9 +83,21 @@ socket.on("message", (msg)=>{
   msg = JSON.parse(msg)
   new_message = ""
   if (msg[1] == "server"){
-    CHAT_DATABASE[msg[0]] += "<div class='messageClassDiv3'> <p class='userName'>Server</p>  <p class='chatText' >" + msg[2] + "</p>  </div>"
+    CHAT_DATABASE[msg[0]] += "<div class='messageClassDiv3'> <p class='userName'>Server</p>  <p class='chatText' >" + msg[2] + "</p> <p>"+getDate()+"</p>  </div>"
+    let flag = msg[3]
+    if (flag != undefined || flag !=""){
+      if(flag == "disconect"){
+        let discoUser = msg[4]
+        if( STATE == discoUser){
+          messagesDiv.innerHTML += "<div class='messageClassDiv3'> <p class='userName'>Server</p>  <p class='chatText' >" + msg[2] + " cambia de chat para seguir chateando</p> <p>"+getDate()+"</p>  </div>"
+        }
+      }
+    }
+    
+    console.log(discoUser)
   }else{
-    CHAT_DATABASE[msg[0]] += "<div class='messageClassDiv1'> <p class='userName' >" + msg[1] + "</p> <p class='chatText' >"+ msg[2] +"</p> </div>"
+  //CHAT_DATABASE[STATE] +=  "<div class='messageClassDiv2'> <p class='chatTimeText'> <span class='userName'>Tú</span>  <span class='messDate'>" + getDate() + "</span>  </p>   <p class='chatText'>"+msg+"</p></div>"
+    CHAT_DATABASE[msg[0]] += "<div class='messageClassDiv1'> <p class='chatTimeText'> <span class='userName'>"+ msg[1] +"</span> <span class='messDate'>"+getDate()+"</span>  </p> <p class='chatText' >"+ msg[2] +"</p> </div>"
   }
 
   if (STATE == msg[0]) {
@@ -84,9 +107,9 @@ socket.on("message", (msg)=>{
     let counter = fatherDiv.querySelector("#unread");
     let value = Number((counter.innerHTML).slice(2, -1))
     counter.innerHTML =  " (" + String(value + 1) + ")"
-
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
   }
-
+  
 });
 
 
