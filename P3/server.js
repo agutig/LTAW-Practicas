@@ -58,11 +58,11 @@ io.on('connect', (socket) => {
         const fechaActual = new Date();
         const hora = Number(fechaActual.getHours().toString().padStart(2, '0'));
         hourMess = ""
-        if (hora > 9 && hora <= 13) {
+        if (hora > 6 && hora <= 13) {
             hourMess = "Buenos días ";
           } else if (hora > 13 && hora < 21) {
             hourMess = "Buenas tardes ";
-          } else if (hora >= 21 || hora < 9) {
+          } else if (hora >= 21 || hora < 6) {
             hourMess = "Buenas noches ";
           }
 
@@ -120,10 +120,15 @@ function spetialCommands(comand, socket , name ,channel){
             break;
 
         case "/list":
-            let response = "Lista de usuarios conectados (menos tú, claro)"
-            for (let i = 0; i <  clients.length; i++){
-                if (socket.id != clients[i].id){
-                    response += "<br> - " + clients[i].name
+
+            let response = "Lista de usuarios conectados (menos tú, claro):"
+            if (clients.length <=1){
+                response = "No hay nadie mas conectado a parte de ti..."
+            }else{
+                for (let i = 0; i <  clients.length; i++){
+                    if (socket.id != clients[i].id){
+                        response += "<br> - " + clients[i].name
+                    }
                 }
             }
             socket.emit("message" ,JSON.stringify([channel ,"server",response]))
@@ -134,7 +139,7 @@ function spetialCommands(comand, socket , name ,channel){
             break;
 
         case "/date":
-            socket.emit("message" , JSON.stringify([channel ,"server","Esta es la fecha actual: " + getDate()]))
+            socket.emit("message" , JSON.stringify([channel ,"server", getDate()]))
             break;
 
         default:
@@ -154,7 +159,7 @@ function getDate(){
     const minutos = fechaActual.getMinutes().toString().padStart(2, '0');
     const segundos = fechaActual.getSeconds().toString().padStart(2, '0');
 
-    const fechaHora = `${dia}/${mes}/${anio} ${hora}:${minutos}:${segundos}`;
+    const fechaHora = `Es el dia: ${dia}/${mes}/${anio} , a las ${hora}:${minutos} y ${segundos} segundos`;
     return fechaHora
 }
 

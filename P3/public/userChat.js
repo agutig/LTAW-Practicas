@@ -8,6 +8,7 @@ usersListDiv = document.getElementById("usersListDiv")
 let CHAT_DATABASE = {general:"<div class='invisibleDiv'></div>"}
 let STATE = "general"
 let USERS_LIST = []
+let SOUND =  new Audio('public/sound_notification.mp3');
 //Send User-server messages
 
 function getDate(){
@@ -93,12 +94,13 @@ socket.on("message", (msg)=>{
         }
       }
     }
-    
-    console.log(discoUser)
+
   }else{
+    SOUND.play();
   //CHAT_DATABASE[STATE] +=  "<div class='messageClassDiv2'> <p class='chatTimeText'> <span class='userName'>Tú</span>  <span class='messDate'>" + getDate() + "</span>  </p>   <p class='chatText'>"+msg+"</p></div>"
     CHAT_DATABASE[msg[0]] += "<div class='messageClassDiv1'> <p class='chatTimeText'> <span class='userName'>"+ msg[1] +"</span> <span class='messDate'>"+getDate()+"</span>  </p> <p class='chatText' >"+ msg[2] +"</p> </div>"
   }
+
 
   if (STATE == msg[0]) {
     setState(msg[0])
