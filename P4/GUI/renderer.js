@@ -1,11 +1,19 @@
 const electron = require('electron');
+const ip = require('ip');
+
 
 console.log("hey")
 let BODY = document.body.innerHTML;
 
+//Static data
 BODY = BODY.replace( "<!--REPLACE_NODE_VERSION-->" ,process.versions.node )
 BODY = BODY.replace( "<!--REPLACE_NODE_CHROME-->" ,process.versions.chrome )
 BODY = BODY.replace( "<!--REPLACE_NODE_ELECTRON-->" ,process.versions.electron )
+document.body.innerHTML = BODY
+//Api conection information data
+
+electron.ipcRenderer.invoke('conectionInformation' , "")
+
 
 document.body.innerHTML = BODY
 
@@ -32,6 +40,11 @@ electron.ipcRenderer.on('genChat' , (event,message) => {
     console.log(message)
 })
 
+electron.ipcRenderer.on('conectionInformation' , (event,message) => {
+
+    document.body.innerHTML = document.body.innerHTML.replace( "<!--REPLACE_URL-->" ,"http://" +  message[0] + ":" +message[1])
+    document.body.innerHTML = document.body.innerHTML.replace( "<!--REPLACE_QR-->" ,message[2])
+})
 
 
 const myButton = document.getElementById('testButton');

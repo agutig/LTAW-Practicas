@@ -8,7 +8,6 @@ function login() {
     m.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     m.onreadystatechange = function() {
         if (m.readyState==4 && m.status == 200) {
-            console.log(m.responseText)
 
             var scriptElement = document.createElement("script");
             scriptElement.setAttribute("type", "text/javascript");
@@ -28,7 +27,6 @@ function login() {
         } else if (m.readyState==4 && m.status == 404) {
             
             console.log("Error")
-            console.log(m.responseText)
             document.getElementById("feedbackText").innerHTML =  ""
             document.getElementById("feedbackText").innerHTML =  "<p id='feedbackResponse' >" + m.responseText + "</p>"
         }

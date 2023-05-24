@@ -5,6 +5,8 @@ const socketServer = require('socket.io').Server;
 const http = require('http');
 const express = require('express');
 const fs = require('fs');
+const ip = require('ip');
+const qrcode = require('qrcode');
 
 
 /* ELECTRON GUI */
@@ -219,6 +221,27 @@ function getDate(){
 
     electron.ipcMain.handle('serverMess',(event,msg) => {
         io.emit("message", JSON.stringify([ "general", "server" ,msg]));
+    })
+
+    electron.ipcMain.handle('conectionInformation',(event,msg) => {
+
+
+        const url = "http://" + ip.address() + ":" + PUERTO;
+        const qrImagePath = "./GUI/QR.png"
+
+     
+        qrcode.toFile(qrImagePath , url, {
+            color: {
+              dark: '#00b35f',  // Blue dots
+              light: '#0000' // Transparent background
+            }
+          }, function (err) {
+            if (err) throw err
+            console.log('done')
+          })
+  
+
+        win.webContents.send('conectionInformation' ,[ip.address(), PUERTO, "QR.png"])
     })
 
     win.loadFile("GUI/renderer.html")
