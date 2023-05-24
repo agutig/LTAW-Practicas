@@ -35,28 +35,45 @@ function updateTotal(){
 function sendPurchase(){
 
     let purchase = []
+    let user= document.getElementsByClassName('logButton')[0].innerHTML;
     let ids = document.getElementsByClassName('cartProductId');
     let stock = document.getElementsByClassName('cartProductInput');
-    for (let i = 0; i < ids.length; i++) {
-        purchase.push([ids[i].getAttribute('productId'), stock[i].value])
-    }
+    let tarjet = document.getElementById('cardClient').value;
+    let direction = document.getElementById('dirClient').value;
+    let feedbackText = document.getElementById('feedbackText');
 
-    console.log(purchase)
-    var m = new XMLHttpRequest();
-    m.open("POST", "/purchase", true);
-    m.setRequestHeader("Content-Type", 'application/json');
-    m.onreadystatechange = function() {
-        if (m.readyState==4 && m.status == 200) {
-            body = document.getElementsByClassName('mainBody')[0];
-            body.innerHTML = "<p id='cartTittle' style='margin: auto; margin-top: 2%'> Compra realizada con exito, puedes comprobar el pedido en tu perfil</p>" 
-            body.innerHTML += "<button id='cartButton'  style='margin: auto; margin-top: 2%' onclick=\"location.href='/' \" ;>Volver a la pagina de inicio</button>"
+    if(direction == ""){
+        feedbackText.innerHTML = "Debes introducir una dirección para finalizar el pago"
+    }else if(tarjet == "") {
+        feedbackText.innerHTML = "Debes introducir una tarjeta de crédito para finalizar el pago"
+    }else{
 
-        } else if (m.readyState==4 && m.status == 404) {
-            console.log("Error")
-            errorText.innerHTML = "Email o contraseña incorrecta"
+        for (let i = 0; i < ids.length; i++) {
+            purchase.push([ids[i].getAttribute('productId'), stock[i].value])
         }
-    };
-    m.send(JSON.stringify(purchase));
+
+        let purchase_data = {
+            products : purchase,
+            data : {dir:direction, card: tarjet ,user:user}
+        }
+
+        console.log(purchase_data)
+        var m = new XMLHttpRequest();
+        m.open("POST", "/purchase", true);
+        m.setRequestHeader("Content-Type", 'application/json');
+        m.onreadystatechange = function() {
+            if (m.readyState==4 && m.status == 200) {
+                body = document.getElementsByClassName('mainBody')[0];
+                body.innerHTML = "<p id='cartTittle' style='margin: auto; margin-top: 2%'> Compra realizada con exito, puedes comprobar el pedido en tu perfil</p>" 
+                body.innerHTML += "<button id='cartButton'  style='margin: auto; margin-top: 2%' onclick=\"location.href='/' \" ;>Volver a la pagina de inicio</button>"
+
+            } else if (m.readyState==4 && m.status == 404) {
+                console.log("Error")
+                errorText.innerHTML = "Email o contraseña incorrecta"
+            }
+        };
+        m.send(JSON.stringify(purchase_data));
+    }
 }
 
 function deleteProduct(id){

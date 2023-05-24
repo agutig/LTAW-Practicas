@@ -269,6 +269,13 @@ header{
     color: #545454;
 }
 
+.orderDivText3{
+    text-align: left;
+    margin-left: 2%;
+    font-size: 50%;
+    font-weight: 500;
+    color: #545454;
+}
 
 .profileText{
     margin-left: 2%;
@@ -323,7 +330,7 @@ header{
 
 
 #ordersDiv .order .orderProductDiv .orderProductText{
-    color: rgb(44, 44, 44);
+    color: rgb(80, 80, 80);
     margin-left: 2%;
     margin-top: 0%;
     font-size: 2vh;

@@ -352,9 +352,8 @@ function manageProductData(data, DATABASE , id ,cookies){
   for (let i = 0; i < DATABASE.products.length; i++){
       if (id ==  DATABASE.products[i].id){
         data = data.replace("placeholderTittle",  DATABASE.products[i].name);
-        data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
         data = data.replace("placeholderImage", imagePath + String( DATABASE.products[i].img[0]));
-        data = data.replace("placeholderIntro",  DATABASE.products[i].intro);
+        data = data.replace("placeholderIntro",  DATABASE.products[i].descripcion);
 
         data = data.replace("<!--placeholderWholePrice-->",  DATABASE.products[i].price);
         data = data.replace("<!--placeholderMonthPrice-->",  (DATABASE.products[i].price/12).toFixed(2));
@@ -383,8 +382,8 @@ function manageProductData(data, DATABASE , id ,cookies){
           data = data.replace("replaceButtonText", "Sin stock");
         }
         
-        for (let j = 0; j <  DATABASE.products[i].description.length; j++){
-          data = data.replace("placeholderESP",  DATABASE.products[i].description[j]);
+        for (let j = 0; j <  DATABASE.products[i].caracteristics.length; j++){
+          data = data.replace("placeholderESP",  DATABASE.products[i].caracteristics[j]);
         }
         break;
       }
@@ -435,14 +434,17 @@ function manageProfilePage(data,cookies){
     }else{
       let components = ""
       for (let i = 0; i <  user.pedidos.length; i++){
-        components += "<div class='order'> <p class='orderDivText'>Pedido</p>"
+        console.log(user.pedidos[i])
+        components += "<div class='order'> <p class='orderDivText'>Pedido para: "+ user.pedidos[i].data.user + "</p>\
+        <p class='orderDivText3'>Dirección de envio: " +user.pedidos[i].data.dir  +" </p>\
+        <p class='orderDivText3'>Numero de tarjeta: "+ user.pedidos[i].data.card + "</p> <p class='orderDivText3'> Productos comprados: </p>  "
         let total = 0
-        for (let j = 0; j <  user.pedidos[i].length; j++){
+        for (let j = 0; j <  user.pedidos[i].products.length; j++){
           newOrder = ORDERTEMPLATE
-          let product = findProductById(user.pedidos[i][j][0])
+          let product = findProductById(user.pedidos[i].products[j][0])
           newOrder = newOrder.replace("TITTLE",product.name);
-          newOrder = newOrder.replace("UNITS",user.pedidos[i][j][1]);
-          let price = product.price * Number(user.pedidos[i][j][1])
+          newOrder = newOrder.replace("UNITS",user.pedidos[i].products[j][1]);
+          let price = product.price * Number(user.pedidos[i].products[j][1])
           newOrder = newOrder.replace("PRICE",price);
           components += newOrder
           total +=price
@@ -486,7 +488,11 @@ async function manageCart(data,cookies , callback){
             totalPrice += Number(stock) * Number(componentData.price)
             productsComponents += newComponent + "\n";
           }
-          productsComponents += " <p id='totalPriceFinal'> Total: " + String(totalPrice) + "</p> </div>";
+          const inputUI = "<div id=inputDataCart > <p class='textUserCart'>Tarjeta de crédito</p> \
+          <input type='number' id='cardClient' class='userDataInput' placeholder='Introduce tu tarjeta de credito para completar el pago'/> \
+          <p class='textUserCart' >Dirección de envio</p> <input id='dirClient' type='text' class='userDataInput' placeholder='Introduce tu direccion para completar el pago'/>\
+          <p id='feedbackText'></p> </div>"
+          productsComponents += " <p id='totalPriceFinal'> Total: " + String(totalPrice) + "</p>" + inputUI + "</div> " ;
           data = data.replace("<!--REPLACE_PRODUCTS-->",productsComponents);
           data = data.replace("REPLACE_TEXT","Realizar pedido");
           data = data.replace("REPLACE_URL","sendPurchase()");
