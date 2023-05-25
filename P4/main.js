@@ -7,6 +7,7 @@ const express = require('express');
 const fs = require('fs');
 const ip = require('ip');
 const qrcode = require('qrcode');
+const colors = require('colors');
 
 
 /* ELECTRON GUI */
@@ -33,11 +34,6 @@ electron.app.on('ready', () => {
 //http://localhost:9000/
 
 //-- Cargar las dependencias
-const socketServer = require('socket.io').Server;
-const http = require('http');
-const express = require('express');
-const fs = require('fs');
-
 
 const PUERTO = 9000;
 const CHAT_HTML =  fs.readFileSync('public/userChat.html', 'utf-8')
@@ -61,8 +57,6 @@ app.post('/login', (req, res) => {
         const datos = new URLSearchParams(data);
         userName = datos.get('userName');
         const clientsName = clients.map(objeto => objeto.name);
-        console.log(clientsName.includes(userName))
-        console.log(clientsName)
         if (clientsName.includes(userName)){
             res.status(404).send("Nombre de usuario ya utilizado por otro usuario");
         }else if(userName.toLowerCase() == "server" ){
@@ -83,25 +77,34 @@ app.post('/login', (req, res) => {
 
 io.on('connect', (socket) => {
 
-    console.log('nueva conexión')
-
     socket.on("connect_login", (msg)=> {
-        console.log("Mensaje Recibido!: " + msg);
+        console.log('Nueva conexión: '.green + socket.id.blue + ": " + msg.yellow)
         clients.push({name: msg , id: socket.id})
-        socket.broadcast.emit("server", "Se ha conectado: " + msg);
+        socket.broadcast.emit("message",JSON.stringify(["general","server", "Se ha conectado: " + msg]));
         io.emit("chatList", JSON.stringify(clients));
-        socket.emit("message", JSON.stringify(["general", "server" ,"Wuolololooo bienvenido " + msg]) );
+        const fechaActual = new Date();
+        const hora = Number(fechaActual.getHours().toString().padStart(2, '0'));
+        hourMess = ""
+        if (hora > 6 && hora <= 13) {
+            hourMess = "Buenos días ";
+          } else if (hora > 13 && hora < 21) {
+            hourMess = "Buenas tardes ";
+          } else if (hora >= 21 || hora < 6) {
+            hourMess = "Buenas noches ";
+          }
+
+        socket.emit("message", JSON.stringify(["general", "server" ,hourMess + msg + ", bienvenido."]) );
         win.webContents.send('usersCon' ,clients)
         win.webContents.send('genChat' , ["general","server", "Se ha conectado: " + msg])
     });
 
     socket.on('disconnect', function(){
-        console.log('CONEXIÓN TERMINADA');
+        console.log('CONEXIÓN TERMINADA CON: '.red  + socket.id.yellow);
         filtered_clients = []
         for (let i = 0; i <  clients.length; i++){
             if (clients[i].id == socket.id){
                 win.webContents.send('genChat' , ["general","server", "Se ha desconectado: " + clients[i].name])
-                io.emit("message", JSON.stringify([ "general", "server" ,"Se ha desconectado: " + clients[i].name]));
+                io.emit("message", JSON.stringify([ "general", "server" ,"Se ha desconectado  " + clients[i].name ,"disconect" ,socket.id]));
             }else{
                 filtered_clients.push(clients[i])
             }
@@ -114,20 +117,18 @@ io.on('connect', (socket) => {
 
 
     socket.on("message", (msg)=> {
-        console.log("Mensaje Recibido!: " + msg);
+        showMesageData(msg , socket.id)
         if (msg[2][0] == "/"){
             spetialCommands(msg[2], socket , msg[1] , msg[0])
         }else{
             if (msg[0] == "general"){
                 socket.broadcast.emit("message",JSON.stringify(msg));
                 win.webContents.send('genChat' , msg)
-
             }else{
 
                 destinatary = msg[0]
                 msg[0] = socket.id
                 io.to(destinatary).emit('message', JSON.stringify(msg));
-                
             }
             
         }
@@ -142,7 +143,6 @@ console.log("Escuchando en puerto: " + PUERTO);
 
 function spetialCommands(comand, socket , name ,channel){
 
-    console.log("hey")
     switch(comand){
 
         case "/help":
@@ -151,13 +151,17 @@ function spetialCommands(comand, socket , name ,channel){
             break;
 
         case "/list":
-            let response = "Lista de usuarios conectados (menos tú, claro)"
-            for (let i = 0; i <  clients.length; i++){
-                if (socket.id != clients[i].id){
-                    response += "<br> - " + clients[i].name
+
+            let response = "Lista de usuarios conectados (menos tú, claro):"
+            if (clients.length <=1){
+                response = "No hay nadie mas conectado a parte de ti..."
+            }else{
+                for (let i = 0; i <  clients.length; i++){
+                    if (socket.id != clients[i].id){
+                        response += "<br> - " + clients[i].name
+                    }
                 }
             }
-            console.log(clients)
             socket.emit("message" ,JSON.stringify([channel ,"server",response]))
             break;
 
@@ -166,13 +170,12 @@ function spetialCommands(comand, socket , name ,channel){
             break;
 
         case "/date":
-            socket.emit("message" , JSON.stringify([channel ,"server","Esta es la fecha actual: " + getDate()]))
+            socket.emit("message" , JSON.stringify([channel ,"server", getDate()]))
             break;
 
         default:
             socket.emit("message" , JSON.stringify([channel ,"server","Comando no reconocido, escribe /help para conocer todas las opciones"]))
             break;
-
     }
 
 }
@@ -187,9 +190,25 @@ function getDate(){
     const minutos = fechaActual.getMinutes().toString().padStart(2, '0');
     const segundos = fechaActual.getSeconds().toString().padStart(2, '0');
 
-    const fechaHora = `${dia}/${mes}/${anio} ${hora}:${minutos}:${segundos}`;
+    const fechaHora = `Es el dia: ${dia}/${mes}/${anio} , a las ${hora}:${minutos} y ${segundos} segundos`;
     return fechaHora
 }
+
+
+function showMesageData(msg , id){
+    console.log("________________________________________________".white)
+    console.log("Mensaje recibido: ".magenta)
+    console.log("origin id: ".blue + id.yellow)
+    console.log("Destination id: ".blue + msg[0].yellow)
+    if (msg[0] == "general"){
+        console.log("Message content: ".blue + msg[2].yellow)
+    }else{
+        console.log("Message content: ".blue + "PRIVATE CONVERSATION")
+    }
+    console.log("________________________________________________".white)
+
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -204,7 +223,7 @@ function getDate(){
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    //-- Crear la ventana principal de nuestra aplicación
+    //-- Crear la ventana principal de nuewin.webContents.send('genChat' , msg)stra aplicación
     win = new electron.BrowserWindow({
         width: 1200,  //-- Anchura 
         height: 800,  //-- Altura

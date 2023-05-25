@@ -222,7 +222,17 @@ body{
     word-break: break-all;
 }
 
+#chatInfoDiv #smallChatDiv #inputDiv{
+    margin: auto;
+}
 
+#chatInfoDiv #smallChatDiv #inputDiv #inputTextServer{
+    border-radius: 16px;
+}
+
+#chatInfoDiv #smallChatDiv #inputDiv #testButton{
+    border-radius: 16px;
+}
 
 #chatInfoDiv #infoChatDiv{
     height: 100%;
@@ -232,6 +242,8 @@ body{
     overflow: auto;
     background-color: #464646;
 }
+
+
 
 .invisibleDiv{
     height: 10%;

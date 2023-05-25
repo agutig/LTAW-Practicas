@@ -1,10 +1,7 @@
 const electron = require('electron');
 const ip = require('ip');
 
-
-console.log("hey")
 let BODY = document.body.innerHTML;
-
 //Static data
 BODY = BODY.replace( "<!--REPLACE_NODE_VERSION-->" ,process.versions.node )
 BODY = BODY.replace( "<!--REPLACE_NODE_CHROME-->" ,process.versions.chrome )
@@ -47,9 +44,26 @@ electron.ipcRenderer.on('conectionInformation' , (event,message) => {
 })
 
 
-const myButton = document.getElementById('testButton');
-myButton.addEventListener('click', () => {
-    showText = "<div class='messageDiv1'> <p class='userName'>Server</p>  <p class='chatText' > This is just a test message, ignore</p>  </div>"
-    document.getElementById("smallChatDivDiv").innerHTML += showText;
-    electron.ipcRenderer.invoke('serverMess' , "This is a test message, just ignore it")
+
+
+let testButton= document.getElementById('testButton');
+testButton.addEventListener('click', () => {
+    console.log("Hey")
+    sendMessage("Este es un mensaje de prueba, ignorenlo")
 });
+
+let sendButton = document.getElementById('sendButton');
+
+sendButton.addEventListener('click', () => {
+    console.log("caca")
+    const input = document.getElementById('inputTextServer');
+    sendMessage(input.value)
+    input.value = ""
+});
+console.log(sendButton)
+
+function sendMessage(message){
+    showText = "<div class='messageDiv1'> <p class='userName'>Server</p>  <p class='chatText' >" + message  + "/p>  </div>"
+    document.getElementById("smallChatDivDiv").innerHTML += showText;
+    electron.ipcRenderer.invoke('serverMess' , message )
+}
