@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <title>CHAT SERVER</title>
-  <link rel="icon" type="image/ico" href="/icon.ico"/>   
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="renderer.css"> 
-  <script type="text/javascript" src="renderer.js" defer></script>
+  <link rel="stylesheet" href="renderer.css" defer> 
+  <script  src="renderer.js" defer></script>
+  <script  src="renderer2.js" defer></script>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
 </head>
 
@@ -23,7 +24,7 @@
         <div>
             <h3>Connect</h3>
             <p>URL lanzada en </p>
-            <div><!--REPLACE_URL--></div>
+            <p id="replaceURL"><!--REPLACE_URL--></p>
             <img src="QR.png" />
         </div>
     </div>
@@ -36,11 +37,10 @@
             <div id="smallChatDivDiv">
                 <div class="invisibleDiv"></div>
             </div>
-            <div id="inputDiv">
-                <input id='inputTextServer' type="text"/>
-                <button id='sendButton' >▷</button>
-                <button id='testButton' >Mandar un mensaje de prueba</button>
-            </div>
+            <input type="text"/>
+            <button>D</button>
+
+            <p><input type="button" value="Test"  id="btn_test"/></p>
         </div>
         <div  id="infoChatDiv">
             <p>Usuarios conectados:  <p id="usersConNum"> </p>  </p>

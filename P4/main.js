@@ -236,19 +236,10 @@ function showMesageData(msg , id){
 
     win.on('ready-to-show', () => {
         win.webContents.send('usersCon' ,clients)
-    })
 
-    electron.ipcMain.handle('serverMess',(event,msg) => {
-        io.emit("message", JSON.stringify([ "general", "server" ,msg]));
-    })
-
-    electron.ipcMain.handle('conectionInformation',(event,msg) => {
-
-
+        /*
         const url = "http://" + ip.address() + ":" + PUERTO;
         const qrImagePath = "./GUI/QR.png"
-
-     
         qrcode.toFile(qrImagePath , url, {
             color: {
               dark: '#00b35f',  // Blue dots
@@ -258,10 +249,16 @@ function showMesageData(msg , id){
             if (err) throw err
             console.log('done')
           })
-  
-
         win.webContents.send('conectionInformation' ,[ip.address(), PUERTO, "QR.png"])
+        */
+        win.webContents.send('conectionInformation' , JSON.stringify([ip.address(), PUERTO, "QR.png"]))
     })
+
+    electron.ipcMain.handle('serverMess',(event,msg) => {
+        io.emit("message", JSON.stringify([ "general", "server" ,msg]));
+    })
+
+    
 
     win.loadFile("GUI/renderer.html")
 
