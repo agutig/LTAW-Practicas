@@ -26,7 +26,7 @@ function updateTotal(){
     for (let i = 0; i < subPrices.length; i++) {
         total += Number(subPrices[i].textContent) 
     }
-    document.getElementById('totalPriceFinal').textContent = "Total " + String(total) 
+    document.getElementById('totalPriceFinal').textContent = "Total: " + String(total)  + " €"
     if (total <= 0){
         location.reload();
     }

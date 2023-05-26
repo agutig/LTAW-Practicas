@@ -469,7 +469,7 @@ async function manageCart(data,cookies , callback){
           <input type='number' id='cardClient' class='userDataInput' placeholder='Introduce tu tarjeta de credito para completar el pago'/> \
           <p class='textUserCart' >Dirección de envio</p> <input id='dirClient' type='text' class='userDataInput' placeholder='Introduce tu direccion para completar el pago'/>\
           <p id='feedbackText'></p> </div>"
-          productsComponents += " <p id='totalPriceFinal'> Total: " + String(totalPrice) + "</p>" + inputUI + "</div> " ;
+          productsComponents += " <p id='totalPriceFinal'> Total: " + String(totalPrice) + " € </p>" + inputUI + "</div> " ;
           data = data.replace("<!--REPLACE_PRODUCTS-->",productsComponents);
           data = data.replace("REPLACE_TEXT","Realizar pedido");
           data = data.replace("REPLACE_URL","sendPurchase()");
@@ -487,7 +487,7 @@ async function manageCart(data,cookies , callback){
     }
     
   }else{
-    data = data.replace("<!--REPLACE_PRODUCTS-->"," <p id='cartTittle'  style='margin: auto; margin-top: 2%'> Inicia sesion para poder realizar la compra </p>");
+    data = data.replace("<!--REPLACE_PRODUCTS-->"," <p id='cartTittle'  style='margin: auto; margin-top: 2%'> Inicia sesión para poder realizar la compra </p>");
     data = data.replace("extraStyle=''","style='margin: auto; margin-top: 2%'");
     data = data.replace("REPLACE_URL","location.href='login.html';");
     data = data.replace("REPLACE_TEXT","Inicia sesion");
