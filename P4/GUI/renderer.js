@@ -21,16 +21,16 @@ electron.ipcRenderer.on('usersCon' , (event,message) => {
     let userList = document.getElementById("usersConList")
     userList.innerHTML = ""
     for (let i = 0; i <  message.length; i++){
-        userList.innerHTML += "<br> <p id='greenDot'>.</p>" + message[i].name
+        userList.innerHTML += "<br> <div class='conectedDiv'> <p id='greenDot'>.</p> <p class='notGreenDot'>" + message[i].name + " </p> </div>"
     }
 })
 
 
 electron.ipcRenderer.on('genChat' , (event,message) => {
 
-    typeText = 0
-    if(message[1] == "server"){typeText = 1}
-    showText = "<div class='messageDiv"+typeText +"' > <p class='userName'>" + message[1] + "</p> <p class='chatText'>"+ message[2] + "</p>  </div>"
+    typeText = 1
+    if(message[1] == "server"){typeText = 2}
+    showText = "<div class='messageClassDiv"+ typeText +"'> <p class='chatTimeText'> <span class='userName'> " + message[1] + "</span> <span class='messDate'>"+ getDate() +"</span>  </p> <p class='chatText' >"+ message[2] +"</p> </div>"
     document.getElementById("smallChatDivDiv").innerHTML += showText;
  
 })

@@ -116,7 +116,76 @@ body{
 }
 
 
-#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv0{
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv2{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 1%;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    border: 1px solid rgb(0, 179, 95);
+    background-color: rgb(0, 179, 95);
+    border-radius: 16px;
+    width: min-content;
+    max-width: 40%;
+    min-width: 5%;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
+}
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv2 .chatTimeText{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv2 .userName{
+    font-weight: 800;
+    text-align: left;
+    margin: auto;
+    margin-left: 1.1vw;
+    width: auto;
+    max-width: 80%;
+    min-width: 20%;
+    display: inline;
+}
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv2 .chatTimeText .messDate{
+    margin: auto;
+    margin-right: 1.1vw;
+    margin-left: 0.5vw;
+    color: #fafafa;
+    font-size: 80%;
+}
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv2 .chatText{
+    padding-left:  0.75vw;
+    padding-right: 0.75vw;
+    font-weight: 400;
+    font-size: 110;
+    text-align: left;
+    margin: auto;
+    margin-left: 1vw;
+    margin-right: 0.75vw;
+    margin-bottom: 0.5vh;
+    width: max-content;
+    max-width: 25vw;
+    min-width: 1.75vw;
+    border-radius: 16px;
+    color: #fafafa;
+    background-color: rgb(0, 119, 64);
+    word-break: break-all;
+}
+
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv1{
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -137,19 +206,38 @@ body{
               0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
-#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv0 .userName{
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv1 .chatTimeText{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+}
+
+
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv1 .userName{
     font-weight: 800;
     text-align: left;
-    margin-left: 1vw;
-    margin-top: 1vh;
+    margin: auto;
+    margin-left: 1.1vw;
     width: auto;
     max-width: 80%;
     min-width: 20%;
     display: inline;
+
 }
 
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv1 .messDate{
+    margin: auto;
+    margin-right: 1.1vw;
+    margin-left: 0.5vw;
+    color: #fafafa;
+    font-size: 80%;
+}
 
-#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv0 .chatText{
+#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageClassDiv1 .chatText{
+
     padding-left:  0.75vw;
     padding-right: 0.75vw;
     font-weight: 400;
@@ -165,60 +253,6 @@ body{
     border-radius: 16px;
     color: #fafafa;
     background-color: rgb(92, 45, 92);
-    word-break: break-all;
-}
-
-
-#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv1{
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    margin-top: 1%;
-    margin-right: 2%;
-    margin-bottom: 1%;
-    border: 1px solid #00b35f;
-    background-color: rgb(0, 179, 95);
-    border-radius: 16px;
-    width: min-content;
-    max-width: 40%;
-    min-width: 5%;
-    box-shadow: 
-              0 1.5px 1.5px rgba(0,0,0,0.35),
-              0 1.5px 1.5px rgba(0,0,0,0.35), 
-              0 1.5px 1.5px rgba(0,0,0,0.35), 
-              0 1.5px 1.5px rgba(0,0,0,0.35),
-              0 1.5px 1.5px rgba(0,0,0,0.35);
-}
-
-#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv1 .userName{
-    font-weight: 800;
-    text-align: left;
-    margin-left: 1vw;
-    margin-top: 1vh;
-    width: auto;
-    max-width: 80%;
-    min-width: 20%;
-    display: inline;
-
-}
-
-#chatInfoDiv #smallChatDiv #smallChatDivDiv .messageDiv1 .chatText{
-
-    padding-left:  0.75vw;
-    padding-right: 0.75vw;
-    font-weight: 400;
-    font-size: 110;
-    text-align: left;
-    margin: auto;
-    margin-left: 2.5vw;
-    margin-right: 1vw;
-    margin-top: 0.5vh;
-    margin-bottom: 0.5vh;
-    width: max-content;
-    max-width: 25vw;
-    border-radius: 16px;
-    color: #fafafa;
-    background-color: rgb(0, 119, 64);
     word-break: break-all;
 }
 
@@ -249,10 +283,28 @@ body{
     height: 10%;
 }
 
-#greenDot{
+
+.conectedDiv{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+    width: 95%;
+    border: 1px solid rgb(44, 44, 44);
+    border-radius: 16px;
+}
+
+.conectedDiv #greenDot{
     color: greenyellow;
     margin: auto;
-    margin-right: 10%;
+    margin-top: -10%;
     font-size: 200%;
     font-weight: 900;
+    width: 5%;
+}
+
+.conectedDiv .notGreenDot{
+    margin: auto;
+    text-align: center;
+    width: 30%;
 }
