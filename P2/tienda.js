@@ -28,7 +28,7 @@ function print_info_req(req) {
 
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
 
-  if (false){
+  if (true){
     console.log("");
     console.log("Mensaje de solicitud");
     console.log("====================");
