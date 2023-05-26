@@ -328,34 +328,7 @@
       "name": "José Álvaro Osorio Balvin",
       "email": "jbalvin@jmail.com",
       "image": "images/cliente_1.png",
-      "pedidos": [
-        {
-          "products": [
-            [
-              "1",
-              "50"
-            ]
-          ],
-          "data": {
-            "dir": "Calle de tu corazon, 3, 28283",
-            "card": "666666666666666666666",
-            "user": "jbalvin"
-          }
-        },
-        {
-          "products": [
-            [
-              "1",
-              "1"
-            ]
-          ],
-          "data": {
-            "dir": "aaaaaaaaaaa",
-            "card": "333",
-            "user": "jbalvin"
-          }
-        }
-      ],
+      "pedidos": [],
       "cart": "",
       "review": "He comprado todos los Samsung Galaxy S23 muajajaj"
     },
