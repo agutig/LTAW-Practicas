@@ -28,7 +28,7 @@ function print_info_req(req) {
 
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
 
-  if (true){
+  if (false){
     console.log("");
     console.log("Mensaje de solicitud");
     console.log("====================");
@@ -272,9 +272,9 @@ const server = http.createServer((req, res) => {
 
         // This can be highly optimized
         for (let i = 0; i <  DATABASE.products.length; i++){
-          for (let j = 0; j <  content.length; j++){
-            if (DATABASE.products[i].id == content[j][0]){
-              DATABASE.products[i].stock = DATABASE.products[i].stock - content[j][1]
+          for (let j = 0; j <  content.products.length; j++){
+            if (DATABASE.products[i].id == content.products[j][0]){
+              DATABASE.products[i].stock = DATABASE.products[i].stock - content.products[j][1]
               break; 
             }
           }
