@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="renderer.css" defer> 
   <script  src="renderer.js" defer></script>
-  <script  src="renderer2.js" defer></script>
+  <script  src="renderer_UI.js" defer></script>
   <meta http-equiv="Content-Security-Policy" content="default-src 'self';" />
 </head>
 
@@ -15,17 +15,17 @@
 
     <div id="infoDIV">
         <div id="infoDIVDIV">
-            <h3>Versions</h3>
-            <p>Version de node: <!--REPLACE_NODE_VERSION--></p> 
-            <p>Version de chromium: <!--REPLACE_NODE_CHROME--></p>
-            <p>Version de electron: <!--REPLACE_NODE_ELECTRON--></p>
-            <p>Version del server: 1.0.0</p>
+            <h3 class="infoTextTittle">Versiones</h3>
+            <p class="infoText">Version de node: <p class="infoTextGreen" id="nodeText"><!--REPLACE_NODE_VERSION--></p></p> 
+            <p class="infoText">Version de chrome: <p class="infoTextGreen" id="chromeText"><!--REPLACE_NODE_CHROME--></p></p>
+            <p class="infoText">Version de electron: <p class="infoTextGreen" id="electronText"><!--REPLACE_NODE_ELECTRON--></p></p>
+            <p class="infoText">Version del server: <p class="infoTextGreen" >1.0.0</p></p>
         </div>
         <div>
-            <h3>Connect</h3>
-            <p>URL lanzada en </p>
-            <p id="replaceURL"><!--REPLACE_URL--></p>
-            <img src="QR.png" />
+            <h3 class="infoTextTittle">Connect</h3>
+            <p class="infoText">URL lanzada en </p>
+            <p id="replaceURL" class="infoTextGreen"><!--REPLACE_URL--></p>
+            <img id='QR' src="loading.png" />
         </div>
     </div>
 
@@ -37,10 +37,11 @@
             <div id="smallChatDivDiv">
                 <div class="invisibleDiv"></div>
             </div>
-            <input type="text" id="inputTextServer"/>
-            <button id="sendButton">D</button>
-
-            <input type="button" value="Test"  id="testButton"/>
+            <div id="inputDiv">
+                <input type="text" id="inputTextServer"/>
+                <button id="sendButton"> ▷ </button>
+                <input type="button" value="Test"  id="testButton"/>
+            </div>
         </div>
         <div  id="infoChatDiv">
             <p>Usuarios conectados:  <p id="usersConNum"> </p>  </p>

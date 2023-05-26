@@ -9,7 +9,6 @@ let CHAT_DATABASE = {general:"<div class='invisibleDiv'></div>"}
 let STATE = "general"
 let USERS_LIST = []
 let SOUND =  new Audio('public/sound_notification.mp3');
-//Send User-server messages
 
 function getDate(){
   var date = new Date();

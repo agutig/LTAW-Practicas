@@ -36,8 +36,30 @@ body{
     -6px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
+
+.infoTextTittle{
+    font-size: 170%;
+}
+.infoText{
+    margin: auto;
+    margin-left: 2%;
+    margin-top: 1%;
+    margin-bottom: 0.5%;
+    text-align: center;
+    font-weight: 600;
+    font-size: fit-content;
+}
+
+.infoTextGreen{
+    color: rgb(0, 179, 95);
+    font-weight: 600;
+    font-size: fit-content;
+    margin: auto;
+    margin-top: 1%;
+}
+
 #infoDIVDIV{
-    border-bottom: #212121 1px solid;
+    border-bottom: #2f2f2f 5px solid;
 }
 
 #chatInfoDiv{
@@ -55,7 +77,7 @@ body{
     width: 80%;
     margin: auto;
     background-color: #464646;
-    border-right: #2a2a2a 5px solid;
+    border-right: #2f2f2f 5px solid;
 }
 
 #chatInfoDiv #smallChatDiv #tittleConversation{
@@ -91,7 +113,7 @@ body{
 
 #chatInfoDiv #smallChatDiv #smallChatDivDiv{
     overflow: auto;
-    border-bottom: 1px solid #212121;
+    border-bottom: 5px solid #2f2f2f;
     height: 90%;
 }
 
@@ -176,7 +198,7 @@ body{
     margin-right: 0.75vw;
     margin-bottom: 0.5vh;
     width: max-content;
-    max-width: 25vw;
+    max-width: 20vw;
     min-width: 1.75vw;
     border-radius: 16px;
     color: #fafafa;
@@ -244,12 +266,12 @@ body{
     font-size: 110;
     text-align: left;
     margin: auto;
-    margin-left: 2.5vw;
+    margin-left: 1vw;
     margin-right: 1vw;
     margin-top: 0.5vh;
     margin-bottom: 0.5vh;
     width: max-content;
-    max-width: 25vw;
+    max-width: 20vw;
     border-radius: 16px;
     color: #fafafa;
     background-color: rgb(92, 45, 92);
@@ -258,14 +280,101 @@ body{
 
 #chatInfoDiv #smallChatDiv #inputDiv{
     margin: auto;
+    width: 100%;
+    height: 9%; 
 }
 
 #chatInfoDiv #smallChatDiv #inputDiv #inputTextServer{
+    margin: auto;
+    margin-top: 1.5%;
+    height:  3vw;
     border-radius: 16px;
+    width: 80%;
+    font-size: 130%;
+    text-align: center;
+    border: 1px solid #0b0b0b79;
+    box-sizing: border-box;
+    background-color: #cbcbcb;
+    font-size: 150%;
+    color: rgb(51, 51, 51);
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
 }
 
 #chatInfoDiv #smallChatDiv #inputDiv #testButton{
-    border-radius: 16px;
+    margin: auto;
+    margin-top: 0.75%;
+    height: 3vw;
+    font-size: 130%;
+    border-radius: 32px;
+    border: 1px solid #0b0b0b79;
+    box-sizing: border-box;
+    background-color: #545454;
+    color: #d8d8d8;
+    font-weight: 800;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
+
+    transition: background-color 1s , box-shadow 1s;
+}
+
+#chatInfoDiv #smallChatDiv #inputDiv #testButton:hover{
+    background-color: rgb(0, 179, 95);
+    box-shadow: 
+              0 4px 4px rgba(0,0,0,0.20),
+              0 4px 4px rgba(0,0,0,0.20), 
+              0 4px 4px rgba(0,0,0,0.20), 
+              0 4px 4px rgba(0,0,0,0.20),
+              0 4px 4px rgba(0,0,0,0.20);
+}
+
+#chatInfoDiv #smallChatDiv #inputDiv #testButton:active{
+    box-shadow: none;
+}
+
+
+#chatInfoDiv #smallChatDiv #inputDiv #sendButton{
+    margin: auto;
+    margin-top: 0.75%;
+    width: 3vw;
+    height: 3vw;
+    font-size: 130%;
+    border-radius: 32px;
+    border: 1px solid #0b0b0b79;
+    box-sizing: border-box;
+    background-color: #545454;
+    color: #d8d8d8;
+    font-weight: 800;
+    box-shadow: 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35), 
+              0 1.5px 1.5px rgba(0,0,0,0.35),
+              0 1.5px 1.5px rgba(0,0,0,0.35);
+
+    transition: background-color 1s , box-shadow 1s;
+}
+
+#chatInfoDiv #smallChatDiv #inputDiv #sendButton:hover{
+    background-color: rgb(0, 179, 95);
+    box-shadow: 
+              0 4px 4px rgba(0,0,0,0.20),
+              0 4px 4px rgba(0,0,0,0.20), 
+              0 4px 4px rgba(0,0,0,0.20), 
+              0 4px 4px rgba(0,0,0,0.20),
+              0 4px 4px rgba(0,0,0,0.20);
+}
+
+#chatInfoDiv #smallChatDiv #inputDiv #sendButton:active{
+    box-shadow: none;
 }
 
 #chatInfoDiv #infoChatDiv{
@@ -284,6 +393,16 @@ body{
 }
 
 
+#usersConNum{
+    color: rgb(0, 179, 95);
+    font-size: 200%;
+}
+
+#usersConList{
+    margin: auto;
+    width: 90%;
+}
+
 .conectedDiv{
     display: flex;
     flex-direction: row;
@@ -295,16 +414,19 @@ body{
 }
 
 .conectedDiv #greenDot{
-    color: greenyellow;
+    color: rgb(0, 179, 95);
     margin: auto;
-    margin-top: -10%;
-    font-size: 200%;
+    margin-top: -12%;
+    margin-left: 5%;
+    font-size: 220%;
     font-weight: 900;
     width: 5%;
 }
 
 .conectedDiv .notGreenDot{
     margin: auto;
-    text-align: center;
+    margin-left: -30%;
+    text-align: left;
     width: 30%;
+    font-size: fit-content;
 }

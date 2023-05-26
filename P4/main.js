@@ -226,7 +226,7 @@ function showMesageData(msg , id){
     //-- Crear la ventana principal de nuewin.webContents.send('genChat' , msg)stra aplicación
     win = new electron.BrowserWindow({
         width: 1200,  //-- Anchura 
-        height: 800,  //-- Altura
+        height: 750,  //-- Altura
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
@@ -234,10 +234,12 @@ function showMesageData(msg , id){
 
     });
 
+    
+
     win.on('ready-to-show', () => {
         win.webContents.send('usersCon' ,clients)
 
-        /*
+        
         const url = "http://" + ip.address() + ":" + PUERTO;
         const qrImagePath = "./GUI/QR.png"
         qrcode.toFile(qrImagePath , url, {
@@ -246,20 +248,23 @@ function showMesageData(msg , id){
               light: '#0000' // Transparent background
             }
           }, function (err) {
-            if (err) throw err
-            console.log('done')
+            if (err) {
+                throw err
+            }else{
+                console.log('QR done')
+                win.webContents.send('QR' , "OK")
+            }
           })
-        win.webContents.send('conectionInformation' ,[ip.address(), PUERTO, "QR.png"])
-        */
+        
         win.webContents.send('conectionInformation' , JSON.stringify([ip.address(), PUERTO, "QR.png"]))
     })
 
     electron.ipcMain.handle('serverMess',(event,msg) => {
         io.emit("message", JSON.stringify([ "general", "server" ,msg]));
     })
-
     
-
+    win.setMenuBarVisibility(false)
+    win.setIcon("GUI/Logo.png");
     win.loadFile("GUI/renderer.html")
 
 });
