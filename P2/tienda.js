@@ -242,8 +242,7 @@ const server = http.createServer((req, res) => {
       cartCookie = convert2Dic(cartCookie,"_")
       delete cartCookie[id]
       var updatedCart = '';
-
-      if (cartCookie.length <=0 ){
+      if (cartCookie.length <=0 || String(cartCookie) == {} ){
         updatedCart = ''
         res.setHeader('Set-Cookie', ["cart= ; expires=Thu, 01 Jan 1970 00:00:00 GMT"]);
       }else{
