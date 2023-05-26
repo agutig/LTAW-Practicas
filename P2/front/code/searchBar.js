@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 const searchBar = document.getElementsByClassName('searchBar')[0];
 const searchElements = document.getElementById('searchElements')
-console.log(searchElements)
 searchBar.addEventListener('input', searchPreview);
 
 let searchResults = []
@@ -23,7 +22,6 @@ function searchPreview() {
             searchElements.innerHTML += "<button class='elementSearched' onclick=\"location.href='/product.html?product_id=" + results[i][1]+"';\">"+ results[i][0] +"</button>"
           }
           searchResults = results
-          console.log(searchResults);
         }
       }
       m.send();  //Envío de la petición
@@ -39,7 +37,6 @@ function productSearch(){
 
   const searchBar = document.getElementsByClassName('searchBar')[0];
   search = searchBar.value
-  console.log(search)
   const m = new XMLHttpRequest();
   m.open("GET", "/searchProduct?product="+search, true);
   m.onreadystatechange = () => {

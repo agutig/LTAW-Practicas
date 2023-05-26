@@ -71,7 +71,7 @@ button.onclick = () => {
 
 //Manage Server-client responses
 socket.on("connect", () => {
-  console.log("conexión correcta")
+ //console.log("conexión correcta")
   socket.emit('connect_login', USERNAME);
 });  
 

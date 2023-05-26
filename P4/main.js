@@ -14,7 +14,7 @@ const colors = require('colors');
 const electron = require('electron');
 let win = null;
 electron.app.on('ready', () => {
-    console.log("Evento Ready!");
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
@@ -138,7 +138,7 @@ io.on('connect', (socket) => {
 
 //-- Lanzar el servidor HTTP
 server.listen(PUERTO);
-console.log("Escuchando en puerto: " + PUERTO);
+console.log("Escuchando en puerto: ".yellow + String(PUERTO).blue);
 
 
 function spetialCommands(comand, socket , name ,channel){
@@ -251,7 +251,7 @@ function showMesageData(msg , id){
             if (err) {
                 throw err
             }else{
-                console.log('QR done')
+                console.log('--> New QR made <--'.yellow)
                 win.webContents.send('QR' , "OK")
             }
           })

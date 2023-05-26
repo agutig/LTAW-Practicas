@@ -79,8 +79,6 @@ m.onreadystatechange = function() {
 m.send();
 
 
-console.log(reviews)
-
 });
 
 

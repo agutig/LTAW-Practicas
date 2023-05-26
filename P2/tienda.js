@@ -28,7 +28,7 @@ function print_info_req(req) {
 
   const myURL = new URL(req.url, 'http://' + req.headers['host']);
 
-  if (false){
+  if (true){
     console.log("");
     console.log("Mensaje de solicitud");
     console.log("====================");
@@ -202,7 +202,6 @@ const server = http.createServer((req, res) => {
             }
             reviews.push(reviewObj)
         }
-      console.log(reviews)
       }
       OK(res,JSON.stringify(reviews))
 
@@ -238,14 +237,10 @@ const server = http.createServer((req, res) => {
 
     }else if(url.pathname == '/deleteProductCart') {
       let id = url.searchParams.get("id");
-      console.log(id)
       cookies = getCookies(req)
       cartCookie = cookies['cart'].split(":")
       cartCookie = convert2Dic(cartCookie,"_")
-      console.log(cookies)
-      console.log(cartCookie)
       delete cartCookie[id]
-      console.log(cartCookie)
       var updatedCart = '';
 
       if (cartCookie.length <=0 ){
@@ -259,22 +254,6 @@ const server = http.createServer((req, res) => {
         res.setHeader('Set-Cookie',["cart="+updatedCart]);
       }
 
-      console.log(updatedCart)
-      
-      /*
-      for (let i = 0; i <  DATABASE.clients.length; i++){
-        if (DATABASE.clients[i].userName == cookies.userName){
-
-            if(cookies.cart != undefined && cookies.cart != null  ){DATABASE.clients[i].cart = updatedCart}else{DATABASE.clients[i].cart = ""}
-            fs.writeFile('tienda.json', JSON.stringify(DATABASE, null, 2), (err) => {
-              if (err) throw err;
-              console.log('Updated JSON');
-            });
-            break; 
-        }
-      }
-      */
-     
       OK(res,"200 OK")
       //res.setHeader('Set-Cookie', "cart="+cartCokie );
 
@@ -363,7 +342,6 @@ function manageProductData(data, DATABASE , id ,cookies){
         if(cookies['cart'] != null){
           cartCookie = cookies['cart'].split(":")
           cartCookie = convert2Dic(cartCookie,"_")
-          console.log(cartCookie)
           for (let key in cartCookie) {
             if (key ==  DATABASE.products[i].id){
                 reservedStock = Number(cartCookie[key])
@@ -434,7 +412,6 @@ function manageProfilePage(data,cookies){
     }else{
       let components = ""
       for (let i = 0; i <  user.pedidos.length; i++){
-        console.log(user.pedidos[i])
         components += "<div class='order'> <p class='orderDivText'>Pedido para: "+ user.pedidos[i].data.user + "</p>\
         <p class='orderDivText3'>Dirección de envio: " +user.pedidos[i].data.dir  +" </p>\
         <p class='orderDivText3'>Numero de tarjeta: "+ user.pedidos[i].data.card + "</p> <p class='orderDivText3'> Productos comprados: </p>  "

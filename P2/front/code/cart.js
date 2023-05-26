@@ -57,7 +57,6 @@ function sendPurchase(){
             data : {dir:direction, card: tarjet ,user:user}
         }
 
-        console.log(purchase_data)
         var m = new XMLHttpRequest();
         m.open("POST", "/purchase", true);
         m.setRequestHeader("Content-Type", 'application/json');
@@ -77,7 +76,6 @@ function sendPurchase(){
 }
 
 function deleteProduct(id){
-    console.log(id)
     var elemento = document.querySelector('[productid="' + id + '"]');
     elemento.remove()
     //elemento.innerHTML = ""

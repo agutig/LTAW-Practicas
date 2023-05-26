@@ -15,13 +15,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         if (index < 0){ index = fileListLen -1}
         index = Math.abs(index % fileListLen)
  
-        //index = Math.abs(index % fileListLen)
-
         var ppt = document.getElementById("ppt" + String(index));
         ppt.style.textShadow  = "0.75px 0.75px 0 #1b1b1b, -0.75px -0.75px 0 #1b1b1b,  0.75px -0.75px 0 #1b1b1b,   -0.75px 0.75px 0 #1b1b1b"
-        
 
-        //Load data
         file[file.length -1] = String(index) + ".png"
         img_url[img_url.length - 1] = file.join("_")
 
@@ -43,7 +39,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         ppt1.style.textShadow = "none"
         ppt2.style.textShadow = "none"
         actPic(1)
-
     };
 
     prevRev.onclick = function() {
@@ -51,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         ppt1.style.textShadow = "none"
         ppt2.style.textShadow = "none"
         actPic(-1)
-
     };
 
     

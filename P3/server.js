@@ -107,7 +107,7 @@ io.on('connect', (socket) => {
 
 //-- Lanzar el servidor HTTP
 server.listen(PUERTO);
-console.log("Escuchando en puerto: " + PUERTO);
+console.log("Escuchando en puerto: ".yellow + String(PUERTO).blue);
 
 
 function spetialCommands(comand, socket , name ,channel){
