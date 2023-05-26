@@ -30,7 +30,7 @@
       "id": 1,
       "price": 1020,
       "category": "high",
-      "stock": 0,
+      "stock": 50,
       "marca": "Samsung",
       "slogan": "Tecnología punta",
       "descripcion": "Nuestro llamativo diseño simétrico vuelve con una gran diferencia: el uso de materiales reciclados y ecológicos.1,2 Desde el cristal reutilizado hasta el color del marco de metal pulido.",
@@ -328,14 +328,7 @@
       "name": "José Álvaro Osorio Balvin",
       "email": "jbalvin@jmail.com",
       "image": "images/cliente_1.png",
-      "pedidos": [
-        [
-          [
-            "1",
-            "100"
-          ]
-        ]
-      ],
+      "pedidos": [],
       "cart": "",
       "review": "He comprado todos los Samsung Galaxy S23 muajajaj"
     },
@@ -364,7 +357,7 @@
           }
         }
       ],
-      "cart": "0_2:3_2",
+      "cart": "2_9:4_6",
       "review": "Han escrito mal mi nombre, caguen la leche"
     }
   ]
