@@ -71,15 +71,10 @@ button.onclick = () => {
 
 //Manage Server-client responses
 socket.on("connect", () => {
- //console.log("conexión correcta")
   socket.emit('connect_login', USERNAME);
 });  
 
-/*
-socket.on("disconnect", ()=> {
-  socket.emit('connect_login', USERNAME);
-})
-*/
+
 
 socket.on("message", (msg)=>{
   msg = JSON.parse(msg)
@@ -98,7 +93,7 @@ socket.on("message", (msg)=>{
 
   }else{
     SOUND.play();
-  //CHAT_DATABASE[STATE] +=  "<div class='messageClassDiv2'> <p class='chatTimeText'> <span class='userName'>Tú</span>  <span class='messDate'>" + getDate() + "</span>  </p>   <p class='chatText'>"+msg+"</p></div>"
+
     CHAT_DATABASE[msg[0]] += "<div class='messageClassDiv1'> <p class='chatTimeText'> <span class='userName'>"+ msg[1] +"</span> <span class='messDate'>"+getDate()+"</span>  </p> <p class='chatText' >"+ msg[2] +"</p> </div>"
   }
 
