@@ -91,14 +91,13 @@ socket.on("message", (msg)=>{
       if(flag == "disconect"){
         let discoUser = msg[4]
         if( STATE == discoUser){
-          messagesDiv.innerHTML += "<div class='messageClassDiv3'> <p class='userName'>Server</p>  <p class='chatText' >" + msg[2] + " cambia de chat para seguir chateando</p> <p>"+getDate()+"</p>  </div>"
+          messagesDiv.innerHTML += "<div class='messageClassDiv3'> <p class='userName'>Server</p>  <p class='chatText' >" + msg[2] + " ,cambia de chat para seguir chateando</p> <p>"+getDate()+"</p>  </div>"
         }
       }
     }
 
   }else{
     SOUND.play();
-  //CHAT_DATABASE[STATE] +=  "<div class='messageClassDiv2'> <p class='chatTimeText'> <span class='userName'>Tú</span>  <span class='messDate'>" + getDate() + "</span>  </p>   <p class='chatText'>"+msg+"</p></div>"
     CHAT_DATABASE[msg[0]] += "<div class='messageClassDiv1'> <p class='chatTimeText'> <span class='userName'>"+ msg[1] +"</span> <span class='messDate'>"+getDate()+"</span>  </p> <p class='chatText' >"+ msg[2] +"</p> </div>"
   }
 
