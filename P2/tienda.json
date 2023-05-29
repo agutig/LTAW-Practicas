@@ -232,7 +232,7 @@
       "price": 102,
       "marca": "Realme",
       "slogan": "Innovación, eficiencia y estilo en un solo dispositivo",
-      "stock": 15,
+      "stock": 14,
       "descripcion": "La vida es impredecible, pero nuestro móvil no. Con su diseño resistente y su protección contra el agua y el polvo, podrás llevarlo contigo a cualquier parte sin preocupaciones. Además, su batería de larga duración y su carga inalámbrica te permitirán estar conectado en todo momento. Y con su sistema de reconocimiento de voz y asistente personal, podrás hacer tus tareas diarias con mayor eficiencia.",
       "caracteristics": [
         "Pantalla Super Retina XDR Pantalla OLED de 6,1 pulgadas (15,54 cm) en diagonal Resolución de 2.556 por 1.179 píxeles a 460 p/p",
@@ -308,7 +308,21 @@
       "name": "Alvaro Gutierrez",
       "email": "guti@guti.com",
       "image": "/images/gatoTiste.png",
-      "pedidos": [],
+      "pedidos": [
+        {
+          "products": [
+            [
+              "11",
+              "3"
+            ]
+          ],
+          "data": {
+            "dir": "plaza jamon sabroso, 33, Madrid",
+            "card": "333333",
+            "user": "guti"
+          }
+        }
+      ],
       "cart": "",
       "review": "Miau"
     },
@@ -343,7 +357,7 @@
           }
         }
       ],
-      "cart": "2_1:7_1:10_1",
+      "cart": "",
       "review": "He comprado todos los Samsung Galaxy S23 muajajaj"
     },
     {
@@ -367,6 +381,19 @@
           "data": {
             "dir": "Calle beluga 35643",
             "card": "44445444465674",
+            "user": "deltoro"
+          }
+        },
+        {
+          "products": [
+            [
+              "9",
+              "1"
+            ]
+          ],
+          "data": {
+            "dir": "Calle del buen director de cine, 31, Guadalajara, México",
+            "card": "63263266324",
             "user": "deltoro"
           }
         }
